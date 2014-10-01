@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<changelog xmlns="http://www.omnigroup.com/namespace/OmniPlan/v2">
+  <version>2.1</version>
+  <task-change-set user="shepard zhao" date="2014-07-30T07:20:42.880Z" timestamp="2014-07-30T07:20:42.880Z">
+    <change idref="t1" attribute="title" type="string" from="" to="Ilfamily"/>
+  </task-change-set>
+  <task-change-set user="shepard zhao" date="2014-07-30T07:21:12.326Z" timestamp="2014-07-30T07:21:12.326Z">
+    <change idref="t1" attribute="title" type="string" from="Ilfamily" to="ilfamily" resolved="yes"/>
+  </task-change-set>
+  <task-change-set user="shepard zhao" date="2014-07-31T06:28:01.009Z" timestamp="2014-07-31T06:28:01.009Z">
+    <change idref="t2" to="t-1" to-position="1">
+      <change idref="t2" attribute="title" type="string" to=""/>
+    </change>
+    <change idref="t1" attribute="notesAllowingNil" type="textdata" to="e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcY29jb2FydGYxMzI2XGNvY29hc3VicnRmMTEwCntcZm9udHRibFxmMFxmc3dpc3NcZmNoYXJzZXQwIEhlbHZldGljYTt9CntcY29sb3J0Ymw7XHJlZDI1NVxncmVlbjI1NVxibHVlMjU1O1xyZWQ4NVxncmVlbjg1XGJsdWU4NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccGFyZGlybmF0dXJhbAoKXGYwXGZzMjIgXGNmMiBJbml0aWFsIHNjaGVkdWxlIG9mIGlsZmFtaWx5IC0gd2l0aCB9"/>
+  </task-change-set>
+  <task-change-set user="shepard zhao" date="2014-07-31T06:42:57.326Z" timestamp="2014-07-31T06:42:57.326Z">
+    <change idref="t2" attribute="title" type="string" from="" to="topic proposal" resolved="yes"/>
+    <change idref="t2" attribute="effort" type="real" from="28800" to="144000" resolved="yes"/>
+    <change idref="t2" attribute="notesAllowingNil" type="textdata" to="e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcY29jb2FydGYxMzI2XGNvY29hc3VicnRmMTEwCntcZm9udHRibFxmMFxmc3dpc3NcZmNoYXJzZXQwIEhlbHZldGljYTt9CntcY29sb3J0Ymw7XHJlZDI1NVxncmVlbjI1NVxibHVlMjU1O1xyZWQ4NVxncmVlbjg1XGJsdWU4NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccGFyZGlybmF0dXJhbAoKXGYwXGZzMjIgXGNmMiBicmFpbiBzdG9ybSwgbWluZCB0cmVlfQ==" resolved="yes"/>
+  </task-change-set>
+  <task-change-set user="shepard zhao" date="2014-07-31T06:46:30.247Z" timestamp="2014-07-31T06:46:30.247Z">
+    <change idref="t3" to="t-1" to-position="2" resurrection="yes" resolved="yes">
+      <change idref="t3" attribute="effort" type="real" from="28800" to="144000"/>
+      <change idref="t3" attribute="notesAllowingNil" type="textdata" to="e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcY29jb2FydGYxMzI2XGNvY29hc3VicnRmMTEwCntcZm9udHRibFxmMFxmc3dpc3NcZmNoYXJzZXQwIEhlbHZldGljYTt9CntcY29sb3J0Ymw7XHJlZDI1NVxncmVlbjI1NVxibHVlMjU1O1xyZWQ4NVxncmVlbjg1XGJsdWU4NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccGFyZGlybmF0dXJhbAoKXGYwXGZzMjIgXGNmMiBwcmVwYXJlIHBlcmlvZCh3ZWIgc2VydmVyLS0gYmFzZWQgb24gY2xvdWQgbWF5IGJlKSAtPiB3aWxsIHRha2Ugb25lIHdlZWsgZm9yIG1heGltdW0ufQ=="/>
+      <change idref="t3" attribute="title" type="string" to="building remote server"/>
+    </change>
+  </task-change-set>
+  <task-change-set user="shepard zhao" date="2014-07-31T06:56:05.251Z" timestamp="2014-07-31T06:56:05.251Z">
+    <change idref="t3" attribute="isGroup" type="real" from="0" to="1" resolved="yes"/>
+    <change idref="t3" attribute="isSplittableTask" type="real" from="1" resolved="yes"/>
+    <change idref="t3" attribute="notesAllowingNil" type="textdata" from="e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcY29jb2FydGYxMzI2XGNvY29hc3VicnRmMTEwCntcZm9udHRibFxmMFxmc3dpc3NcZmNoYXJzZXQwIEhlbHZldGljYTt9CntcY29sb3J0Ymw7XHJlZDI1NVxncmVlbjI1NVxibHVlMjU1O1xyZWQ4NVxncmVlbjg1XGJsdWU4NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccGFyZGlybmF0dXJhbAoKXGYwXGZzMjIgXGNmMiAzLjEgcmVtb3RlIHNlcnZlciBidWlsZGluZywgaW5jbHVkZXMgc2VydmVyIGFwcGx5LCBhbmQgZGVwbG95bWVudC5cCjMuMiBkYXRhYmFzZSBtb2NrdXAsIHRoaXMgd2lsbCBzcGVuZCBvbiAxIGRheSBiYXNpY2FsbHkuXAozLjMgYnVpbGQgc2ltcGxlIENNUyB0aGF0IHdpbGwgYWxsb3cgYWRtaW5pc3RyYXRvciB0byBtYW5hZ2UgdGhvc2UgcmVnaXN0ZXJlZCB1c2VycyBhbmQgdGhlaXIgZGF0YS5cCjMuNCBidWlsZGluZyB0aGUgd2ViIHNlcnZpY2VzIGFsbG93cyB0aGUgdXNlciB0byB1cGxvYWQgdGhlIGRhdGEgKGllLiBpbmZvcm1hdGlvbiwgaW1hZ2VzLCBldGMuKVwKMy41IGludGVyZmFjZSBBUEkgYnVpbGQgKHdpbGwgb2ZmZXIgYXBpcyB0byBtb2JpbGUgZW5kIC0gaW4gdGhpcyBjYXNlIGkgd2lsbCBidWlsZCB0aGUgbW9iaWxlIGFwcCBieSB1c2luZyBJT1MpfQ==" to="e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcY29jb2FydGYxMzI2XGNvY29hc3VicnRmMTEwCntcZm9udHRibFxmMFxmc3dpc3NcZmNoYXJzZXQwIEhlbHZldGljYTt9CntcY29sb3J0Ymw7XHJlZDI1NVxncmVlbjI1NVxibHVlMjU1O1xyZWQ4NVxncmVlbjg1XGJsdWU4NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccGFyZGlybmF0dXJhbAoKXGYwXGZzMjIgXGNmMiBwcmVwYXJlIHBlcmlvZCh3ZWIgc2VydmVyLS0gYmFzZWQgb24gY2xvdWQgbWF5IGJlKSAtPiB3aWxsIHRha2Ugb25lIHdlZWsgZm9yIG1heGltdW0ufQ==" resolved="yes"/>
+    <change idref="t3" attribute="taskType" type="real" from="0" to="2" resolved="yes"/>
+    <change idref="t3" attribute="resourceAssignmentType" type="real" from="0" resolved="yes"/>
+    <change idref="t3" attribute="staticCost" type="real" from="0" resolved="yes"/>
+    <change idref="t3" attribute="effort" type="real" from="144000" resolved="yes"/>
+    <change idref="t3" attribute="isSplitChunk" type="real" from="0" resolved="yes"/>
+    <change idref="t3" attribute="scheduleType" type="real" from="0" resolved="yes"/>
+    <change idref="t3" attribute="internalAssignments" type="string" from="" resolved="yes"/>
+    <change idref="t3" attribute="isSplitTask" type="real" from="0" resolved="yes"/>
+    <change idref="t3" attribute="internalEffortDone" type="real" from="0" resolved="yes"/>
+    <change idref="t4" to="t3" to-position="0" resolved="yes">
+      <change idref="t4" attribute="effort" type="real" from="28800" to="7200"/>
+      <change idref="t4" attribute="title" type="string" to="remote server building, includes server apply, and deployment."/>
+    </change>
+    <change idref="t5" to="t3" to-position="1" resolved="yes">
+      <change idref="t5" attribute="title" type="string" to="database mockup, this will spend on 1 day basically."/>
+    </change>
+    <change idref="t8" to="t3" to-position="2" resolved="yes">
+      <change idref="t8" attribute="effort" type="real" from="28800" to="57600"/>
+      <change idref="t8" attribute="title" type="string" to="build simple CMS that will allow administrator to manage those registered users and their data."/>
+    </change>
+    <change idref="t7" to="t3" to-position="3" resolved="yes">
+      <change idref="t7" attribute="title" type="string" to="building the web services allows the user to upload the data (ie. information, images, etc.)"/>
+    </change>
+    <change idref="t6" to="t3" to-position="4" resolved="yes">
+      <change idref="t6" attribute="title" type="string" to="interface API build (will offer APIs to mobile end - in this case i will build the mobile app by using IOS)"/>
+    </change>
+  </task-change-set>
+  <task-change-set user="shepard zhao" date="2014-07-31T06:59:45.872Z" timestamp="2014-07-31T06:59:45.872Z">
+    <change idref="t6" attribute="title" type="string" from="interface API build (will offer APIs to mobile end - in this case i will build the mobile app by using IOS)" to="building interface API (will offer APIs to mobile end - in this case i will build the mobile app by using IOS)" resolved="yes"/>
+  </task-change-set>
+  <task-change-set user="shepard zhao" date="2014-07-31T06:59:55.615Z" timestamp="2014-07-31T06:59:55.615Z">
+    <change idref="t6" attribute="title" type="string" from="building interface API (will offer APIs to mobile end - in this case i will build the mobile app by using IOS)" to="building interface APIs (will offer APIs to mobile end - in this case i will build the mobile app by using IOS)" resolved="yes"/>
+  </task-change-set>
+  <task-change-set user="shepard zhao" date="2014-07-31T07:01:33.164Z" timestamp="2014-07-31T07:01:33.164Z">
+    <change idref="t1" attribute="notesAllowingNil" type="textdata" from="e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcY29jb2FydGYxMzI2XGNvY29hc3VicnRmMTEwCntcZm9udHRibFxmMFxmc3dpc3NcZmNoYXJzZXQwIEhlbHZldGljYTt9CntcY29sb3J0Ymw7XHJlZDI1NVxncmVlbjI1NVxibHVlMjU1O1xyZWQ4NVxncmVlbjg1XGJsdWU4NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccGFyZGlybmF0dXJhbAoKXGYwXGZzMjIgXGNmMiBJbml0aWFsIHNjaGVkdWxlIG9mIGlsZmFtaWx5IC0gd2l0aCB9" to="e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcY29jb2FydGYxMzI2XGNvY29hc3VicnRmMTEwCntcZm9udHRibFxmMFxmc3dpc3NcZmNoYXJzZXQwIEhlbHZldGljYTt9CntcY29sb3J0Ymw7XHJlZDI1NVxncmVlbjI1NVxibHVlMjU1O1xyZWQ4NVxncmVlbjg1XGJsdWU4NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccGFyZGlybmF0dXJhbAoKXGYwXGZzMjIgXGNmMiBJbml0aWFsIHNjaGVkdWxlIG9mIGlsZmFtaWx5IC0gd2l0aCAxMyB3ZWVrc30=" resolved="yes"/>
+    <change idref="t3" attribute="notesAllowingNil" type="textdata" from="e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcY29jb2FydGYxMzI2XGNvY29hc3VicnRmMTEwCntcZm9udHRibFxmMFxmc3dpc3NcZmNoYXJzZXQwIEhlbHZldGljYTt9CntcY29sb3J0Ymw7XHJlZDI1NVxncmVlbjI1NVxibHVlMjU1O1xyZWQ4NVxncmVlbjg1XGJsdWU4NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccGFyZGlybmF0dXJhbAoKXGYwXGZzMjIgXGNmMiBcClwKMy4zIGJ1aWxkIHNpbXBsZSBDTVMgdGhhdCB3aWxsIGFsbG93IGFkbWluaXN0cmF0b3IgdG8gbWFuYWdlIHRob3NlIHJlZ2lzdGVyZWQgdXNlcnMgYW5kIHRoZWlyIGRhdGEuXAozLjQgYnVpbGRpbmcgdGhlIHdlYiBzZXJ2aWNlcyBhbGxvd3MgdGhlIHVzZXIgdG8gdXBsb2FkIHRoZSBkYXRhIChpZS4gaW5mb3JtYXRpb24sIGltYWdlcywgZXRjLilcCjMuNSBpbnRlcmZhY2UgQVBJIGJ1aWxkICh3aWxsIG9mZmVyIGFwaXMgdG8gbW9iaWxlIGVuZCAtIGluIHRoaXMgY2FzZSBpIHdpbGwgYnVpbGQgdGhlIG1vYmlsZSBhcHAgYnkgdXNpbmcgSU9TKX0=" to="e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcY29jb2FydGYxMzI2XGNvY29hc3VicnRmMTEwCntcZm9udHRibFxmMFxmc3dpc3NcZmNoYXJzZXQwIEhlbHZldGljYTt9CntcY29sb3J0Ymw7XHJlZDI1NVxncmVlbjI1NVxibHVlMjU1O1xyZWQ4NVxncmVlbjg1XGJsdWU4NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccGFyZGlybmF0dXJhbAoKXGYwXGZzMjIgXGNmMiBwcmVwYXJlIHBlcmlvZCh3ZWIgc2VydmVyLS0gYmFzZWQgb24gY2xvdWQgbWF5IGJlKSAtPiB3aWxsIHRha2Ugb25lIHdlZWsgZm9yIG1heGltdW0ufQ==" resolved="yes"/>
+    <change idref="t6" attribute="noEarlierThanConstraintDate" type="date" to="2014-08-06T22:30:00.000Z" resolved="yes"/>
+    <change idref="t7" attribute="noEarlierThanConstraintDate" type="date" to="2014-08-05T22:30:00.000Z" resolved="yes"/>
+    <change idref="t8" attribute="noEarlierThanConstraintDate" type="date" to="2014-08-03T22:15:00.000Z" resolved="yes"/>
+  </task-change-set>
+  <task-change-set user="shepard zhao" date="2014-07-31T07:02:46.002Z" timestamp="2014-07-31T07:02:46.002Z">
+    <change idref="t3" attribute="noEarlierThanConstraintDate" type="date" to="2014-08-07T22:00:00.000Z" resolved="yes"/>
+    <change idref="t6" attribute="noEarlierThanConstraintDate" type="date" from="2014-08-06T22:30:00.000Z" to="2014-08-14T01:00:00.000Z" resolved="yes"/>
+    <change idref="t7" attribute="noEarlierThanConstraintDate" type="date" from="2014-08-05T22:30:00.000Z" to="2014-08-13T00:15:00.000Z" resolved="yes"/>
+    <change idref="t8" attribute="noEarlierThanConstraintDate" type="date" from="2014-08-03T22:15:00.000Z" to="2014-08-10T23:00:00.000Z" resolved="yes"/>
+  </task-change-set>
+  <task-change-set user="shepard zhao" date="2014-07-31T07:03:10.890Z" timestamp="2014-07-31T07:03:10.890Z">
+    <change idref="t6" attribute="noEarlierThanConstraintDate" type="date" from="2014-08-14T01:00:00.000Z" to="2014-08-14T00:30:00.000Z" resolved="yes"/>
+  </task-change-set>
+  <task-change-set user="shepard zhao" date="2014-07-31T07:04:22.129Z" timestamp="2014-07-31T07:04:22.129Z">
+    <change idref="t11" to="t3" to-position="5" resolved="yes">
+      <change idref="t11" attribute="effort" type="real" from="28800" to="0"/>
+      <change idref="t11" attribute="isSplittableTask" type="real" from="1" to="0"/>
+      <change idref="t11" attribute="percentCompleteForMilestone" type="real" to="0"/>
+      <change idref="t11" attribute="taskType" type="real" from="0" to="1"/>
+      <change idref="t11" attribute="title" type="string" to="completion the remote server"/>
+    </change>
+  </task-change-set>
+  <task-change-set user="shepard zhao" date="2014-07-31T07:04:41.430Z" timestamp="2014-07-31T07:04:41.430Z">
+    <change idref="t11" attribute="noEarlierThanConstraintDate" type="date" to="2014-08-15T01:45:00.000Z" resolved="yes"/>
+  </task-change-set>
+  <task-change-set user="shepard zhao" date="2014-07-31T07:08:32.144Z" timestamp="2014-07-31T07:08:32.144Z">
+    <change idref="t12" to="t-1" to-position="3" resolved="yes">
+      <change idref="t12" attribute="effort" type="real" from="28800" to="1008000"/>
+      <change idref="t12" attribute="noEarlierThanConstraintDate" type="date" to="2014-08-15T03:45:00.000Z"/>
+      <change idref="t12" attribute="title" type="string" to="native mobile app"/>
+    </change>
+  </task-change-set>
+  <task-change-set user="shepard zhao" date="2014-07-31T07:09:09.062Z" timestamp="2014-07-31T07:09:09.062Z">
+    <change idref="t12" attribute="isGroup" type="real" from="0" to="1" resolved="yes"/>
+    <change idref="t12" attribute="isSplittableTask" type="real" from="1" resolved="yes"/>
+    <change idref="t12" attribute="taskType" type="real" from="0" to="2" resolved="yes"/>
+    <change idref="t12" attribute="resourceAssignmentType" type="real" from="0" resolved="yes"/>
+    <change idref="t12" attribute="staticCost" type="real" from="0" resolved="yes"/>
+    <change idref="t12" attribute="effort" type="real" from="1008000" resolved="yes"/>
+    <change idref="t12" attribute="isSplitChunk" type="real" from="0" resolved="yes"/>
+    <change idref="t12" attribute="scheduleType" type="real" from="0" resolved="yes"/>
+    <change idref="t12" attribute="internalAssignments" type="string" from="" resolved="yes"/>
+    <change idref="t12" attribute="notesAllowingNil" type="textdata" to="e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcY29jb2FydGYxMzI2XGNvY29hc3VicnRmMTEwCntcZm9udHRibFxmMFxmc3dpc3NcZmNoYXJzZXQwIEhlbHZldGljYTt9CntcY29sb3J0Ymw7XHJlZDI1NVxncmVlbjI1NVxibHVlMjU1O1xyZWQ4NVxncmVlbjg1XGJsdWU4NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccGFyZGlybmF0dXJhbAoKXGYwXGZzMjIgXGNmMiBuYXRpdmUgbW9iaWxlIGFwcCAtLS0gaW9zIDcuMCBhYm92ZX0=" resolved="yes"/>
+    <change idref="t12" attribute="isSplitTask" type="real" from="0" resolved="yes"/>
+    <change idref="t12" attribute="internalEffortDone" type="real" from="0" resolved="yes"/>
+    <change idref="t13" to="t12" to-position="0" resolved="yes">
+      <change idref="t13" attribute="effort" type="real" from="28800" to="57600"/>
+      <change idref="t13" attribute="title" type="string" to="GUI mock up"/>
+    </change>
+  </task-change-set>
+  <task-change-set user="shepard zhao" date="2014-07-31T07:10:08.295Z" timestamp="2014-07-31T07:10:08.295Z">
+    <change idref="t13" attribute="notesAllowingNil" type="textdata" to="e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcY29jb2FydGYxMzI2XGNvY29hc3VicnRmMTEwCntcZm9udHRibFxmMFxmc3dpc3NcZmNoYXJzZXQwIEhlbHZldGljYTt9CntcY29sb3J0Ymw7XHJlZDI1NVxncmVlbjI1NVxibHVlMjU1O1xyZWQ4NVxncmVlbjg1XGJsdWU4NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccGFyZGlybmF0dXJhbAoKXGYwXGZzMjIgXGNmMiB0aGUgbW9iaWxlIGd1aSB3aWxsIGJlIG1vY2tlZCB1cCBmaXJzdCBieSB1c2luZyBwc30=" resolved="yes"/>
+  </task-change-set>
+  <task-change-set user="shepard zhao" date="2014-07-31T07:12:18.417Z" timestamp="2014-07-31T07:12:18.417Z">
+    <change idref="t15" to="t12" to-position="1" resolved="yes">
+      <change idref="t15" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t15" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t15" attribute="title" type="string" to="specific process"/>
+    </change>
+    <change idref="t19" to="t15" to-position="0" resolved="yes">
+      <change idref="t19" attribute="title" type="string" to="Task 4"/>
+    </change>
+    <change idref="t18" to="t15" to-position="1" resolved="yes">
+      <change idref="t18" attribute="title" type="string" to="Task 3"/>
+    </change>
+    <change idref="t17" to="t15" to-position="2" resolved="yes">
+      <change idref="t17" attribute="title" type="string" to="Task 2"/>
+    </change>
+    <change idref="t16" to="t15" to-position="3" resolved="yes">
+      <change idref="t16" attribute="title" type="string" to="Task 1"/>
+    </change>
+  </task-change-set>
+  <task-change-set user="shepard zhao" date="2014-07-31T07:14:56.641Z" timestamp="2014-07-31T07:14:56.641Z">
+    <change idref="t20" to="t12" to-position="2" resolved="yes">
+      <change idref="t20" attribute="isGroup" type="real" from="0" to="1"/>
+      <change idref="t20" attribute="taskType" type="real" from="0" to="2"/>
+      <change idref="t20" attribute="title" type="string" to="core functions"/>
+    </change>
+    <change idref="t16" attribute="title" type="string" from="Task 1" to="comments function build" resolved="yes"/>
+    <change idref="t17" attribute="title" type="string" from="Task 2" to="web services (throughout built apis before) to upload and fetch the information (text based data and image)" resolved="yes"/>
+    <change idref="t18" attribute="title" type="string" from="Task 3" to="create the family circle and manage it" resolved="yes"/>
+    <change idref="t19" attribute="title" type="string" from="Task 4" to="completion user registration and login" resolved="yes"/>
+    <change idref="t21" to="t20" to-position="0" resolved="yes">
+      <change idref="t21" attribute="title" type="string" to="Task 1"/>
+    </change>
+  </task-change-set>
+  <task-change-set user="shepard zhao" date="2014-07-31T07:18:25.578Z" timestamp="2014-07-31T07:18:25.578Z">
+    <change idref="t26" to="t12" to-position="3" resolved="yes">
+      <change idref="t26" attribute="notesAllowingNil" type="textdata" to="e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcY29jb2FydGYxMzI2XGNvY29hc3VicnRmMTEwCntcZm9udHRibFxmMFxmc3dpc3NcZmNoYXJzZXQwIEhlbHZldGljYTt9CntcY29sb3J0Ymw7XHJlZDI1NVxncmVlbjI1NVxibHVlMjU1O1xyZWQ4NVxncmVlbjg1XGJsdWU4NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccGFyZGlybmF0dXJhbAoKXGYwXGZzMjIgXGNmMiAob2xkIHBlb3BsZSB3aG8gaXMgbm90IGFibGUgdG8gdHlwZSwgaGUgd2lsbCB1c2UgZmFjZSBhbmltYXRpb24gaW5zdGVhZCktLS0gc3dpdGNoIGZyb20gbm9ybWFsIGtleXdvcmQgdG8gZmFjZSBhbmltYXRpb24gY2hvb3NlLn0="/>
+      <change idref="t26" attribute="title" type="string" to="comments switch function"/>
+    </change>
+    <change idref="t23" to="t20" to-position="1" resolved="yes">
+      <change idref="t23" attribute="title" type="string" to="face animation"/>
+    </change>
+    <change idref="t24" to="t20" to-position="2" resolved="yes">
+      <change idref="t24" attribute="title" type="string" to="voice embedded"/>
+    </change>
+    <change idref="t21" attribute="title" type="string" from="Task 1" to="face mapping (swap the face from different people)" resolved="yes"/>
+  </task-change-set>
+  <task-change-set user="shepard zhao" date="2014-07-31T07:20:24.024Z" timestamp="2014-07-31T07:20:24.024Z">
+    <change idref="t26" attribute="notesAllowingNil" type="textdata" from="e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcY29jb2FydGYxMzI2XGNvY29hc3VicnRmMTEwCntcZm9udHRibFxmMFxmc3dpc3NcZmNoYXJzZXQwIEhlbHZldGljYTt9CntcY29sb3J0Ymw7XHJlZDI1NVxncmVlbjI1NVxibHVlMjU1O1xyZWQ4NVxncmVlbjg1XGJsdWU4NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccGFyZGlybmF0dXJhbAoKXGYwXGZzMjIgXGNmMiAob2xkIHBlb3BsZSB3aG8gaXMgbm90IGFibGUgdG8gdHlwZSwgaGUgd2lsbCB1c2UgZmFjZSBhbmltYXRpb24uKS0tLSBzd2l0Y2ggZnJvbSBub3JtYWwga2V5d29yZCB0byBmYWNlIGFuaW1hdGlvbiBjaG9vc2UufQ==" to="e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcY29jb2FydGYxMzI2XGNvY29hc3VicnRmMTEwCntcZm9udHRibFxmMFxmc3dpc3NcZmNoYXJzZXQwIEhlbHZldGljYTt9CntcY29sb3J0Ymw7XHJlZDI1NVxncmVlbjI1NVxibHVlMjU1O1xyZWQ4NVxncmVlbjg1XGJsdWU4NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccGFyZGlybmF0dXJhbAoKXGYwXGZzMjIgXGNmMiAob2xkIHBlb3BsZSB3aG8gaXMgbm90IGFibGUgdG8gdHlwZSwgaGUgd2lsbCB1c2UgZmFjZSBhbmltYXRpb24gaW5zdGVhZCktLS0gc3dpdGNoIGZyb20gbm9ybWFsIGtleXdvcmQgdG8gZmFjZSBhbmltYXRpb24gY2hvb3NlLn0=" resolved="yes"/>
+  </task-change-set>
+  <task-change-set user="shepard zhao" date="2014-07-31T07:21:09.327Z" timestamp="2014-07-31T07:21:09.327Z">
+    <change idref="t27" to="t-1" to-position="4" resolved="yes">
+      <change idref="t27" attribute="effort" type="real" from="28800" to="288000"/>
+      <change idref="t27" attribute="title" type="string" to="project testing and bug fixing"/>
+    </change>
+    <change idref="t28" to="t-1" to-position="5" resolved="yes">
+      <change idref="t28" attribute="effort" type="real" from="28800" to="3600"/>
+      <change idref="t28" attribute="title" type="string" to="demo"/>
+    </change>
+  </task-change-set>
+  <task-change-set user="shepard zhao" date="2014-07-31T07:26:24.755Z" timestamp="2014-07-31T07:26:24.755Z">
+    <change idref="t13" attribute="effort" type="real" from="57600" to="86400" resolved="yes"/>
+    <change idref="t15" attribute="noEarlierThanConstraintDate" type="date" to="2014-08-20T04:15:00.000Z" resolved="yes"/>
+    <change idref="t20" attribute="noEarlierThanConstraintDate" type="date" to="2014-08-21T04:45:00.000Z" resolved="yes"/>
+    <change idref="t26" attribute="noEarlierThanConstraintDate" type="date" to="2014-08-22T05:30:00.000Z" resolved="yes"/>
+  </task-change-set>
+  <task-change-set user="shepard zhao" date="2014-07-31T07:26:42.055Z" timestamp="2014-07-31T07:26:42.055Z">
+    <change idref="t13" attribute="notesAllowingNil" type="textdata" from="e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcY29jb2FydGYxMzI2XGNvY29hc3VicnRmMTEwCntcZm9udHRibFxmMFxmc3dpc3NcZmNoYXJzZXQwIEhlbHZldGljYTt9CntcY29sb3J0Ymw7XHJlZDI1NVxncmVlbjI1NVxibHVlMjU1O1xyZWQ4NVxncmVlbjg1XGJsdWU4NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccGFyZGlybmF0dXJhbAoKXGYwXGZzMjIgXGNmMiB0aGUgbW9iaWxlIGd1aSB3aWxsIGJlIG1vY2tlZCB1cCBmaXJzdCBieSB1c2luZyBwc1wKfQ==" to="e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcY29jb2FydGYxMzI2XGNvY29hc3VicnRmMTEwCntcZm9udHRibFxmMFxmc3dpc3NcZmNoYXJzZXQwIEhlbHZldGljYTt9CntcY29sb3J0Ymw7XHJlZDI1NVxncmVlbjI1NVxibHVlMjU1O1xyZWQ4NVxncmVlbjg1XGJsdWU4NTt9ClxwYXJkXHR4NTYwXHR4MTEyMFx0eDE2ODBcdHgyMjQwXHR4MjgwMFx0eDMzNjBcdHgzOTIwXHR4NDQ4MFx0eDUwNDBcdHg1NjAwXHR4NjE2MFx0eDY3MjBccGFyZGlybmF0dXJhbAoKXGYwXGZzMjIgXGNmMiB0aGUgbW9iaWxlIGd1aSB3aWxsIGJlIG1vY2tlZCB1cCBmaXJzdCBieSB1c2luZyBwc30=" resolved="yes"/>
+  </task-change-set>
+  <task-change-set user="shepard zhao" date="2014-07-31T07:30:43.892Z" timestamp="2014-07-31T07:30:43.892Z">
+    <change idref="t16" attribute="title" type="string" from="comments function build" to="comment functions build" resolved="yes"/>
+    <change idref="t16" attribute="effort" type="real" from="28800" to="64800" resolved="yes"/>
+    <change idref="t17" attribute="effort" type="real" from="28800" to="64800" resolved="yes"/>
+    <change idref="t18" attribute="effort" type="real" from="28800" to="64800" resolved="yes"/>
+    <change idref="t18" attribute="noEarlierThanConstraintDate" type="date" to="2014-08-20T03:45:00.000Z" resolved="yes"/>
+    <change idref="t19" attribute="effort" type="real" from="28800" to="64800" resolved="yes"/>
+    <change idref="t20" attribute="noEarlierThanConstraintDate" type="date" from="2014-08-21T04:45:00.000Z" to="2014-08-22T06:30:00.000Z" resolved="yes"/>
+    <change idref="t21" attribute="effort" type="real" from="28800" to="288000" resolved="yes"/>
+    <change idref="t23" attribute="effort" type="real" from="28800" to="288000" resolved="yes"/>
+    <change idref="t23" attribute="noEarlierThanConstraintDate" type="date" to="2014-09-07T22:00:00.000Z" resolved="yes"/>
+    <change idref="t24" attribute="effort" type="real" from="28800" to="79200" resolved="yes"/>
+    <change idref="t24" attribute="noEarlierThanConstraintDate" type="date" to="2014-09-21T22:15:00.000Z" resolved="yes"/>
+  </task-change-set>
+  <task-change-set user="shepard zhao" date="2014-07-31T07:31:17.947Z" timestamp="2014-07-31T07:31:17.947Z">
+    <change idref="t26" from="t12" from-position="3" to="t15" to-position="4" resolved="yes"/>
+    <change idref="t26" attribute="effort" type="real" from="28800" to="65700" resolved="yes"/>
+    <change idref="t26" attribute="noEarlierThanConstraintDate" type="date" from="2014-08-22T05:30:00.000Z" to="2014-08-20T04:15:00.000Z" resolved="yes"/>
+  </task-change-set>
+  <task-change-set user="shepard zhao" date="2014-07-31T07:32:23.872Z" timestamp="2014-07-31T07:32:23.872Z">
+    <change idref="t27" attribute="noEarlierThanConstraintDate" type="date" to="2014-09-24T05:15:00.000Z" resolved="yes"/>
+    <change idref="t28" attribute="isSplittableTask" type="real" from="1" to="0" resolved="yes"/>
+    <change idref="t28" attribute="taskType" type="real" from="0" to="1" resolved="yes"/>
+    <change idref="t28" attribute="effort" type="real" from="3600" to="0" resolved="yes"/>
+    <change idref="t28" attribute="percentCompleteForMilestone" type="real" to="0" resolved="yes"/>
+    <change idref="t28" attribute="noEarlierThanConstraintDate" type="date" to="2014-10-08T05:15:00.000Z" resolved="yes"/>
+  </task-change-set>
+  <task-change-set user="shepard zhao" date="2014-08-01T04:29:53.171Z" timestamp="2014-08-01T04:29:53.171Z">
+    <change idref="t21" attribute="effort" type="real" from="288000" to="576000" resolved="yes"/>
+    <change idref="t23" attribute="noEarlierThanConstraintDate" type="date" from="2014-09-07T22:00:00.000Z" to="2014-09-19T06:30:00.000Z" resolved="yes"/>
+    <change idref="t24" attribute="effort" type="real" from="79200" to="288000" resolved="yes"/>
+    <change idref="t24" attribute="noEarlierThanConstraintDate" type="date" from="2014-09-21T22:15:00.000Z" to="2014-10-05T21:00:00.000Z" resolved="yes"/>
+    <change idref="t27" attribute="noEarlierThanConstraintDate" type="date" from="2014-09-24T05:15:00.000Z" to="2014-10-19T21:30:00.000Z" resolved="yes"/>
+    <change idref="t28" attribute="noEarlierThanConstraintDate" type="date" from="2014-10-08T05:15:00.000Z" to="2014-11-02T22:45:00.000Z" resolved="yes"/>
+  </task-change-set>
+  <task-change-set user="shepard zhao" date="2014-08-01T05:04:17.745Z" timestamp="2014-08-01T05:04:17.745Z">
+    <change idref="t1" attribute="title" type="string" from="ilfamily" to="iafamily" resolved="yes"/>
+  </task-change-set>
+  <task-change-set user="shepard zhao" date="2014-08-01T06:08:59.511Z" timestamp="2014-08-01T06:08:59.511Z">
+    <change idref="t15" attribute="title" type="string" from="specific process" to="specific processes" resolved="yes"/>
+  </task-change-set>
+  <task-change-set user="shepard zhao" date="2014-08-01T07:37:12.095Z" timestamp="2014-08-01T07:37:12.095Z">
+    <change idref="t27" attribute="effort" type="real" from="288000" to="279000"/>
+    <change idref="t28" attribute="noEarlierThanConstraintDate" type="date" from="2014-11-02T22:45:00.000Z" to="2014-10-31T05:15:00.000Z"/>
+  </task-change-set>
+  <metadata-change-set user="shepard zhao" date="2014-07-30T07:14:29.491Z" timestamp="2014-07-30T07:14:29.491Z">
+    <change idref="m1" attribute="fixedDate" type="date" from="2007-01-01T20:00:00.000Z" to="2014-07-29T22:00:00.000Z" resolved="yes"/>
+  </metadata-change-set>
+  <metadata-change-set user="shepard zhao" date="2014-07-30T07:20:42.880Z" timestamp="2014-07-30T07:20:42.880Z">
+    <change idref="m1" attribute="fixedDate" type="date" from="2014-07-29T22:00:00.000Z" to="2014-07-31T22:00:00.000Z"/>
+  </metadata-change-set>
+  <metadata-change-set user="shepard zhao" date="2014-07-31T07:08:32.143Z" timestamp="2014-07-31T07:08:32.143Z">
+    <change idref="m1" attribute="autoLevelResources" type="real" from="0" to="1" resolved="yes"/>
+  </metadata-change-set>
+</changelog>

@@ -1,0 +1,9 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.0'
+pod 'Canvas'
+pod 'MBProgressHUD'
+pod "AHKActionSheet"
+pod 'SSKeychain'
+pod 'QBImagePickerController'
+pod 'SDWebImage'
+pod 'AFNetworking'

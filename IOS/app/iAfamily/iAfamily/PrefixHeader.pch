@@ -1,0 +1,76 @@
+//
+//  PrefixHeader.pch
+//  iafamily
+//
+//  Created by shepard zhao on 10/08/2014.
+//  Copyright (c) 2014 com.xunzhao. All rights reserved.
+//
+//iafamily.tk
+#ifndef iafamily_PrefixHeader_pch
+#define iafamily_PrefixHeader_pch
+//global color
+#define Rgb2UIColor(r, g, b,a)  [UIColor colorWithRed:((r) / 255.0) green:((g) / 255.0) blue:((b) / 255.0) alpha:a]
+#define Indent() [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
+
+#define Domain @"http://hypetecho.cloudapp.net"  //default domain
+#define DefaultURL @"http://hypetecho.cloudapp.net/restful/" //default restful url
+#define ImageSize_w 50//image in table view size -- width
+#define ImageSize_h 50 //image in table view size -- height
+#define ImageLoadForTableViewCellAnimationDuration 0.5 //the fadeIn animation duration of the image is for tableViewCell
+#define TimeForUpdateGPSLocation 120.0 //time period for GPS location updateed
+
+#define WelcomeAnimationTime 10.0f //time period for welcome login page
+
+
+
+
+#define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
+#define SYSTEM_VERSION_GREATER_THAN(v)              ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+#define SYSTEM_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
+#define SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)
+
+
+#define GPSLog @"gpsLog.txt" //GpsLog will record current user's location within 5 minues
+#define QuotaLog @"QuotaLog.txt" //QuotaLog will record current data transcation between internet and local
+#define MessageLog @"MessageLog.txt" //MessageLog will tracker the message, where it comes from
+
+
+
+//current user NsUserDefault
+
+#define UserInfo @"userInfoArray"
+
+//family Group NsUserDefault
+#define FamilyGroup @"familyGroups"
+
+
+
+//family members detail NsUserDefault
+#define GroupFamilyMembers @"groupFamilyMembers"
+
+
+//photo NsUserDefault
+#define Photo @"photo"
+
+
+//message NsUserDefailt
+#define Message @"message"
+
+
+//system Perferences NsUserDefault
+#define SystemPerference @"systemPerference"
+
+//face++ api, face dectection
+#define FaceKey @"24211bd8b8afc55b1108ad41cd0042d2"
+#define FaceSecret @"GpumielOgYnYSYHgWi21piCOU0_7DN9x"
+
+
+
+
+
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif

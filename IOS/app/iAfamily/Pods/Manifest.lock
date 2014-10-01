@@ -1,0 +1,50 @@
+PODS:
+  - AFNetworking (2.4.1):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+    - AFNetworking/UIKit
+  - AFNetworking/NSURLConnection (2.4.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.4.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.4.1)
+  - AFNetworking/Security (2.4.1)
+  - AFNetworking/Serialization (2.4.1)
+  - AFNetworking/UIKit (2.4.1):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - AHKActionSheet (0.4.2)
+  - Canvas (0.1.2)
+  - MBProgressHUD (0.9)
+  - QBImagePickerController (2.2)
+  - SDWebImage (3.7.1):
+    - SDWebImage/Core
+  - SDWebImage/Core (3.7.1)
+  - SSKeychain (1.2.2)
+
+DEPENDENCIES:
+  - AFNetworking
+  - AHKActionSheet
+  - Canvas
+  - MBProgressHUD
+  - QBImagePickerController
+  - SDWebImage
+  - SSKeychain
+
+SPEC CHECKSUMS:
+  AFNetworking: 0aabc6fae66d6e5d039eeb21c315843c7aae51ab
+  AHKActionSheet: 5bac772d0e966456257fbb8eefafbea9717ccbbc
+  Canvas: ae2faca05a15c4d6659fb3ae5e2a14817df4449a
+  MBProgressHUD: 2038dbcf3dce73215abed6001657043d53aa79a8
+  QBImagePickerController: 8325d5ac8ba69e65af78ba43aa5e0190bdd016eb
+  SDWebImage: 116e88633b5b416ea0ca4b334a4ac59cf72dd38d
+  SSKeychain: cc48bd3ad24fcd9125adb9e0d23dd50b8bbd08b9
+
+COCOAPODS: 0.34.1

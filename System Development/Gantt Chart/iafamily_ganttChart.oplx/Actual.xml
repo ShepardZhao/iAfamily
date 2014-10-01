@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<scenario xmlns="http://www.omnigroup.com/namespace/OmniPlan/v2" id="hGOhqLLAbXT">
+  <start-date>2014-07-31T22:00:00.000Z</start-date>
+  <prototype-task>
+    <task id="t4294967294">
+      <title>Task 1</title>
+      <effort>28800</effort>
+    </task>
+  </prototype-task>
+  <prototype-task>
+    <task id="t4294967293">
+      <title>Milestone 1</title>
+      <type>milestone</type>
+    </task>
+  </prototype-task>
+  <prototype-task>
+    <task id="t4294967292">
+      <title>Group 1</title>
+      <type>group</type>
+    </task>
+  </prototype-task>
+  <prototype-resource>
+    <resource id="r4294967294">
+      <name>Resource 1</name>
+      <type>Staff</type>
+    </resource>
+  </prototype-resource>
+  <prototype-resource>
+    <resource id="r4294967293">
+      <name>Equipment 1</name>
+      <type>Equipment</type>
+    </resource>
+  </prototype-resource>
+  <prototype-resource>
+    <resource id="r4294967292">
+      <name>Material 1</name>
+      <type>Material</type>
+      <units-available>0</units-available>
+      <efficiency>0</efficiency>
+    </resource>
+  </prototype-resource>
+  <prototype-resource>
+    <resource id="r4294967291">
+      <name>Group 1</name>
+      <type>Group</type>
+    </resource>
+  </prototype-resource>
+  <top-resource idref="r-1"/>
+  <resource id="r-1">
+    <type>Group</type>
+    <child-resource idref="r1"/>
+  </resource>
+  <resource id="r1">
+    <name>Resource 1</name>
+    <type>Staff</type>
+  </resource>
+  <top-task idref="t-1"/>
+  <task id="t-1">
+    <type>group</type>
+    <child-task idref="t1"/>
+    <child-task idref="t2"/>
+    <child-task idref="t3"/>
+    <child-task idref="t12"/>
+    <child-task idref="t27"/>
+    <child-task idref="t28"/>
+  </task>
+  <task id="t1">
+    <title>iafamily</title>
+    <effort>1903500</effort>
+    <start-constraint-date>2014-07-31T06:00:00.000Z</start-constraint-date>
+    <note>
+      <text>
+        <p>
+          <run>
+            <lit>Initial schedule of ilfamily - with 13 weeks</lit>
+          </run>
+        </p>
+      </text>
+    </note>
+    <start-no-earlier-than>2014-07-31T06:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t2">
+    <title>topic proposal</title>
+    <effort>144000</effort>
+    <note>
+      <text>
+        <p>
+          <run>
+            <lit>brain storm, mind tree</lit>
+          </run>
+        </p>
+      </text>
+    </note>
+  </task>
+  <task id="t3">
+    <title>building remote server</title>
+    <type>group</type>
+    <start-constraint-date>2014-08-07T22:00:00.000Z</start-constraint-date>
+    <child-task idref="t4"/>
+    <child-task idref="t5"/>
+    <child-task idref="t8"/>
+    <child-task idref="t7"/>
+    <child-task idref="t6"/>
+    <child-task idref="t11"/>
+    <note>
+      <text>
+        <p>
+          <run>
+            <lit>prepare period(web server-- based on cloud may be) -&gt; will take one week for maximum.</lit>
+          </run>
+        </p>
+      </text>
+    </note>
+    <start-no-earlier-than>2014-08-07T22:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t4">
+    <title>remote server building, includes server apply, and deployment.</title>
+    <effort>7200</effort>
+  </task>
+  <task id="t5">
+    <title>database mockup, this will spend on 1 day basically.</title>
+    <effort>28800</effort>
+  </task>
+  <task id="t6">
+    <title>building interface APIs (will offer APIs to mobile end - in this case i will build the mobile app by using IOS)</title>
+    <effort>28800</effort>
+    <start-constraint-date>2014-08-14T00:30:00.000Z</start-constraint-date>
+    <start-no-earlier-than>2014-08-14T00:30:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t7">
+    <title>building the web services allows the user to upload the data (ie. information, images, etc.)</title>
+    <effort>28800</effort>
+    <start-constraint-date>2014-08-13T00:15:00.000Z</start-constraint-date>
+    <start-no-earlier-than>2014-08-13T00:15:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t8">
+    <title>build simple CMS that will allow administrator to manage those registered users and their data.</title>
+    <effort>57600</effort>
+    <start-constraint-date>2014-08-10T23:00:00.000Z</start-constraint-date>
+    <start-no-earlier-than>2014-08-10T23:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t11">
+    <title>completion the remote server</title>
+    <type>milestone</type>
+    <start-constraint-date>2014-08-15T01:45:00.000Z</start-constraint-date>
+    <start-no-earlier-than>2014-08-15T01:45:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t12">
+    <title>native mobile app</title>
+    <type>group</type>
+    <start-constraint-date>2014-08-15T03:45:00.000Z</start-constraint-date>
+    <child-task idref="t13"/>
+    <child-task idref="t15"/>
+    <child-task idref="t20"/>
+    <note>
+      <text>
+        <p>
+          <run>
+            <lit>native mobile app --- ios 7.0 above</lit>
+          </run>
+        </p>
+      </text>
+    </note>
+    <start-no-earlier-than>2014-08-15T03:45:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t13">
+    <title>GUI mock up</title>
+    <effort>86400</effort>
+    <note>
+      <text>
+        <p>
+          <run>
+            <lit>the mobile gui will be mocked up first by using ps</lit>
+          </run>
+        </p>
+      </text>
+    </note>
+  </task>
+  <task id="t15">
+    <title>specific processes</title>
+    <type>group</type>
+    <start-constraint-date>2014-08-20T04:15:00.000Z</start-constraint-date>
+    <child-task idref="t19"/>
+    <child-task idref="t18"/>
+    <child-task idref="t17"/>
+    <child-task idref="t16"/>
+    <child-task idref="t26"/>
+    <start-no-earlier-than>2014-08-20T04:15:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t16">
+    <title>comment functions build</title>
+    <effort>64800</effort>
+  </task>
+  <task id="t17">
+    <title>web services (throughout built apis before) to upload and fetch the information (text based data and image)</title>
+    <effort>64800</effort>
+  </task>
+  <task id="t18">
+    <title>create the family circle and manage it</title>
+    <effort>64800</effort>
+    <start-constraint-date>2014-08-20T03:45:00.000Z</start-constraint-date>
+    <start-no-earlier-than>2014-08-20T03:45:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t19">
+    <title>completion user registration and login</title>
+    <effort>64800</effort>
+  </task>
+  <task id="t20">
+    <title>core functions</title>
+    <type>group</type>
+    <start-constraint-date>2014-08-22T06:30:00.000Z</start-constraint-date>
+    <child-task idref="t21"/>
+    <child-task idref="t23"/>
+    <child-task idref="t24"/>
+    <start-no-earlier-than>2014-08-22T06:30:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t21">
+    <title>face mapping (swap the face from different people)</title>
+    <effort>576000</effort>
+  </task>
+  <task id="t23">
+    <title>face animation</title>
+    <effort>288000</effort>
+    <start-constraint-date>2014-09-19T06:30:00.000Z</start-constraint-date>
+    <start-no-earlier-than>2014-09-19T06:30:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t24">
+    <title>voice embedded</title>
+    <effort>288000</effort>
+    <start-constraint-date>2014-10-05T21:00:00.000Z</start-constraint-date>
+    <start-no-earlier-than>2014-10-05T21:00:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t26">
+    <title>comments switch function</title>
+    <effort>65700</effort>
+    <start-constraint-date>2014-08-20T04:15:00.000Z</start-constraint-date>
+    <note>
+      <text>
+        <p>
+          <run>
+            <lit>(old people who is not able to type, he will use face animation instead)--- switch from normal keyword to face animation choose.</lit>
+          </run>
+        </p>
+      </text>
+    </note>
+    <start-no-earlier-than>2014-08-20T04:15:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t27">
+    <title>project testing and bug fixing</title>
+    <effort>279000</effort>
+    <start-constraint-date>2014-10-19T21:30:00.000Z</start-constraint-date>
+    <start-no-earlier-than>2014-10-19T21:30:00.000Z</start-no-earlier-than>
+  </task>
+  <task id="t28">
+    <title>demo</title>
+    <type>milestone</type>
+    <start-constraint-date>2014-10-31T05:15:00.000Z</start-constraint-date>
+    <start-no-earlier-than>2014-10-31T05:15:00.000Z</start-no-earlier-than>
+  </task>
+  <critical-path root="-1" enabled="true" resources="false">
+    <color r="1" g="0.5" b="0.5"/>
+  </critical-path>
+</scenario>
