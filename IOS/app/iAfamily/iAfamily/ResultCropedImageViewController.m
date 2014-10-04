@@ -50,8 +50,6 @@
 }
 
 
-
-
 -(void) animation{
 
     [UIView animateWithDuration:0.5f

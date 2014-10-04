@@ -55,7 +55,8 @@
 
 
 //message NsUserDefailt
-#define Message @"message"
+#define Message_photo @"message_photos"
+#define Message_nvitation @"message_invitation"
 
 
 //system Perferences NsUserDefault

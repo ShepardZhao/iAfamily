@@ -39,6 +39,10 @@
         
     */
     
+    
+    
+    
+    
     // here to check the login status, if the user name and password are stored on the keychain then $this will head to main page, otherwise, then login page.
     UITabBarController *controller_family = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"mainTabBar"];
      WelcomeViewController *controller_welcome = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"WelcomeViewController"];
@@ -50,7 +54,7 @@
         
         self.window.rootViewController = controller_welcome;
     }
-    
+
     
 
     return YES;

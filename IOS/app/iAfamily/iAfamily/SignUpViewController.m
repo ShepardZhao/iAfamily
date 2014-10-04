@@ -13,8 +13,18 @@
 #import "ServerEnd.h"
 #import "AHKActionSheet.h"
 #import "NsUserDefaultModel.h"
+#import "AnimationAndUIAndImage.h"
 @interface SignUpViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *emailLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *passwordLabel;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *ageLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *phoneLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *genderLabel;
 @end
 
 @implementation SignUpViewController
@@ -108,6 +118,17 @@
     [self.genderTextView setLeftView:spacerView];
     
     
+    
+    
+    
+     [self.emailTextView setValue:Rgb2UIColor(255,255,255,1.0) forKeyPath:@"_placeholderLabel.textColor"];
+     [self.passwordTextView setValue:Rgb2UIColor(255,255,255,1.0) forKeyPath:@"_placeholderLabel.textColor"];
+     [self.nameTextView setValue:Rgb2UIColor(255,255,255,1.0) forKeyPath:@"_placeholderLabel.textColor"];
+     [self.ageTextView setValue:Rgb2UIColor(255,255,255,1.0) forKeyPath:@"_placeholderLabel.textColor"];
+     [self.phoneTextView setValue:Rgb2UIColor(255,255,255,1.0) forKeyPath:@"_placeholderLabel.textColor"];
+     [self.genderTextView setValue:Rgb2UIColor(255,255,255,1.0) forKeyPath:@"_placeholderLabel.textColor"];
+    
+    
 }
 /**
 *end
@@ -174,29 +195,77 @@
 
 
 /**
-*hiden the keyboard when pressed the return key
-**/
--(BOOL)textFieldShouldReturn:(UITextField *)textField {
-    
-    [textField resignFirstResponder];
-    return YES;
-}
-/**
-*end
-**/
-
-/**
 *define when the keyboard showed up
 **/
 
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
-    if (textField == self.genderTextView) {
-        return NO;
+    
+    if (textField.tag==0) {
+        [AnimationAndUIAndImage fadeInAnimation:self.emailLabel];
+        [AnimationAndUIAndImage fadeOutAnimation:self.passwordLabel :0.3f];
+        
+        [AnimationAndUIAndImage fadeOutAnimation:self.nameLabel :0.3f];
+        [AnimationAndUIAndImage fadeOutAnimation:self.ageLabel :0.3f];
+        [AnimationAndUIAndImage fadeOutAnimation:self.phoneLabel :0.3f];
+        [AnimationAndUIAndImage fadeOutAnimation:self.genderLabel :0.3f];
     }
-    else{
-         return YES;
-         }
+    else if (textField.tag==1){
+        
+        [AnimationAndUIAndImage fadeOutAnimation:self.emailLabel:0.3f];
+        [AnimationAndUIAndImage fadeInAnimation:self.passwordLabel];
+        
+        [AnimationAndUIAndImage fadeOutAnimation:self.nameLabel:0.3f];
+        [AnimationAndUIAndImage fadeOutAnimation:self.ageLabel :0.3f];
+        [AnimationAndUIAndImage fadeOutAnimation:self.phoneLabel :0.3f];
+        [AnimationAndUIAndImage fadeOutAnimation:self.genderLabel :0.3f];
+        
+    }
+    else if(textField.tag==2){
+        [AnimationAndUIAndImage fadeOutAnimation:self.emailLabel:0.3f];
+        [AnimationAndUIAndImage fadeOutAnimation:self.passwordLabel:0.3f];
+        
+        [AnimationAndUIAndImage fadeInAnimation:self.nameLabel];
+        [AnimationAndUIAndImage fadeOutAnimation:self.ageLabel :0.3f];
+        [AnimationAndUIAndImage fadeOutAnimation:self.phoneLabel :0.3f];
+        [AnimationAndUIAndImage fadeOutAnimation:self.genderLabel :0.3f];
+    }
+    else if(textField.tag==3){
+        [AnimationAndUIAndImage fadeOutAnimation:self.emailLabel:0.3f];
+        [AnimationAndUIAndImage fadeOutAnimation:self.passwordLabel:0.3f];
+        
+        [AnimationAndUIAndImage fadeOutAnimation:self.nameLabel:0.3f];
+        [AnimationAndUIAndImage fadeInAnimation:self.ageLabel];
+        [AnimationAndUIAndImage fadeOutAnimation:self.phoneLabel :0.3f];
+        [AnimationAndUIAndImage fadeOutAnimation:self.genderLabel :0.3f];
+
+    }
+    else if(textField.tag==4){
+        [AnimationAndUIAndImage fadeOutAnimation:self.emailLabel:0.3f];
+        [AnimationAndUIAndImage fadeOutAnimation:self.passwordLabel:0.3f];
+        
+        [AnimationAndUIAndImage fadeOutAnimation:self.nameLabel:0.3f];
+        [AnimationAndUIAndImage fadeOutAnimation:self.ageLabel:0.3f];
+        [AnimationAndUIAndImage fadeInAnimation:self.phoneLabel];
+        [AnimationAndUIAndImage fadeOutAnimation:self.genderLabel :0.3f];
+    }
+    else if (textField.tag==5) {
+        [AnimationAndUIAndImage fadeOutAnimation:self.emailLabel:0.3f];
+        [AnimationAndUIAndImage fadeOutAnimation:self.passwordLabel:0.3f];
+        
+        [AnimationAndUIAndImage fadeOutAnimation:self.nameLabel:0.3f];
+        [AnimationAndUIAndImage fadeOutAnimation:self.ageLabel:0.3f];
+        [AnimationAndUIAndImage fadeOutAnimation:self.phoneLabel:0.3f];
+        [AnimationAndUIAndImage fadeInAnimation:self.genderLabel ];
+        [[self view] endEditing:YES];
+        [AnimationAndUIAndImage fadeOutAnimation:self.genderLabel:0.3f];
+
+        
+        
+    }
+    
+    return YES;
+    
 }
 /**
 *end
@@ -207,8 +276,41 @@
 /**
  *keyboard over the textfield
  **/
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if (textField.tag==0 && textField.returnKeyType ==UIReturnKeyNext) {
+        [self.passwordTextView becomeFirstResponder];
+
+    }
+    
+    else if (textField.tag==1 && textField.returnKeyType ==UIReturnKeyNext) {
+        [self.nameTextView becomeFirstResponder];
+    }
+    
+    else if (textField.tag==2) {
+        [self.ageTextView becomeFirstResponder];
+    }
+    
+    else if (textField.tag==3) {
+        [self.phoneTextView becomeFirstResponder];
+        
+    }
+    
+    else if (textField.tag==4 && textField.returnKeyType ==UIReturnKeyNext) {
+        [self.genderTextView becomeFirstResponder];
+    }
+    
+    
+    return YES;
+}
+
+
+
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
+    
+    
+    
     [self animateTextField: textField up: YES];
 }
 

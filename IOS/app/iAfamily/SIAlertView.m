@@ -171,6 +171,9 @@ static SIAlertView *__si_alert_current_view;
 
 - (void)viewDidLoad
 {
+    
+    
+    
     [super viewDidLoad];
     [self.alertView setup];
 }
@@ -251,9 +254,9 @@ static SIAlertView *__si_alert_current_view;
     appearance.viewBackgroundColor = [UIColor whiteColor];
     appearance.titleColor = [UIColor blackColor];
     appearance.messageColor = [UIColor darkGrayColor];
-    appearance.titleFont = [UIFont boldSystemFontOfSize:20];
-    appearance.messageFont = [UIFont systemFontOfSize:16];
-    appearance.buttonFont = [UIFont systemFontOfSize:[UIFont buttonFontSize]];
+    appearance.titleFont = [UIFont fontWithName:@"Lato-Regular" size:16];
+    appearance.messageFont = [UIFont fontWithName:@"Lato-Light" size:14];
+    appearance.buttonFont = [UIFont fontWithName:@"Lato-Light" size:15];
     appearance.buttonColor = [UIColor colorWithWhite:0.4 alpha:1];
     appearance.cancelButtonColor = [UIColor colorWithWhite:0.3 alpha:1];
     appearance.destructiveButtonColor = [UIColor whiteColor];
@@ -889,6 +892,8 @@ static SIAlertView *__si_alert_current_view;
     [self setupButtons];
     [self invalidateLayout];
 }
+
+
 
 - (void)teardown
 {

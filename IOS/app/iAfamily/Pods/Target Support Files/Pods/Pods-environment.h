@@ -72,6 +72,12 @@
 #define COCOAPODS_VERSION_MINOR_QBImagePickerController 2
 #define COCOAPODS_VERSION_PATCH_QBImagePickerController 0
 
+// RSKImageCropper
+#define COCOAPODS_POD_AVAILABLE_RSKImageCropper
+#define COCOAPODS_VERSION_MAJOR_RSKImageCropper 0
+#define COCOAPODS_VERSION_MINOR_RSKImageCropper 3
+#define COCOAPODS_VERSION_PATCH_RSKImageCropper 0
+
 // SDWebImage
 #define COCOAPODS_POD_AVAILABLE_SDWebImage
 #define COCOAPODS_VERSION_MAJOR_SDWebImage 3
@@ -89,4 +95,16 @@
 #define COCOAPODS_VERSION_MAJOR_SSKeychain 1
 #define COCOAPODS_VERSION_MINOR_SSKeychain 2
 #define COCOAPODS_VERSION_PATCH_SSKeychain 2
+
+// SlackTextViewController
+#define COCOAPODS_POD_AVAILABLE_SlackTextViewController
+#define COCOAPODS_VERSION_MAJOR_SlackTextViewController 1
+#define COCOAPODS_VERSION_MINOR_SlackTextViewController 1
+#define COCOAPODS_VERSION_PATCH_SlackTextViewController 1
+
+// SlackTextViewController/Additions
+#define COCOAPODS_POD_AVAILABLE_SlackTextViewController_Additions
+#define COCOAPODS_VERSION_MAJOR_SlackTextViewController_Additions 1
+#define COCOAPODS_VERSION_MINOR_SlackTextViewController_Additions 1
+#define COCOAPODS_VERSION_PATCH_SlackTextViewController_Additions 1
 

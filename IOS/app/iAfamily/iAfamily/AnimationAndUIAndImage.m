@@ -140,8 +140,6 @@ dispatch_async(dispatch_get_main_queue(),^{
                                               } completion:nil];
                           
                           }];
-    
-    
 }
 
 
@@ -255,10 +253,10 @@ dispatch_async(dispatch_get_main_queue(),^{
 /**
  **fade out animation
  **/
-+(void) fadeOutAnimation:(UIView*)object{
++(void) fadeOutAnimation:(UIView*)object :(float)value{
 
     [UIView animateWithDuration:0.5f animations:^{
-            [object setAlpha:0.0f];
+            [object setAlpha:value];
     
     } completion:nil];
     

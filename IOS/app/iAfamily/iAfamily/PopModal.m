@@ -11,7 +11,10 @@
 @implementation PopModal
 
 +(void)showAlertMessage: (NSString*) getErrorMessage : (NSString*) messageTitle : (NSString*) buttonTitle : (SIAlertViewButtonType) setButtonType {
-    SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:messageTitle andMessage:getErrorMessage];
+    
+
+    
+    SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:messageTitle andMessage:getErrorMessage ];
     [alertView addButtonWithTitle:buttonTitle type:setButtonType
                           handler:^(SIAlertView *alert) {
                               

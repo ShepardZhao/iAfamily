@@ -8,10 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "InternetCheck.h"
-@interface WelcomeViewController : UIViewController<UIScrollViewDelegate> 
-@property (weak, nonatomic) IBOutlet UIScrollView *welcomeScrollView;
-@property (weak, nonatomic) IBOutlet UIPageControl *welcomePageControl;
-@property (nonatomic, strong) NSArray *imageArray; 
+@interface WelcomeViewController : UIViewController<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *emailTextView;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextView;
 -(IBAction)login;

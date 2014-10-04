@@ -14,9 +14,10 @@
 #import "PopModal.h"
 #import "SSKeychain.h"
 #import "NsUserDefaultModel.h"
+#import "AnimationAndUIAndImage.h"
 @interface WelcomeViewController ()
-
-
+@property (weak, nonatomic) IBOutlet UILabel *emailLabel;
+@property (weak, nonatomic) IBOutlet UILabel *passwordLabel;
 @property (weak, nonatomic) IBOutlet UIButton *signInBt;
 @property (weak, nonatomic) IBOutlet UIButton *SignUpBt;
 
@@ -24,9 +25,6 @@
 
 @implementation WelcomeViewController
 
-@synthesize welcomePageControl;
-@synthesize welcomeScrollView;
-@synthesize imageArray;
 
 
 - (void) viewWillAppear:(BOOL)animated
@@ -34,8 +32,25 @@
 
     [super viewWillAppear:animated];
 
+    //create the full screen image
     
+    UIImageView* fullImageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
+    
+    [fullImageView  setImage:[UIImage imageNamed:@"background"]];
+    //add the blur effect on image
+    UIVisualEffect *blurEffect;
+    blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+    
+    UIVisualEffectView *visualEffectView;
+    visualEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+    
+    
+    visualEffectView.frame = fullImageView.bounds;
+    
+    [fullImageView addSubview:visualEffectView];
 
+    [self.view addSubview:fullImageView];
+    [self.view sendSubviewToBack:fullImageView];
 }
 
 
@@ -44,14 +59,7 @@
 
     //design the UI
     [self initialUI];
-    //make a page control
-    [self scrolleViewImage];
-    [self scrolleAutoAnimated];
-
-    //try to hide the keyboard
-    [self hideThekeyboard];
-    
-
+   
 }
 
 
@@ -66,116 +74,6 @@
 
 
 
-/**
-*The image in scrolleview auto change
-**/
--(void)scrolleAutoAnimated{
-
-    [NSTimer scheduledTimerWithTimeInterval:WelcomeAnimationTime
-                                     target:self
-                                   selector:@selector(ImagescrolleAutoAnimated:)
-                                   userInfo:nil
-                                    repeats:YES];
-    
-
-
-}
-
--(void)ImagescrolleAutoAnimated:(NSTimer*)t{
-    
-    int page = welcomeScrollView.contentOffset.x / 296;
-    
-    if ( page + 1 < [imageArray count] )
-    {
-        page++;
-        welcomePageControl.currentPage = page++;
-    }
-    else
-    {
-        page = 0;
-        welcomePageControl.currentPage = page;
-    }
-    CGRect frame = self.welcomeScrollView.frame;
-    frame.origin.x = frame.size.width * self.welcomePageControl.currentPage;
-    frame.origin.y = 0;
-    
-    [welcomeScrollView scrollRectToVisible:frame animated:YES];
-    
-    
-}
-
-
-/**
-*scroll view image change
-**/
-
--(void) scrolleViewImage{
-    // Do any additional setup after loading the view.
-    //Put the names of our image files in our array.
-
-    
-    imageArray = [[NSArray alloc] initWithObjects:@"pageViewImage_1", @"pageViewImage_2", @"pageViewImage_3",nil];
-    
-    for (int i = 0; i < [imageArray count]; i++) {
-        //We'll create an imageView object in every 'page' of our scrollView.
-        CGRect frame;
-        frame.origin.x = self.welcomeScrollView.frame.size.width * i;
-        frame.origin.y = 0;
-        frame.size = self.welcomeScrollView.frame.size;
-        
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
-        imageView.image = [UIImage imageNamed:[imageArray objectAtIndex:i]];
-        
-        
-        //add the blur effect on image
-        UIVisualEffect *blurEffect;
-        blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
-        
-        UIVisualEffectView *visualEffectView;
-        visualEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
-        
-        visualEffectView.frame = imageView.bounds;
-        [imageView addSubview:visualEffectView];
-        
-        
-        
-        [self.welcomeScrollView addSubview:imageView];
-    }
-    //Set the content size of our scrollview according to the total width of our imageView objects.
-    welcomeScrollView.contentSize = CGSizeMake(welcomeScrollView.frame.size.width * [imageArray count], welcomeScrollView.frame.size.height);
-    
-    
-    }
-
-
-- (void)scrollViewDidScroll:(UIScrollView *)sender
-{
-    
-    // Update the page when more than 50% of the previous/next page is visible
-    CGFloat pageWidth = self.welcomeScrollView.frame.size.width;
-    int page = floor((self.welcomeScrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
-    self.welcomePageControl.currentPage = page;
-    
-    
-    if(page==0){
-        _signInBt.backgroundColor = Rgb2UIColor(26, 188, 156,1.0);
-    }
-    else if(page==1){
-        _signInBt.backgroundColor = Rgb2UIColor(52, 152, 219,1.0);
-    
-    }
-    else if (page==2){
-        _signInBt.backgroundColor = Rgb2UIColor(231, 76, 60,1.0);
-    }
-
-    
-}
-
-
-/**
-*end
-**/
-
 
 
 
@@ -186,15 +84,11 @@
 **/
 -(void) initialUI{
 
-    //page control button
-    welcomePageControl.backgroundColor = [UIColor clearColor];
-    welcomePageControl.currentPageIndicatorTintColor = Rgb2UIColor(255,255,255,1);
-    welcomePageControl.pageIndicatorTintColor =   Rgb2UIColor(255,255,255,0.5);
-    //emailTextView;
+       //emailTextView;
     //passwordTextView;
     
-    //[self.emailTextView setValue:Rgb2UIColor(20,20,20,1.0) forKeyPath:@"_placeholderLabel.textColor"];
-    //[self.passwordTextView setValue:Rgb2UIColor(20,20,20,1.0) forKeyPath:@"_placeholderLabel.textColor"];
+    [self.emailTextView setValue:Rgb2UIColor(255,255,255,1.0) forKeyPath:@"_placeholderLabel.textColor"];
+   [self.passwordTextView setValue:Rgb2UIColor(255,255,255,1.0) forKeyPath:@"_placeholderLabel.textColor"];
     
     UIView *spacerView = Indent();
     [self.emailTextView setLeftViewMode:UITextFieldViewModeAlways];
@@ -203,6 +97,10 @@
     [self.passwordTextView setLeftViewMode:UITextFieldViewModeAlways];
     [self.passwordTextView setLeftView:spacerView];
     
+
+
+
+
 }
 
 /**
@@ -211,33 +109,6 @@
 
 
 
-/**
-*hide the keyboard
-**/
--(void) hideThekeyboard{
-
-
-//hideKeyboardOnScrollView
-    UITapGestureRecognizer *tapScroll = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapped)];
-    tapScroll.cancelsTouchesInView = NO;
-    [welcomeScrollView addGestureRecognizer:tapScroll];
-    
-}
-
-- (void) tapped
-{
-    [self.view endEditing:YES];
-}
-
-
--(BOOL)textFieldShouldReturn:(UITextField *)textField {
-    [textField resignFirstResponder];
-    return YES;
-}
-
-/**
-*end
-**/
 
 
 
@@ -284,8 +155,6 @@
 
 }
  
-
-
 
 
 
@@ -365,6 +234,48 @@
 /**
 *keyboard over the textfield
 **/
+
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+
+    
+    if (textField.tag==0 && textField.returnKeyType == UIReturnKeyNext) {
+        [self.passwordTextView becomeFirstResponder];
+
+    }
+    
+    if (textField.tag==1 && textField.returnKeyType == UIReturnKeyDone) {
+        [self login];
+
+    }
+    
+    
+    
+    
+    return YES;
+}
+
+
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    
+    if (textField.tag==0) {
+        [AnimationAndUIAndImage fadeInAnimation:self.emailLabel];
+        [AnimationAndUIAndImage fadeOutAnimation:self.passwordLabel:0.3f];
+    }
+    if(textField.tag==1){
+        
+     [AnimationAndUIAndImage fadeOutAnimation:self.emailLabel:0.3f];
+        
+     [AnimationAndUIAndImage fadeInAnimation:self.passwordLabel];
+    
+    }
+    
+    return YES;
+
+
+}
+
+
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
     [self animateTextField: textField up: YES];

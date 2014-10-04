@@ -38,9 +38,9 @@
     
 }
 - (IBAction)doFullScreenMAPView:(id)sender {
-    [AnimationAndUIAndImage fadeOutAnimation:self.memberProfile];
+    [AnimationAndUIAndImage fadeOutAnimation:self.memberProfile:0.0f];
 
-    [AnimationAndUIAndImage fadeOutAnimation:self.expandMap];
+    [AnimationAndUIAndImage fadeOutAnimation:self.expandMap:0.0f];
     
     smallMap = self.mapview.frame;
     

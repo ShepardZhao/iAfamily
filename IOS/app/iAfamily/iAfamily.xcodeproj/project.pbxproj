@@ -29,17 +29,18 @@
 		8730AA6F19973C6000EB74C4 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8730AA6E19973C6000EB74C4 /* SignUpViewController.m */; };
 		87335D3619D2B11F00FA4E12 /* detailPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 87335D3519D2B11F00FA4E12 /* detailPhotoCollectionViewCell.m */; };
 		87335D3919D2B13000FA4E12 /* detailPhotoCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87335D3819D2B13000FA4E12 /* detailPhotoCollectionViewController.m */; };
+		873C7A3A19DE71CC00F90F94 /* MessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 873C7A3919DE71CC00F90F94 /* MessageTableViewCell.m */; };
+		873C7A3E19DEAB4500F90F94 /* MessagePhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 873C7A3D19DEAB4500F90F94 /* MessagePhotoCollectionViewCell.m */; };
+		873C7A4119DEB40200F90F94 /* InnerMessagePhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 873C7A4019DEB40200F90F94 /* InnerMessagePhotoCollectionViewCell.m */; };
+		873C7A4A19DEBB8B00F90F94 /* MessagePhotoCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 873C7A4919DEBB8B00F90F94 /* MessagePhotoCollectionViewController.m */; };
+		873C7A4D19DEC31400F90F94 /* MessagePhotoHeaderCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 873C7A4C19DEC31400F90F94 /* MessagePhotoHeaderCollectionReusableView.m */; };
 		8742E18619A8CAE500C9330D /* FamilyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8742E18519A8CAE500C9330D /* FamilyViewController.m */; };
 		8757C80219CFF77F00F1076C /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8757C80119CFF77F00F1076C /* Lato-Light.ttf */; };
 		8762C2A6199F99AA00865399 /* SuccessedRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8762C2A5199F99AA00865399 /* SuccessedRegisterViewController.m */; };
 		8762C2AD19A0712800865399 /* SettingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8762C2AC19A0712800865399 /* SettingTableViewController.m */; };
-		8768F6A819A753C300F51DF6 /* CropImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8768F6A719A753C300F51DF6 /* CropImageViewController.m */; };
-		8768F6B719A75BD700F51DF6 /* NLCropViewLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8768F6B419A75BD700F51DF6 /* NLCropViewLayer.m */; };
-		8768F6B819A75BD700F51DF6 /* NLImageCropperView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8768F6B619A75BD700F51DF6 /* NLImageCropperView.m */; };
 		8768F6BE19A764D500F51DF6 /* ResultCropedImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8768F6BD19A764D500F51DF6 /* ResultCropedImageViewController.m */; };
 		8768F6C219A793FB00F51DF6 /* NsUserDefaultModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8768F6C119A793FB00F51DF6 /* NsUserDefaultModel.m */; };
 		87701A8919D9385300BF7B75 /* detailPhotoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 87701A8819D9385300BF7B75 /* detailPhotoTableViewCell.m */; };
-		877956F619C5A71800FDE051 /* MessagePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 877956F519C5A71800FDE051 /* MessagePhotoViewController.m */; };
 		877956FC19C5CEF400FDE051 /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 877956FB19C5CEF400FDE051 /* PhotoCollectionViewCell.m */; };
 		877956FF19C5D95A00FDE051 /* AllPhotosCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 877956FE19C5D95A00FDE051 /* AllPhotosCollectionViewController.m */; };
 		877A4B2219B7278400C33AF4 /* AnimationAndUIAndImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 877A4B2119B7278400C33AF4 /* AnimationAndUIAndImage.m */; };
@@ -143,6 +144,16 @@
 		87335D3519D2B11F00FA4E12 /* detailPhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = detailPhotoCollectionViewCell.m; sourceTree = "<group>"; };
 		87335D3719D2B13000FA4E12 /* detailPhotoCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = detailPhotoCollectionViewController.h; sourceTree = "<group>"; };
 		87335D3819D2B13000FA4E12 /* detailPhotoCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = detailPhotoCollectionViewController.m; sourceTree = "<group>"; };
+		873C7A3819DE71CC00F90F94 /* MessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageTableViewCell.h; sourceTree = "<group>"; };
+		873C7A3919DE71CC00F90F94 /* MessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageTableViewCell.m; sourceTree = "<group>"; };
+		873C7A3C19DEAB4500F90F94 /* MessagePhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagePhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		873C7A3D19DEAB4500F90F94 /* MessagePhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagePhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		873C7A3F19DEB40200F90F94 /* InnerMessagePhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InnerMessagePhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		873C7A4019DEB40200F90F94 /* InnerMessagePhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InnerMessagePhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		873C7A4819DEBB8B00F90F94 /* MessagePhotoCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagePhotoCollectionViewController.h; sourceTree = "<group>"; };
+		873C7A4919DEBB8B00F90F94 /* MessagePhotoCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagePhotoCollectionViewController.m; sourceTree = "<group>"; };
+		873C7A4B19DEC31400F90F94 /* MessagePhotoHeaderCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagePhotoHeaderCollectionReusableView.h; sourceTree = "<group>"; };
+		873C7A4C19DEC31400F90F94 /* MessagePhotoHeaderCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagePhotoHeaderCollectionReusableView.m; sourceTree = "<group>"; };
 		8742E18419A8CAE500C9330D /* FamilyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FamilyViewController.h; sourceTree = "<group>"; };
 		8742E18519A8CAE500C9330D /* FamilyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FamilyViewController.m; sourceTree = "<group>"; };
 		8757C80119CFF77F00F1076C /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
@@ -151,20 +162,12 @@
 		8762C2AB19A0712800865399 /* SettingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewController.h; sourceTree = "<group>"; };
 		8762C2AC19A0712800865399 /* SettingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewController.m; sourceTree = "<group>"; };
 		8762C2AE19A0E17400865399 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		8768F6A619A753C300F51DF6 /* CropImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CropImageViewController.h; sourceTree = "<group>"; };
-		8768F6A719A753C300F51DF6 /* CropImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CropImageViewController.m; sourceTree = "<group>"; };
-		8768F6B319A75BD700F51DF6 /* NLCropViewLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLCropViewLayer.h; sourceTree = "<group>"; };
-		8768F6B419A75BD700F51DF6 /* NLCropViewLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLCropViewLayer.m; sourceTree = "<group>"; };
-		8768F6B519A75BD700F51DF6 /* NLImageCropperView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLImageCropperView.h; sourceTree = "<group>"; };
-		8768F6B619A75BD700F51DF6 /* NLImageCropperView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLImageCropperView.m; sourceTree = "<group>"; };
 		8768F6BC19A764D500F51DF6 /* ResultCropedImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultCropedImageViewController.h; sourceTree = "<group>"; };
 		8768F6BD19A764D500F51DF6 /* ResultCropedImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultCropedImageViewController.m; sourceTree = "<group>"; };
 		8768F6C019A793FB00F51DF6 /* NsUserDefaultModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NsUserDefaultModel.h; sourceTree = "<group>"; };
 		8768F6C119A793FB00F51DF6 /* NsUserDefaultModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NsUserDefaultModel.m; sourceTree = "<group>"; };
 		87701A8719D9385300BF7B75 /* detailPhotoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = detailPhotoTableViewCell.h; sourceTree = "<group>"; };
 		87701A8819D9385300BF7B75 /* detailPhotoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = detailPhotoTableViewCell.m; sourceTree = "<group>"; };
-		877956F419C5A71800FDE051 /* MessagePhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagePhotoViewController.h; sourceTree = "<group>"; };
-		877956F519C5A71800FDE051 /* MessagePhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagePhotoViewController.m; sourceTree = "<group>"; };
 		877956FA19C5CEF400FDE051 /* PhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewCell.h; sourceTree = "<group>"; };
 		877956FB19C5CEF400FDE051 /* PhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewCell.m; sourceTree = "<group>"; };
 		877956FD19C5D95A00FDE051 /* AllPhotosCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllPhotosCollectionViewController.h; sourceTree = "<group>"; };
@@ -444,6 +447,21 @@
 			name = SignUp;
 			sourceTree = "<group>";
 		};
+		873C7A3B19DEAB2300F90F94 /* Message_photo */ = {
+			isa = PBXGroup;
+			children = (
+				873C7A3C19DEAB4500F90F94 /* MessagePhotoCollectionViewCell.h */,
+				873C7A3D19DEAB4500F90F94 /* MessagePhotoCollectionViewCell.m */,
+				873C7A3F19DEB40200F90F94 /* InnerMessagePhotoCollectionViewCell.h */,
+				873C7A4019DEB40200F90F94 /* InnerMessagePhotoCollectionViewCell.m */,
+				873C7A4819DEBB8B00F90F94 /* MessagePhotoCollectionViewController.h */,
+				873C7A4919DEBB8B00F90F94 /* MessagePhotoCollectionViewController.m */,
+				873C7A4B19DEC31400F90F94 /* MessagePhotoHeaderCollectionReusableView.h */,
+				873C7A4C19DEC31400F90F94 /* MessagePhotoHeaderCollectionReusableView.m */,
+			);
+			name = Message_photo;
+			sourceTree = "<group>";
+		};
 		8757C80019CFF76100F1076C /* font */ = {
 			isa = PBXGroup;
 			children = (
@@ -481,12 +499,6 @@
 		8768F69319A7094D00F51DF6 /* CropView */ = {
 			isa = PBXGroup;
 			children = (
-				8768F6B319A75BD700F51DF6 /* NLCropViewLayer.h */,
-				8768F6B419A75BD700F51DF6 /* NLCropViewLayer.m */,
-				8768F6B519A75BD700F51DF6 /* NLImageCropperView.h */,
-				8768F6B619A75BD700F51DF6 /* NLImageCropperView.m */,
-				8768F6A619A753C300F51DF6 /* CropImageViewController.h */,
-				8768F6A719A753C300F51DF6 /* CropImageViewController.m */,
 				8768F6BC19A764D500F51DF6 /* ResultCropedImageViewController.h */,
 				8768F6BD19A764D500F51DF6 /* ResultCropedImageViewController.m */,
 			);
@@ -590,12 +602,13 @@
 		87A85A4819ADAEA1004F0D73 /* Message */ = {
 			isa = PBXGroup;
 			children = (
+				873C7A3B19DEAB2300F90F94 /* Message_photo */,
 				8713EFFF19B4B9C9002B0FBA /* ViewInvitationMessageViewController.h */,
 				8713F00019B4B9C9002B0FBA /* ViewInvitationMessageViewController.m */,
 				87B5663C19B7038600CCA358 /* MessageViewController.h */,
 				87B5663D19B7038600CCA358 /* MessageViewController.m */,
-				877956F419C5A71800FDE051 /* MessagePhotoViewController.h */,
-				877956F519C5A71800FDE051 /* MessagePhotoViewController.m */,
+				873C7A3819DE71CC00F90F94 /* MessageTableViewCell.h */,
+				873C7A3919DE71CC00F90F94 /* MessageTableViewCell.m */,
 			);
 			name = Message;
 			sourceTree = "<group>";
@@ -1072,12 +1085,11 @@
 				878ED11219C2D6CF00BCB932 /* FaceDectectionAndAnimationViewController.m in Sources */,
 				87B2C0BD19C05745009A419D /* IntroductionViewController.m in Sources */,
 				877A4B2219B7278400C33AF4 /* AnimationAndUIAndImage.m in Sources */,
-				8768F6B819A75BD700F51DF6 /* NLImageCropperView.m in Sources */,
 				87138B9419C01CA50075DC25 /* ODRefreshControl.m in Sources */,
 				87E461E119C30C04001D1BAF /* FaceppGroup.m in Sources */,
 				8768F6C219A793FB00F51DF6 /* NsUserDefaultModel.m in Sources */,
 				87E461E219C30C04001D1BAF /* FaceppGrouping.m in Sources */,
-				8768F6A819A753C300F51DF6 /* CropImageViewController.m in Sources */,
+				873C7A4A19DEBB8B00F90F94 /* MessagePhotoCollectionViewController.m in Sources */,
 				87B2C0B619C05165009A419D /* HelpTableViewController.m in Sources */,
 				8768F6BE19A764D500F51DF6 /* ResultCropedImageViewController.m in Sources */,
 				87E461DD19C30C04001D1BAF /* FaceppAPI.m in Sources */,
@@ -1095,12 +1107,12 @@
 				87B59EC1199E39560027F4BD /* Security.m in Sources */,
 				87B59ED1199F3EF50027F4BD /* PopModal.m in Sources */,
 				87E461DE19C30C04001D1BAF /* FaceppClient.m in Sources */,
+				873C7A3A19DE71CC00F90F94 /* MessageTableViewCell.m in Sources */,
 				873019C019A2422600FABC18 /* SIAlertView.m in Sources */,
 				87B59E481997C7170027F4BD /* UIImage+BlurredFrame.m in Sources */,
 				871027AB19BABE6C00A42028 /* SendThePhotosViewController.m in Sources */,
 				87BC165419935CCB009DCEDB /* main.m in Sources */,
 				87214B5019D9A57F00F069A7 /* FullScreenLineLayout.m in Sources */,
-				877956F619C5A71800FDE051 /* MessagePhotoViewController.m in Sources */,
 				87A85A4119ACC0CA004F0D73 /* FamilyViewDetailTableViewController.m in Sources */,
 				87B5663E19B7038600CCA358 /* MessageViewController.m in Sources */,
 				877A4B3219B96BEB00C33AF4 /* PersonalInfoSettingModifyTableViewController.m in Sources */,
@@ -1113,23 +1125,25 @@
 				87FF707C19DBEF060058FAA2 /* HeaderCollectionReusableView.m in Sources */,
 				877A4B2919B731A800C33AF4 /* MessageModel.m in Sources */,
 				87E461E719C30C04001D1BAF /* FaceppError.m in Sources */,
+				873C7A4119DEB40200F90F94 /* InnerMessagePhotoCollectionViewCell.m in Sources */,
 				87E461E019C30C04001D1BAF /* FaceppFaceset.m in Sources */,
 				8791643A19BD7BCE001C7217 /* GPSDelegate.m in Sources */,
 				87E461E819C30C04001D1BAF /* FaceppResult.m in Sources */,
 				8710279819B9CFF400A42028 /* MyPhotosViewController.m in Sources */,
 				87E461DF19C30C04001D1BAF /* FaceppDetection.m in Sources */,
 				87E461E619C30C04001D1BAF /* FaceppTrainer.m in Sources */,
+				873C7A4D19DEC31400F90F94 /* MessagePhotoHeaderCollectionReusableView.m in Sources */,
 				87E461E419C30C04001D1BAF /* FaceppPerson.m in Sources */,
 				87A85A4719AD8DF2004F0D73 /* SingleMemberDetailViewController.m in Sources */,
 				87B59E371997C2870027F4BD /* BlurryModalSegue.m in Sources */,
 				873019C119A2422600FABC18 /* UIWindow+SIUtils.m in Sources */,
 				87B59E741998A84D0027F4BD /* InternetCheck.m in Sources */,
 				87335D3619D2B11F00FA4E12 /* detailPhotoCollectionViewCell.m in Sources */,
+				873C7A3E19DEAB4500F90F94 /* MessagePhotoCollectionViewCell.m in Sources */,
 				870E195819DA94ED009956BC /* HMSideMenu.m in Sources */,
 				87B59E3D1997C6FE0027F4BD /* MZAppearance.m in Sources */,
 				87B2C0B919C0537C009A419D /* LogsViewController.m in Sources */,
 				87B59E3E1997C6FE0027F4BD /* NSInvocation+Copy.m in Sources */,
-				8768F6B719A75BD700F51DF6 /* NLCropViewLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

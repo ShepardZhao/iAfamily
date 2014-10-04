@@ -10,14 +10,14 @@
 	<string>iAfamily</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>7E6DC6B024A583D9235EA0458C71065E421A6AD5</key>
+		<key>6F093232BFEC457223CBDF9B37ADE04F99CEC04B</key>
 		<string>https://github.com/zhaoxun321/iafamily.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>IOS/app/iAfamily/iAfamily.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>7E6DC6B024A583D9235EA0458C71065E421A6AD5</key>
+		<key>6F093232BFEC457223CBDF9B37ADE04F99CEC04B</key>
 		<string>../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
@@ -25,14 +25,14 @@
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>7E6DC6B024A583D9235EA0458C71065E421A6AD5</string>
+	<string>6F093232BFEC457223CBDF9B37ADE04F99CEC04B</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>7E6DC6B024A583D9235EA0458C71065E421A6AD5</string>
+			<string>6F093232BFEC457223CBDF9B37ADE04F99CEC04B</string>
 			<key>IDESourceControlWCCName</key>
 			<string>iafamily</string>
 		</dict>

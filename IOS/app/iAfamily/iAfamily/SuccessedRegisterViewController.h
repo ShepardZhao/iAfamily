@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "SimpleCam.h"
 #import "QBImagePickerController.h"
-#import "CropImageViewController.h"
+#import "RSKImageCropper.h"
 @interface SuccessedRegisterViewController : UIViewController<SimpleCamDelegate,QBImagePickerControllerDelegate>
 -(IBAction)returnToLogin;
 @end

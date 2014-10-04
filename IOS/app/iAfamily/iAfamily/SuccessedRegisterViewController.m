@@ -10,8 +10,10 @@
 #import "CSAnimationView.h"
 #import "Canvas.h"
 #import "PopModal.h"
+#import "ResultCropedImageViewController.h"
 
-@interface SuccessedRegisterViewController ()
+
+@interface SuccessedRegisterViewController ()<RSKImageCropViewControllerDelegate>
 @property (nonatomic,strong) SimpleCam *simpleCam;
 @property (nonatomic) BOOL takePhotoImmediately;
 @property (nonatomic,strong) UIImage* image;
@@ -72,7 +74,7 @@
     // Close simpleCam - use this as opposed to 'dismissViewController' otherwise, the captureSession may not close properly and may result in memory leaks.
     [simpleCam closeWithCompletion:^{
 
-        [self performSegueWithIdentifier:@"croppedViewSegue" sender:self];
+        [self performSegueWithIdentifier:@"sendToCropResultSegue" sender:self];
 
     }];
 }
@@ -128,8 +130,8 @@
     if (self.presentedViewController) {
         [self dismissViewControllerAnimated:YES completion:^{
         
-            [self performSegueWithIdentifier:@"croppedViewSegue" sender:self];
-        
+                //if photo has been selected
+            [self callImageCrop];
         }];
     } else {
         [self.navigationController popToViewController:self animated:YES];
@@ -147,7 +149,6 @@
     if (iref)
     {
 
-        
         //generate the image and added to the self view
         self.image = [UIImage imageWithCGImage:iref scale:[rep scale] orientation:(UIImageOrientation)[rep orientation]];
         
@@ -179,13 +180,55 @@
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if([segue.identifier isEqualToString:@"croppedViewSegue"]) {
+   
+
+    if([segue.identifier isEqualToString:@"sendToCropResultSegue"]) {
     
-        CropImageViewController *cRcontroller = (CropImageViewController *)segue.destinationViewController;
+        ResultCropedImageViewController *cRcontroller = (ResultCropedImageViewController*)segue.destinationViewController;
         cRcontroller.image = self.image;
 
-    
     }
+    
+}
+
+
+
+
+-(void) callImageCrop{
+   
+    RSKImageCropViewController *imageCropVC = [[RSKImageCropViewController alloc] initWithImage:self.image cropMode:RSKImageCropModeCircle];
+    imageCropVC.delegate = self;
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:imageCropVC];
+
+     [self presentViewController:navigationController animated:YES completion:nil];
+    
+
+}
+
+
+
+#pragma - RSKImageCropViewControllerDelegate
+
+- (void)imageCropViewControllerDidCancelCrop:(RSKImageCropViewController *)controller
+{
+    //if did not crop then dismiss
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)imageCropViewController:(RSKImageCropViewController *)controller didCropImage:(UIImage *)croppedImage
+{
+    self.image = croppedImage;
+
+    //if did crop then dismiss the view and send it to restultCropedImageViewController.h
+    [self dismissViewControllerAnimated:YES completion:^{
+
+        //send the image to another view
+        [self performSegueWithIdentifier:@"sendToCropResultSegue" sender:self];
+
+    }];
+    
+
 }
 
 

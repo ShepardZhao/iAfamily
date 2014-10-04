@@ -22,7 +22,7 @@
 
 +(void) fadeInAnimation:(UIView*)object;
 
-+(void) fadeOutAnimation:(UIView*)object;
++(void) fadeOutAnimation:(UIView*)object :(float)value;
 
 +(void) collectionImageAsynDownload:(NSString*)url : (UIImageView*)uiImageView : (NSString*) placeHolderName;
 

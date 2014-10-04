@@ -9,13 +9,29 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "iafamily/SendThePhotosViewController.m"
-            timestampString = "433841144.628121"
+            filePath = "iAfamily/CropImageViewController.m"
+            timestampString = "434089859.03547"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
-            landmarkName = "-viewWillAppear:"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "-callImageCrop"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iAfamily/CropImageViewController.m"
+            timestampString = "434089860.375539"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "-callImageCrop"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -51,26 +51,67 @@ class MessageFetchModel extends DataBaseCRUDModel {
 
     public  function  detailRequesting($userID){
 
-        $this->statement ='SELECT message_id,message_content,message_type,sender_id,receiver_id,create_date FROM iafamily_message WHERE receiver_id=? AND message_status=1 ORDER BY create_date';
+        $temp = array();
+
+        $finalValue =array();
+
+        $this->statement ="SELECT message_id,message_content,sender_id,receiver_id,create_date FROM iafamily_message WHERE receiver_id=? AND message_type='photo' AND message_status=1 ORDER BY create_date DESC";
         $this->bindType = array('i');
         $this->bindName = array($userID);
         $this->selectSQL();
 
+
+        //copy sender id into an array
         foreach ($this->selectedFetchResult as $index=>$array){
+            foreach($array as $key=>$value){
+                if($key==='sender_id'){
+                    array_push($temp,$value);
 
-            $this->userInfoFetch->fetchSpecificUsersInfoApi($this->selectedFetchResult[$index]['sender_id']);
-            $this->selectedFetchResult[$index]['senderUrl'] = $this->userInfoFetch->selectedFetchResult[0]['user_avatar'];
-            $this->selectedFetchResult[$index]['senderName'] = $this->userInfoFetch->selectedFetchResult[0]['user_name'];
+                }
+            }
 
+        }
+
+        //make the sender id unique
+        $uniquedSenderIds = array_unique($temp);
+
+        //unserialize
+        foreach ($this->selectedFetchResult as $index=>$array){
             foreach ($array as $key=>$value){
                     if($key==='message_content'){
                         $this->selectedFetchResult[$index][$key]= unserialize($value);
                     }
 
-
                 }
         }
 
+        $returnArray=array();
+
+        //copy same sender id
+        foreach($uniquedSenderIds as $keyValue){
+            $finalValue['sender_id'] = $keyValue;
+            $finalValue['content'] = array();
+            foreach ($this->selectedFetchResult as $index=>$array){
+                foreach ($array as $key=>$value){
+                    if($key==='sender_id'){
+                        if($keyValue ==$value){
+                            array_push($finalValue['content'],$array);
+                        }
+                    }
+
+                }
+            }
+            $this->userInfoFetch->fetchSpecificUsersInfoApi($keyValue);
+            $finalValue['senderUrl'] = $this->userInfoFetch->selectedFetchResult[0]['user_avatar'];
+            $finalValue['senderName'] = $this->userInfoFetch->selectedFetchResult[0]['user_name'];
+
+            array_push($returnArray,$finalValue);
+
+        }
+
+
+
+        $this->selectedFetchResult =$returnArray;
 
 
 
