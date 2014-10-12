@@ -7,6 +7,7 @@
  */
 include_once $_SERVER["DOCUMENT_ROOT"].'/lib/model/DataBaseCRUDModel.php';
 
+
 class imageUploadModel extends  DataBaseCRUDModel{
 
     private $destination;
@@ -19,6 +20,7 @@ class imageUploadModel extends  DataBaseCRUDModel{
     private $printError = TRUE;
     public $error = '';
     private  $imageID;
+
 
     public function __construct(){
         parent::__construct();
@@ -160,49 +162,74 @@ class imageUploadModel extends  DataBaseCRUDModel{
     //imagecopyresized to resize the image
     public function resize($tempfile,$dst_w,$dst_h,$resetName){
 
+// *** 1) Initialize / load image
+        //$resizeObj = new imageResize($tempfile);
 
-        list($src_w,$src_h)=getimagesize($tempfile);  // get primitive image
+// *** 2) Resize image (options: exact, portrait, landscape, auto, crop)
+       // $resizeObj -> resizeImage($dst_w, $dst_h, 'crop');
 
-        $dst_scale = $dst_h/$dst_w; //dst ratio
-        $src_scale = $src_h/$src_w; //primitive ratio
+// *** 3) Save image
+        //$resizeObj -> saveImage($this->getDestination().$resetName.$this -> getfilename().'.gif', 100);
+        /*
+        $thumb = new Imagick($tempfile);
 
-        if ($src_scale>=$dst_scale){  // over height
-            $w = intval($src_w);
-            $h = intval($dst_scale*$w);
+        $thumb->resizeImage($dst_w,$dst_h,Imagick::FILTER_LANCZOS,1);
+        $thumb->writeImage($this->getDestination().$resetName.$this -> getfilename().'.jpeg');
 
-            $x = 0;
-            $y = ($src_h - $h)/3;
-        } else { // over width
-            $h = intval($src_h);
-            $w = intval($h/$dst_scale);
+        $thumb->destroy();
 
-            $x = ($src_w - $w)/2;
-            $y = 0;
-        }
-
-        //crop
-        $source=imagecreatefromjpeg($tempfile);
-        $croped=imagecreatetruecolor($w, $h);
-        imagecopy($croped, $source, 0, 0, $x, $y, $src_w, $src_h);
-
-        //resize
-        $scale = $dst_w / $w;
-        $target = imagecreatetruecolor($dst_w, $dst_h);
-        $final_w = intval($w * $scale);
-        $final_h = intval($h * $scale);
-        $this -> nwidth = $final_w;
-        $this -> nheight = $final_h;
-        imagecopyresampled($target, $croped, 0, 0, 0, 0, $final_w,$final_h, $w, $h);
+        */
 
 
-        //save
-        imagejpeg($target, $this->getDestination().$resetName.$this -> getfilename().'.jpeg',100);
 
-        imagedestroy($target);
+         list($src_w,$src_h)=getimagesize($tempfile);  // get primitive image
 
-        //roate
+         $dst_scale = $dst_h/$dst_w; //dst ratio
+         $src_scale = $src_h/$src_w; //primitive ratio
 
-        $this -> error ='';
+         if ($src_scale>=$dst_scale){  // over height
+             $w = intval($src_w);
+             $h = intval($dst_scale*$w);
+
+             $x = 0;
+             $y = ($src_h - $h)/3;
+         } else { // over width
+             $h = intval($src_h);
+             $w = intval($h/$dst_scale);
+
+             $x = ($src_w - $w)/2;
+             $y = 0;
+         }
+
+         //crop
+         $source=imagecreatefromjpeg($tempfile);
+         $croped=imagecreatetruecolor($w, $h);
+         imagecopy($croped, $source, 0, 0, $x, $y, $src_w, $src_h);
+
+         //resize
+         $scale = $dst_w / $w;
+         $target = imagecreatetruecolor($dst_w, $dst_h);
+         $final_w = intval($w * $scale);
+         $final_h = intval($h * $scale);
+         $this -> nwidth = $final_w;
+         $this -> nheight = $final_h;
+         imagecopyresampled($target, $croped, 0, 0, 0, 0, $final_w,$final_h, $w, $h);
+
+
+         //save
+         imagejpeg($target, $this->getDestination().$resetName.$this -> getfilename().'.jpeg',100);
+
+         imagedestroy($target);
+
+         //roate
+
+         $this -> error ='';
+
+
+
+
+
+
 
     }
 

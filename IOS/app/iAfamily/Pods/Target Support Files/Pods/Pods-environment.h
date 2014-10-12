@@ -48,12 +48,6 @@
 #define COCOAPODS_VERSION_MINOR_AFNetworking_UIKit 4
 #define COCOAPODS_VERSION_PATCH_AFNetworking_UIKit 1
 
-// AHKActionSheet
-#define COCOAPODS_POD_AVAILABLE_AHKActionSheet
-#define COCOAPODS_VERSION_MAJOR_AHKActionSheet 0
-#define COCOAPODS_VERSION_MINOR_AHKActionSheet 4
-#define COCOAPODS_VERSION_PATCH_AHKActionSheet 2
-
 // Canvas
 #define COCOAPODS_POD_AVAILABLE_Canvas
 #define COCOAPODS_VERSION_MAJOR_Canvas 0
@@ -95,16 +89,4 @@
 #define COCOAPODS_VERSION_MAJOR_SSKeychain 1
 #define COCOAPODS_VERSION_MINOR_SSKeychain 2
 #define COCOAPODS_VERSION_PATCH_SSKeychain 2
-
-// SlackTextViewController
-#define COCOAPODS_POD_AVAILABLE_SlackTextViewController
-#define COCOAPODS_VERSION_MAJOR_SlackTextViewController 1
-#define COCOAPODS_VERSION_MINOR_SlackTextViewController 1
-#define COCOAPODS_VERSION_PATCH_SlackTextViewController 1
-
-// SlackTextViewController/Additions
-#define COCOAPODS_POD_AVAILABLE_SlackTextViewController_Additions
-#define COCOAPODS_VERSION_MAJOR_SlackTextViewController_Additions 1
-#define COCOAPODS_VERSION_MINOR_SlackTextViewController_Additions 1
-#define COCOAPODS_VERSION_PATCH_SlackTextViewController_Additions 1
 

@@ -10,4 +10,12 @@
 
 @implementation HeaderCollectionReusableView
 
+-(void)awakeFromNib{
+    
+    self.header.frame = CGRectMake(0, 0, 320, 30);
+    
+
+}
+
+
 @end

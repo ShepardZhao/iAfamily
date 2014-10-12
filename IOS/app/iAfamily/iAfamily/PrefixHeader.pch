@@ -50,13 +50,39 @@
 #define GroupFamilyMembers @"groupFamilyMembers"
 
 
-//photo NsUserDefault
-#define Photo @"photo"
+//ALL photo NsUserDefault
+#define AllPhoto @"Allphoto"
+
+//My photo NsUserDefault
+#define MyPhoto @"Myphoto"
+
+
+//Set filter (sort)
+#define Date_Photo @"Date_Photo"
+
+#define Family_Photo @"Family_Photo"
+
+#define Uploaders_Photo @"Uploaders_Photo"
+
+#define Favorite_Photo @"Favorite_Photo"
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 //message NsUserDefailt
 #define Message_photo @"message_photos"
-#define Message_nvitation @"message_invitation"
+#define Message_invitation @"message_invitation"
 
 
 //system Perferences NsUserDefault
@@ -68,7 +94,8 @@
 
 
 
-
+#define kAvatarSize 30.0
+#define kMinimumHeight 40.0
 
 
 // Include any system framework and library headers here that should be included in all compilation units.

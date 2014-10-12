@@ -10,7 +10,5 @@
 
 @interface MessagePhotoCollectionViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UICollectionView *innerUICollectionView;
-
-
 @property (strong,nonatomic) NSMutableArray* imageArrays;
 @end

@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "ServerEnd.h"
+#import "MyPhotosViewController.h"
 
 @interface SendThePhotosViewController : UIViewController<UITextFieldDelegate>
 
 @property (nonatomic,strong) NSMutableArray* selectedImages;
-
+@property(strong,nonatomic) NSMutableArray* gpsArray;
 @end

@@ -10,6 +10,7 @@
 
 @interface detailPhotoCollectionViewController : UICollectionViewController
 @property(strong,nonatomic) NSMutableArray* detailPhotosArray;
-@property(strong,nonatomic)     UIToolbar* keyboardToolbar;
-
+@property (weak, nonatomic) IBOutlet UIImageView *backImage;
+@property (strong,nonatomic) NSString* titleName;
+@property(nonatomic) BOOL groupStatus;
 @end

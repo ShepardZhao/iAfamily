@@ -32,19 +32,9 @@
     [super viewDidLoad];
     
     navBarHairlineImageView = [AnimationAndUIAndImage findHairlineImageViewUnder:self.navigationController.navigationBar];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-}
-
--(void) viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:YES];
-    navBarHairlineImageView.hidden = YES;
-
+    
     self.tableview.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     self.title = self.familyTitle;
     
@@ -54,7 +44,7 @@
     }
     else{
         //you dont have to define any statement thats to reload the table/
-
+        
         self.membersDicitonary = [self getResearchFromNsUserDefault];
     }
     
@@ -63,7 +53,14 @@
     ODRefreshControl *refreshControl = [[ODRefreshControl alloc] initInScrollView:self.tableview];
     [refreshControl addTarget:self action:@selector(dropViewDidBeginRefreshing:) forControlEvents:UIControlEventValueChanged];
     
+
+}
+
+-(void) viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
     
+    navBarHairlineImageView.hidden = YES;
+
 }
 
 
@@ -119,7 +116,7 @@
     [cell addSubview:memberOnlineStatusButton];
     cell.textLabel.text = self.membersDicitonary[indexPath.row][@"user_name"];
     
-    [AnimationAndUIAndImage tableImageAsyncDownload:self.membersDicitonary[indexPath.row][@"user_avatar"] : cell.imageView];
+    [AnimationAndUIAndImage tableImageAsyncDownload:self.membersDicitonary[indexPath.row][@"user_avatar"] : cell.imageView:NO];
     
     return cell;
 
@@ -239,8 +236,8 @@
     if ([segue.identifier isEqualToString:@"showMemberDetailSegue"]) {
         NSIndexPath *indexPath = [self.tableview indexPathForCell:sender];
         
-        SingleMemberDetailViewController *SignleController = (SingleMemberDetailViewController *)segue.destinationViewController;
-        SignleController.singleMemberDetail = self.membersDicitonary[indexPath.row];
+        SingleMemberDetailViewController *signleController = (SingleMemberDetailViewController *)segue.destinationViewController;
+        signleController.singleMemberDetail = self.membersDicitonary[indexPath.row];
     }
     
     
@@ -249,8 +246,7 @@
         FamilyUserSearchViewController *searchController = (FamilyUserSearchViewController*) segue.destinationViewController;
         searchController.familyID = self.familyId;
         searchController.familyTitle = self.familyTitle;
-        
-        
+    
     }
     
    

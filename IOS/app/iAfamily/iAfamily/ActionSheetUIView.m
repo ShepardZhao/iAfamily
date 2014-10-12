@@ -17,52 +17,115 @@
     // Drawing code
 }
 */
-+(void) actionSheetView:(UIViewController*)controller : (QBImagePickerController*) qbController : (SimpleCam*) simpleCam {
+-(void) actionSheetView:(UIViewController*)controller : (QBImagePickerController*) qbController : (SimpleCam*) simpleCam {
+    if (SYSTEM_VERSION_LESS_THAN(@"8.0")) {
+        UIActionSheet *photoSelectMethod = [[UIActionSheet alloc] initWithTitle:@"Select Photo Methods" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:   @"From Album",
+                                            @"From Camera",
+                                            nil];
+        photoSelectMethod.tag=1;
+        [photoSelectMethod showInView:controller.view ];
+        
+    }
+    else{
+    
+        UIAlertController *actionSheetController =  [UIAlertController alertControllerWithTitle:@"Select Photo Methods" message:@"" preferredStyle:UIAlertControllerStyleActionSheet];
+    
+        
+        UIAlertAction *fromAlbum = [UIAlertAction actionWithTitle:@"From Album" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action)
+                                 {
+                                     [self performSelector:@selector(fromAlbum) withObject:nil];
+                                 }];
+        
+        UIAlertAction *fromCamera = [UIAlertAction actionWithTitle:@"From Camera" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action)
+                                    {
+                                        [self performSelector:@selector(fromCamera) withObject:nil];
+                                    }];
+        
+        UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action)
+                                 {
+                                     [actionSheetController dismissViewControllerAnimated:YES completion:nil];
+                                 }];
+        
+        
+        
+        [actionSheetController addAction:fromAlbum];
+        [actionSheetController addAction:fromCamera];
+        [actionSheetController addAction:cancel];
+        
+        //******** THIS IS THE IMPORTANT PART!!!  ***********
+        actionSheetController.view.tintColor = [UIColor lightGrayColor];
+        
+        
+        
+        [controller presentViewController:actionSheetController animated:YES completion:nil];
+
+    
+    
+    }
+   
+    
+    
   
-    AHKActionSheet *actionSheet = [[AHKActionSheet alloc] initWithTitle:NSLocalizedString(@"Select From:",nil)];
-    actionSheet.blurTintColor = [UIColor colorWithWhite:0.0f alpha:0.55f];
-    actionSheet.blurRadius = 8.0f;
-    actionSheet.buttonHeight = 50.0f;
-    actionSheet.cancelButtonHeight = 50.0f;
-    actionSheet.animationDuration = 0.3f;
-    actionSheet.cancelButtonShadowColor = [UIColor colorWithWhite:0.0f alpha:0.1f];
-    actionSheet.separatorColor = [UIColor colorWithWhite:1.0f alpha:0.3f];
-    actionSheet.selectedBackgroundColor = [UIColor colorWithWhite:0.0f alpha:0.5f];
-    UIFont *defaultFont = [UIFont fontWithName:@"Avenir" size:17.0f];
-    actionSheet.buttonTextAttributes = @{ NSFontAttributeName : defaultFont,
-                                          NSForegroundColorAttributeName : [UIColor whiteColor] };
-    actionSheet.disabledButtonTextAttributes = @{ NSFontAttributeName : defaultFont,
-                                                  NSForegroundColorAttributeName : [UIColor grayColor] };
-    actionSheet.destructiveButtonTextAttributes = @{ NSFontAttributeName : defaultFont,
-                                                     NSForegroundColorAttributeName : [UIColor redColor] };
-    actionSheet.cancelButtonTextAttributes = @{ NSFontAttributeName : defaultFont,
-                                                NSForegroundColorAttributeName : [UIColor whiteColor] };
-    [actionSheet addButtonWithTitle:@"Access From Library"
-                              image: [AnimationAndUIAndImage circleImage: [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"myPhotos_library"]] : 1].image
-                               type:AHKActionSheetButtonTypeDefault handler:^(AHKActionSheet* as){
-                                   //handler when clicked
-                                   
-                                   UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:qbController];
-                                   [controller presentViewController:navigationController animated:YES completion:NULL];
-                                   
-                                   
-                               }];
+
     
     
-    [actionSheet addButtonWithTitle:@"Access From Camera"
-                              image: [AnimationAndUIAndImage circleImage: [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"myPhotos_camera"]] : 1].image
-                               type:AHKActionSheetButtonTypeDefault handler:^(AHKActionSheet* as){
-                                   
-                                   [controller presentViewController:simpleCam animated:YES completion:nil];
-                               }];
     
     
-    [actionSheet show];
+    
+    self.controller =controller;
+    self.qbController =qbController;
+    self.simpleCam = simpleCam;
+    
+    
+    
+}
+
+
+
+- (void)willPresentActionSheet:(UIActionSheet *)actionSheet {
+  
+
+    for (UIView *_currentView in actionSheet.subviews) {
+        if ([_currentView isKindOfClass:[UILabel class]]) {
+            UILabel * tempLabel = (UILabel *)_currentView;
+            [tempLabel setFont:[UIFont boldSystemFontOfSize:12.0f]];
+        }
+        if ([_currentView isKindOfClass:[UIButton class]]) {
+            UIButton* tempButton =(UIButton *)_currentView;
+            
+            [tempButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+
+        }
+        
+    }
+}
 
 
 
 
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    NSString *title = [actionSheet buttonTitleAtIndex:buttonIndex];
+    if([title isEqualToString:@"From Album"]) {
+        //Code if Devanagari button is pressed
+        [self fromAlbum];
+        
+    }
+    if([title isEqualToString:@"From Camera"]) {
+        [self fromCamera];
+    }
+}
+
+-(void) fromAlbum{
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:self.qbController];
+    [self.controller presentViewController:navigationController animated:YES completion:NULL];
+    
 
 }
+
+-(void) fromCamera{
+    [self.controller presentViewController:self.simpleCam animated:YES completion:nil];
+
+}
+
 
 @end

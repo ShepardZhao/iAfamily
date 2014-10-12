@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "InternetCheck.h"
+#import <AVFoundation/AVFoundation.h>
+
 @interface WelcomeViewController : UIViewController<UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *emailTextView;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextView;
 -(IBAction)login;
+@property (weak, nonatomic) IBOutlet UIView *controllerDisplayView;
+
 @end

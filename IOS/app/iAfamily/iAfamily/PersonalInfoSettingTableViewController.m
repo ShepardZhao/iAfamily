@@ -11,7 +11,6 @@
 #import "AnimationAndUIAndImage.h"
 #import "FaceDectectionAndAnimationViewController.h"
 #import "PopModal.h"
-#import "ActionSheetUIView.h"
 
 @interface PersonalInfoSettingTableViewController (){
     NSString* type;
@@ -37,7 +36,8 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    //self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.actionSheet = [[ActionSheetUIView alloc] init];
 }
 
 
@@ -84,7 +84,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"personalDetail" forIndexPath:indexPath];
 
     UILabel* rightLabel = [[UILabel alloc] initWithFrame:CGRectMake(100, 13,190, 17)];
-    [rightLabel setTextColor:Rgb2UIColor(189, 195, 199,1.0) ];
+    [rightLabel setTextColor:[UIColor lightGrayColor] ];
     rightLabel.textAlignment =  NSTextAlignmentRight;
     [rightLabel setFont:[UIFont fontWithName:@"Lato-Light" size:15]];
     if (indexPath.section==0 && indexPath.row==0) {
@@ -93,7 +93,7 @@
         UIImageView* uiImageView = [[UIImageView alloc] initWithFrame:CGRectMake(245,cell.frame.size.height/2-25,50,50)];
         [cell addSubview:uiImageView];
         
-        [AnimationAndUIAndImage tableImageAsyncDownload:self.detailPersonalDictionary[@"user_avatar"] : uiImageView];
+        [AnimationAndUIAndImage tableImageAsyncDownload:self.detailPersonalDictionary[@"user_avatar"] : uiImageView:NO];
 
     }
     
@@ -177,7 +177,7 @@
             SimpleCam * simpleCam = [[SimpleCam alloc]init];
             simpleCam.delegate = self;
             
-            [ActionSheetUIView actionSheetView:self :imagePickerController :simpleCam];
+            [self.actionSheet actionSheetView:self :imagePickerController :simpleCam];
         
         }
         

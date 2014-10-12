@@ -10,6 +10,7 @@
 #import "MessagePhotoHeaderCollectionReusableView.h"
 #import "MessagePhotoCollectionViewCell.h"
 #import "AnimationAndUIAndImage.h"
+#import "MessageViewController.h"
 @interface MessagePhotoCollectionViewController (){
     UIImageView *userHeader;
     UIImageView *navBarHairlineImageView;
@@ -27,7 +28,7 @@
     
     userHeader = [[UIImageView alloc] initWithFrame:CGRectMake(self.view.center.x-20, 22, 40, 40)];
     
-     [AnimationAndUIAndImage tableImageAsyncDownload:self.header : userHeader];
+    [AnimationAndUIAndImage tableImageAsyncDownload:self.header : userHeader:NO];
     
     
     [self.navigationController.view addSubview:userHeader];
@@ -40,8 +41,7 @@
     [super viewWillDisappear:animated];
     [userHeader removeFromSuperview];
     navBarHairlineImageView.hidden = NO;
-
-
+    
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -100,9 +100,6 @@
     // Configure the cell
     
      cell.imageArrays = self.singleUserDetailArray[@"content"][indexPath.section][@"message_content"];
-    
-    
-    
     return cell;
     
     
@@ -133,7 +130,7 @@
     }
     else{
        
-        return CGSizeMake(310, (80.0f*((double)number/4.0f))+55);
+        return CGSizeMake(310, (80.0f*((double)number/4.0f))+15);
 
     }
     

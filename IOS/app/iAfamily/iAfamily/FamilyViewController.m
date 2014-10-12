@@ -47,7 +47,7 @@
     // Label for vibrant text
     UILabel* addFamilLabel = [[UILabel alloc] initWithFrame:CGRectMake(60, 100, 200,50)];
     addFamilLabel.font= [UIFont fontWithName:@"Lato-Light" size:21];
-    addFamilLabel.text = @"Create The Family";
+    addFamilLabel.text = @"Create A Family";
     addFamilLabel.textAlignment = NSTextAlignmentCenter;
     
     
@@ -174,10 +174,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
   
-    [self initialUI];
-
+    
+    navBarHairlineImageView = [AnimationAndUIAndImage findHairlineImageViewUnder:self.navigationController.navigationBar];
     
     self.initialTransformation = [AnimationAndUIAndImage tableViewAnimation];
+    
+    
+    
     
     //do refresh when pull the screen
     ODRefreshControl *refreshControl = [[ODRefreshControl alloc] initInScrollView:self.tableView];
@@ -269,13 +272,7 @@
 }
 */
 
--(void) initialUI{
-    
-    
-    navBarHairlineImageView = [AnimationAndUIAndImage findHairlineImageViewUnder:self.navigationController.navigationBar];
-   
 
-   }
 
 
 
@@ -387,7 +384,7 @@
         memberLabel.text =NumberOfMembers;
         memberLabel.textAlignment =  NSTextAlignmentCenter;
         memberLabel.textColor = Rgb2UIColor(255, 255,255,1.0);
-        memberLabel.font = [UIFont fontWithName:@"Helvetica Neue" size:29];
+        memberLabel.font = [UIFont fontWithName:@"Lato-Regular" size:29];
         [cell addSubview:memberLabel];
     
         return cell;

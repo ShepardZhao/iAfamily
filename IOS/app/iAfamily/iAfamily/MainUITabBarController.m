@@ -10,10 +10,10 @@
 #import "SSKeychain.h"
 #import "PopModal.h"
 #import "MessageModel.h"
+#import "ParsePushModel.h"
 @interface MainUITabBarController (){
     NSTimer* timer;
     UIImageView *navBarHairlineImageView;
-
 
 }
 
@@ -26,8 +26,6 @@
     // Do any additional setup after loading the view.
    
     //alloc the memory for gps update function
-    
-
     
     [self logIn];
 }
@@ -148,6 +146,10 @@
                     [NsUserDefaultModel setUserDefault:UserInfodictionary : @"userInfoArray"];
                     
             
+                
+                    //set push notification
+                        [ParsePushModel setChannelName];
+                
                     //complete the requestion and refresh the tableview
                     
                     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{

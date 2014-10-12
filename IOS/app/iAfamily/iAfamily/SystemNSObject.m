@@ -21,12 +21,25 @@
     return dateString;
 }
 
++(NSString*)getCurrentCommentDate{
+    NSDate *localDate = [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    dateFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+    
+    NSString *dateString = [dateFormatter stringFromDate: localDate];
+    return dateString;
+}
+
 //get current TimeStamp
 +(NSString*) getCurrentTimeStamp{
 
-    NSString * timestamp = [NSString stringWithFormat:@"%f",[[NSDate date] timeIntervalSince1970] * 1000];
+    NSTimeInterval timestamp = [[NSDate date] timeIntervalSince1970];
 
-    return timestamp;
+    
+    NSString * unixTime = [[NSString alloc] initWithFormat:@"%0.0f", timestamp];
+
+    
+    return unixTime;
 
 }
 

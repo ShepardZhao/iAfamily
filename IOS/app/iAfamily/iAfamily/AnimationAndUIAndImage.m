@@ -8,6 +8,7 @@
 
 #import "AnimationAndUIAndImage.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "MBProgressHUD.h"
 
 @implementation AnimationAndUIAndImage
 
@@ -115,29 +116,33 @@ dispatch_async(dispatch_get_main_queue(),^{
  ** async download the image for cell of table view
  **/
 
-+(void) tableImageAsyncDownload: (NSString*) url : (UIImageView*) uiImageView{
++(void) tableImageAsyncDownload: (NSString*) url : (UIImageView*) uiImageView : (BOOL)isComment{
+    [AnimationAndUIAndImage circleImage:uiImageView :1];
+
+    
     [uiImageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",Domain,url]]
                    placeholderImage:[UIImage imageNamed:@"userPlaceholder"]
                             options:SDWebImageRetryFailed
                            progress:nil
                           completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                              [AnimationAndUIAndImage circleImage:uiImageView :1];
-                              
-                              uiImageView.alpha = 0.0;
-                              [UIView transitionWithView:uiImageView
-                                                duration:ImageLoadForTableViewCellAnimationDuration
-                                                 options:UIViewAnimationOptionTransitionCrossDissolve
-                                              animations:^{
-                                                  [uiImageView setImage:image];
-                                                  CGSize itemSize = CGSizeMake(ImageSize_w, ImageSize_h);
+                                                  CGSize itemSize;
+                                                  if (!isComment) {
+                                                    itemSize  = CGSizeMake(ImageSize_w, ImageSize_h);
+        
+                                                  }
+                                                  else{
+                                                  
+                                                   itemSize = CGSizeMake(kAvatarSize, kAvatarSize);
+                                                  }
+                                                  
+                                                  uiImageView.image=  [AnimationAndUIAndImage squareImageWithImage:image scaledToSize:itemSize];
                                                   UIGraphicsBeginImageContextWithOptions(itemSize, NO, UIScreen.mainScreen.scale);
                                                   CGRect imageRect = CGRectMake(0.0, 0.0, itemSize.width, itemSize.height);
                                                   [uiImageView.image drawInRect:imageRect];
                                                   uiImageView.image = UIGraphicsGetImageFromCurrentImageContext();
                                                   UIGraphicsEndImageContext();
-                                                  uiImageView.alpha = 1.0;
-                                                  
-                                              } completion:nil];
+                              
+                              
                           
                           }];
 }
@@ -154,17 +159,44 @@ dispatch_async(dispatch_get_main_queue(),^{
 /**
  **collection view image Async download
  **/
-+(void)collectionImageAsynDownload:(NSString*)url : (UIImageView*)uiImageView : (NSString*) placeHolderName{
-
-
++(void)collectionImageAsynDownload:(NSString*)url : (UIImageView*)uiImageView : (NSString*) placeHolderName :(BOOL) animated {
+   UIProgressView *progressView;
+    if (animated) {
+        progressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
+        progressView.center = uiImageView.center;
+        [uiImageView addSubview:progressView];
+    }
+    
     [uiImageView sd_setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",Domain,url]]
                    placeholderImage:[UIImage imageNamed:placeHolderName]
                             options:0
                            progress:^(NSInteger receivedSize, NSInteger expectedSize) {
-                               
+                               if (animated) {
+                                   
+                                   progressView.progress = (double)receivedSize / (double)expectedSize;
+                                   progressView.tintColor = Rgb2UIColor(26, 188, 156,1.0);
+                               }
                            }
                           completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-                             
+                              
+                              if (animated) {
+                                  [progressView removeFromSuperview];
+                                  uiImageView.alpha = 0.0;
+                                  
+                                  [UIView transitionWithView:uiImageView
+                                                    duration:ImageLoadForTableViewCellAnimationDuration
+                                                     options:UIViewAnimationOptionTransitionCrossDissolve
+                                                  animations:^{
+                                                      [uiImageView setImage:image];
+                                                      uiImageView.alpha = 1.0;
+                                                      
+                                                  } completion:nil];
+                                
+                              }
+                              
+                              
+                              
+                              
                           }];
 
 
@@ -459,9 +491,6 @@ dispatch_async(dispatch_get_main_queue(),^{
 /**
  **end
  **/
-
-
-
 
 
 

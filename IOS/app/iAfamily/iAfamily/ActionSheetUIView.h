@@ -7,10 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AHKActionSheet.h"
 #import "AnimationAndUIAndImage.h"
 #import "QBImagePickerController.h"
 #import "SimpleCam.h"
-@interface ActionSheetUIView : UIViewController
-+(void) actionSheetView:(UIViewController*)controller : (QBImagePickerController*) qbController : (SimpleCam*) simpleCam;
+#import "QuartzCore/QuartzCore.h"
+
+@interface ActionSheetUIView : UIViewController<UIActionSheetDelegate>
+
+@property (strong,nonatomic) UIViewController* controller;
+@property (strong,nonatomic) QBImagePickerController* qbController;
+@property (strong,nonatomic) SimpleCam* simpleCam;
+
+
+
+-(void) actionSheetView:(UIViewController*)controller : (QBImagePickerController*) qbController : (SimpleCam*) simpleCam;
+
+
 @end

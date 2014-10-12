@@ -16,4 +16,12 @@
 @property (weak, nonatomic) IBOutlet UITextField *phoneTextView;
 @property (weak, nonatomic) IBOutlet UITextField *genderTextView;
 -(IBAction)signUpNext;
+
+@property (weak, nonatomic) IBOutlet UIButton *loginBtn;
+@property (weak, nonatomic) IBOutlet UIButton *nextBtn;
+
+
+
+
+
 @end

@@ -20,7 +20,6 @@ PODS:
   - AFNetworking/UIKit (2.4.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - AHKActionSheet (0.4.2)
   - Canvas (0.1.2)
   - MBProgressHUD (0.9)
   - QBImagePickerController (2.2)
@@ -28,33 +27,24 @@ PODS:
   - SDWebImage (3.7.1):
     - SDWebImage/Core
   - SDWebImage/Core (3.7.1)
-  - SlackTextViewController (1.1.1):
-    - SlackTextViewController/Additions
-    - SlackTextViewController/Additions
-  - SlackTextViewController/Additions (1.1.1):
-    - SlackTextViewController/Additions
   - SSKeychain (1.2.2)
 
 DEPENDENCIES:
   - AFNetworking
-  - AHKActionSheet
   - Canvas
   - MBProgressHUD
   - QBImagePickerController
   - RSKImageCropper
   - SDWebImage
-  - SlackTextViewController
   - SSKeychain
 
 SPEC CHECKSUMS:
   AFNetworking: 0aabc6fae66d6e5d039eeb21c315843c7aae51ab
-  AHKActionSheet: 5bac772d0e966456257fbb8eefafbea9717ccbbc
   Canvas: ae2faca05a15c4d6659fb3ae5e2a14817df4449a
   MBProgressHUD: 2038dbcf3dce73215abed6001657043d53aa79a8
   QBImagePickerController: 8325d5ac8ba69e65af78ba43aa5e0190bdd016eb
   RSKImageCropper: 38002f13db12cd5d13925872d932c7aee328149b
   SDWebImage: 116e88633b5b416ea0ca4b334a4ac59cf72dd38d
-  SlackTextViewController: a5a4db17a834d13194182f62f4faad2ea8f9929e
   SSKeychain: cc48bd3ad24fcd9125adb9e0d23dd50b8bbd08b9
 
 COCOAPODS: 0.34.1

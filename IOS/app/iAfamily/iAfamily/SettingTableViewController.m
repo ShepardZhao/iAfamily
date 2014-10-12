@@ -159,7 +159,7 @@
 -(void) fetchUserInfo{
     NSDictionary *arr = [NsUserDefaultModel getUserDictionaryFromSession];
     //asyn load image for table view
-    [AnimationAndUIAndImage tableImageAsyncDownload:arr[@"user_avatar"] : self.my.imageView];
+    [AnimationAndUIAndImage tableImageAsyncDownload:arr[@"user_avatar"] : self.my.imageView:NO];
     self.my.detailTextLabel.numberOfLines=2;
     self.my.textLabel.text = arr[@"user_name"];
     self.my.detailTextLabel.text = [NSString stringWithFormat:@"ID:%@\nPhone:%@",arr[@"user_id"],arr[@"user_phone"]];

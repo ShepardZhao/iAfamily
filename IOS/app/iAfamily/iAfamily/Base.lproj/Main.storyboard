@@ -1,23 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6249" systemVersion="14A379a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="H1g-i8-xZi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6249" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="H1g-i8-xZi">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6243"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <mutableArray key="Lato-Bold.ttf">
+            <string>Lato-Bold</string>
+        </mutableArray>
         <mutableArray key="Lato-Light.ttf">
-            <string>Lato-Light</string>
-            <string>Lato-Light</string>
-            <string>Lato-Light</string>
-            <string>Lato-Light</string>
-            <string>Lato-Light</string>
-            <string>Lato-Light</string>
-            <string>Lato-Light</string>
-            <string>Lato-Light</string>
-            <string>Lato-Light</string>
-            <string>Lato-Light</string>
-            <string>Lato-Light</string>
-            <string>Lato-Light</string>
             <string>Lato-Light</string>
             <string>Lato-Light</string>
             <string>Lato-Light</string>
@@ -58,6 +49,25 @@
         </mutableArray>
         <mutableArray key="Lato-Regular.ttf">
             <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -80,7 +90,7 @@
                                         <rect key="frame" x="0.0" y="66" width="267" height="46"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                                         <connections>
                                             <outlet property="delegate" destination="H1g-i8-xZi" id="XJ0-UZ-Yah"/>
@@ -90,7 +100,7 @@
                                         <rect key="frame" x="0.0" y="20" width="267" height="46"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
                                         <connections>
                                             <outlet property="delegate" destination="H1g-i8-xZi" id="SqP-Pp-gfe"/>
@@ -108,29 +118,19 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <button opaque="NO" alpha="0.96999999999999997" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tLG-NQ-lRI">
-                                        <rect key="frame" x="221" y="190" width="46" height="32"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="15"/>
-                                        <state key="normal" title="Sign in">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="login" destination="H1g-i8-xZi" eventType="touchUpInside" id="gKp-m4-WHZ"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Forget Password?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BcW-BN-jMx">
-                                        <rect key="frame" x="37" y="120" width="136" height="21"/>
-                                        <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="13"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Forget Password?" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BcW-BN-jMx">
+                                        <rect key="frame" x="131" y="119" width="136" height="21"/>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="11"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                         <size key="shadowOffset" width="0.0" height="0.0"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUE-SA-DSZ">
-                                        <rect key="frame" x="8" y="192" width="88" height="30"/>
-                                        <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="15"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUE-SA-DSZ">
+                                        <rect key="frame" x="5" y="164" width="50" height="50"/>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="13"/>
                                         <state key="normal" title="John in">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <segue destination="npu-Mp-Q5Y" kind="custom" identifier="signUp" customClass="BlurryModalSegue" id="peN-X4-EY5"/>
@@ -150,6 +150,18 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" alpha="0.96999999999999997" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tLG-NQ-lRI">
+                                        <rect key="frame" x="229" y="164" width="50" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="13"/>
+                                        <state key="normal" title="Sign in">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="login" destination="H1g-i8-xZi" eventType="touchUpInside" id="gKp-m4-WHZ"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
@@ -157,6 +169,7 @@
                     </view>
                     <connections>
                         <outlet property="SignUpBt" destination="VUE-SA-DSZ" id="Mqx-tT-LO0"/>
+                        <outlet property="controllerDisplayView" destination="4lK-Ar-hQs" id="yYB-dD-w5E"/>
                         <outlet property="emailLabel" destination="mhp-dx-4PV" id="e2E-ia-wnC"/>
                         <outlet property="emailTextView" destination="URb-15-9mc" id="EhP-D2-C6d"/>
                         <outlet property="passwordLabel" destination="iVo-I5-JXy" id="Xdl-xx-iwP"/>
@@ -167,7 +180,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1n3-eD-t97" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-309" y="-33"/>
+            <point key="canvasLocation" x="-423" y="-485"/>
         </scene>
         <!--Successed Register View Controller-->
         <scene sceneID="q4i-Uj-46d">
@@ -333,14 +346,14 @@
                                 <rect key="frame" x="19" y="135" width="285" height="46"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
                                 <connections>
                                     <outlet property="delegate" destination="npu-Mp-Q5Y" id="RMx-yQ-Hox"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aSm-lR-3oj">
-                                <rect key="frame" x="54" y="179" width="250" height="1"/>
+                                <rect key="frame" x="54" y="179" width="235" height="1"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -350,14 +363,14 @@
                                 <rect key="frame" x="19" y="180" width="285" height="46"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="npu-Mp-Q5Y" id="RUL-bt-KLg"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.30000001192092896" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nlf-bf-QVb">
-                                <rect key="frame" x="54" y="226" width="250" height="1"/>
+                                <rect key="frame" x="54" y="226" width="235" height="1"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -367,14 +380,14 @@
                                 <rect key="frame" x="19" y="225" width="285" height="46"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                 <connections>
                                     <outlet property="delegate" destination="npu-Mp-Q5Y" id="ZVl-N3-lXH"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.30000001192092896" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xcl-GP-ZOA">
-                                <rect key="frame" x="54" y="269" width="250" height="1"/>
+                                <rect key="frame" x="54" y="269" width="235" height="1"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -384,14 +397,14 @@
                                 <rect key="frame" x="19" y="270" width="285" height="46"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="npu-Mp-Q5Y" id="Hce-YA-ee4"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.30000001192092896" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fz8-JX-nCd">
-                                <rect key="frame" x="54" y="315" width="250" height="1"/>
+                                <rect key="frame" x="54" y="315" width="235" height="1"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -401,14 +414,14 @@
                                 <rect key="frame" x="19" y="315" width="285" height="46"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="next"/>
                                 <connections>
                                     <outlet property="delegate" destination="npu-Mp-Q5Y" id="hZH-wV-hPq"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.30000001192092896" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcp-jo-FRc">
-                                <rect key="frame" x="54" y="360" width="250" height="1"/>
+                                <rect key="frame" x="54" y="360" width="235" height="1"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -418,7 +431,7 @@
                                 <rect key="frame" x="19" y="360" width="285" height="46"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <connections>
                                     <action selector="GenderChoose:" destination="npu-Mp-Q5Y" eventType="touchDown" id="f4s-ch-BuA"/>
@@ -426,7 +439,7 @@
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.30000001192092896" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t7a-Hm-kEm">
-                                <rect key="frame" x="54" y="404" width="250" height="1"/>
+                                <rect key="frame" x="54" y="404" width="235" height="1"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -468,27 +481,27 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LGb-cU-Kit">
-                                <rect key="frame" x="29" y="43" width="58" height="32"/>
-                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="15"/>
-                                <state key="normal" title="LogIn">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="signUpDimiss:" destination="npu-Mp-Q5Y" eventType="touchUpInside" id="TAt-mz-J8s"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t9X-BY-I61">
-                                <rect key="frame" x="254" y="38" width="50" height="43"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t9X-BY-I61">
+                                <rect key="frame" x="239" y="43" width="50" height="50"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="15"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="13"/>
                                 <state key="normal" title="Next">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="signUpNext" destination="npu-Mp-Q5Y" eventType="touchUpInside" id="OyY-eT-Eh3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LGb-cU-Kit">
+                                <rect key="frame" x="25" y="43" width="50" height="50"/>
+                                <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="13"/>
+                                <state key="normal" title="LogIn">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="signUpDimiss:" destination="npu-Mp-Q5Y" eventType="touchUpInside" id="TAt-mz-J8s"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -500,8 +513,10 @@
                         <outlet property="emailTextView" destination="JCx-QI-cY5" id="qYu-bq-r2Y"/>
                         <outlet property="genderLabel" destination="t7a-Hm-kEm" id="TN3-pC-19V"/>
                         <outlet property="genderTextView" destination="nRG-Bv-VF2" id="973-9Y-cfC"/>
+                        <outlet property="loginBtn" destination="LGb-cU-Kit" id="PvE-nE-FiE"/>
                         <outlet property="nameLabel" destination="xcl-GP-ZOA" id="wqm-Bz-4A0"/>
                         <outlet property="nameTextView" destination="K6d-tw-Gxq" id="OWt-VC-frk"/>
+                        <outlet property="nextBtn" destination="t9X-BY-I61" id="G48-mg-rWj"/>
                         <outlet property="passwordLabel" destination="Nlf-bf-QVb" id="u3k-UV-Nbj"/>
                         <outlet property="passwordTextView" destination="XCK-If-H8m" id="ZPf-ib-Cug"/>
                         <outlet property="phoneLabel" destination="wcp-jo-FRc" id="CXU-r0-ZZy"/>
@@ -533,7 +548,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="483" y="-139"/>
+            <point key="canvasLocation" x="563" y="-315"/>
         </scene>
         <!--Message View Controller-->
         <scene sceneID="sWi-eL-rYk">
@@ -561,7 +576,7 @@
                                                     <rect key="frame" x="8" y="7" width="50" height="50"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ujr-ox-8Kz">
-                                                    <rect key="frame" x="64" y="9" width="127" height="21"/>
+                                                    <rect key="frame" x="64" y="9" width="183" height="21"/>
                                                     <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="17"/>
                                                     <color key="textColor" red="0.15686274510000001" green="0.2156862745" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -570,25 +585,27 @@
                                                     <rect key="frame" x="255" y="16" width="32" height="32"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8UO-ha-uca">
-                                                    <rect key="frame" x="64" y="32" width="127" height="21"/>
+                                                    <rect key="frame" x="64" y="32" width="183" height="21"/>
                                                     <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="11"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uev-e1-tG2">
-                                                    <rect key="frame" x="210" y="21" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="14"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="STp-i7-vum">
+                                                    <rect key="frame" x="246" y="7" width="17" height="17"/>
+                                                    <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="12"/>
+                                                    <state key="normal" title="1" backgroundImage="bagage">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="headerImage" destination="mB8-mp-fIv" id="pMa-rB-E2V"/>
                                             <outlet property="latestImage_One" destination="d34-mV-lzj" id="UWl-fA-My4"/>
-                                            <outlet property="numberOfImage" destination="Uev-e1-tG2" id="6Dh-sz-xSi"/>
+                                            <outlet property="numberOfMessage" destination="STp-i7-vum" id="zMR-Hs-qMY"/>
                                             <outlet property="subTitle" destination="8UO-ha-uca" id="TYI-0c-i7x"/>
-                                            <outlet property="titel" destination="ujr-ox-8Kz" id="Y5A-4E-5u0"/>
+                                            <outlet property="title" destination="ujr-ox-8Kz" id="Ah0-SJ-lq2"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -609,9 +626,13 @@
                                 <segment title="Message"/>
                                 <segment title="Invitation"/>
                             </segments>
+                            <connections>
+                                <action selector="doMessageSwitch:" destination="Pmb-PY-lgn" eventType="valueChanged" id="c8T-on-sib"/>
+                            </connections>
                         </segmentedControl>
                     </navigationItem>
                     <connections>
+                        <outlet property="messageSegment" destination="E6e-gO-MKL" id="voP-b2-4Pi"/>
                         <outlet property="tableView" destination="DN5-0m-QtF" id="iog-Jg-JeQ"/>
                         <segue destination="suJ-64-bYF" kind="push" identifier="viewInvitationMessageSegue" id="1SI-C3-y2S"/>
                         <segue destination="FzR-zC-dhT" kind="push" identifier="messagePhotoSegue" id="fgs-Gr-eXA"/>
@@ -628,7 +649,7 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="m4p-NQ-MA1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.98039215690000003" green="0.98431372549999996" blue="0.98431372549999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.94901960780000005" green="0.92549019610000005" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nxx-j3-QAm">
                             <size key="itemSize" width="309" height="80"/>
                             <size key="headerReferenceSize" width="50" height="30"/>
@@ -727,26 +748,13 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rGS-C9-LUH">
                                 <rect key="frame" x="-20" y="-20" width="360" height="608"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backgound" translatesAutoresizingMaskIntoConstraints="NO" id="Fd5-SH-Qt0">
-                                        <rect key="frame" x="20" y="20" width="320" height="568"/>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D23-aN-gQM">
-                                        <rect key="frame" x="34" y="268" width="292" height="46"/>
-                                        <color key="backgroundColor" red="0.12941176469999999" green="0.72941176470000002" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="Accept">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="acceptAction:" destination="suJ-64-bYF" eventType="touchUpInside" id="G3M-Az-fVu"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i4v-D0-ALy">
-                                        <rect key="frame" x="34" y="322" width="292" height="46"/>
+                                        <rect key="frame" x="276" y="288" width="50" height="50"/>
                                         <color key="backgroundColor" red="0.87450980389999999" green="0.35294117650000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="14"/>
                                         <state key="normal" title="Decline">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="declineAction:" destination="suJ-64-bYF" eventType="touchUpInside" id="di1-dm-DRz"/>
@@ -767,8 +775,27 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D23-aN-gQM">
+                                        <rect key="frame" x="41" y="288" width="50" height="50"/>
+                                        <color key="backgroundColor" red="0.12941176469999999" green="0.72941176470000002" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="14"/>
+                                        <state key="normal" title="Accept">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="acceptAction:" destination="suJ-64-bYF" eventType="touchUpInside" id="G3M-Az-fVu"/>
+                                        </connections>
+                                    </button>
+                                    <tableViewCell contentMode="scaleToFill" fixedFrame="YES" selectionStyle="default" indentationWidth="10" rowHeight="240" translatesAutoresizingMaskIntoConstraints="NO" id="cUj-tO-uDL">
+                                        <rect key="frame" x="20" y="121" width="320" height="240"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cUj-tO-uDL" id="5Ea-Lk-TIY">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.94901960780000005" green="0.92549019610000005" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                     </view>
@@ -780,7 +807,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fvg-lV-XOO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3111" y="-735.99999999999955"/>
+            <point key="canvasLocation" x="3111" y="-736"/>
         </scene>
         <!--Family-->
         <scene sceneID="P78-OY-962">
@@ -850,9 +877,10 @@
                         <color key="backgroundColor" red="0.94901960780000005" green="0.92549019610000005" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Family" id="2jI-hd-W29">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="buS-9J-ya6">
+                        <barButtonItem key="rightBarButtonItem" image="addFamily" id="13V-eL-6gG">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
-                                <action selector="addFamily:" destination="f4l-zO-YZV" id="t9X-Ra-Dpk"/>
+                                <action selector="addFamily:" destination="f4l-zO-YZV" id="Jog-gY-WGa"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -868,7 +896,7 @@
         <!--Single Member Detail View Controller-->
         <scene sceneID="pcb-K3-NSR">
             <objects>
-                <viewController id="RZs-l3-x7m" customClass="SingleMemberDetailViewController" sceneMemberID="viewController">
+                <viewController extendedLayoutIncludesOpaqueBars="YES" id="RZs-l3-x7m" customClass="SingleMemberDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WGD-BG-8ym"/>
                         <viewControllerLayoutGuide type="bottom" id="VaW-Gu-Srw"/>
@@ -1073,150 +1101,6 @@
             </objects>
             <point key="canvasLocation" x="2175" y="-114"/>
         </scene>
-        <!--Detail Photo Collection View Controller-->
-        <scene sceneID="Iu4-IZ-GJH">
-            <objects>
-                <collectionViewController extendedLayoutIncludesOpaqueBars="YES" id="Xmg-Ql-IUh" customClass="detailPhotoCollectionViewController" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="uLr-5m-0fX">
-                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.94901960780000005" green="0.92549019610000005" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
-                        <collectionViewLayout key="collectionViewLayout" id="iD7-Ht-756" customClass="FullScreenLineLayout"/>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="detailPhotoCell" id="zhr-l4-JgF" customClass="detailPhotoCollectionViewCell">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="118" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="TDU-Fa-9rh">
-                                            <rect key="frame" x="0.0" y="54" width="320" height="470"/>
-                                            <color key="backgroundColor" red="0.94901960780000005" green="0.92549019610000005" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
-                                            <view key="tableHeaderView" contentMode="scaleToFill" id="66Z-ov-yRF">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <subviews>
-                                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cyy-pG-sel">
-                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
-                                                    </imageView>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="13S-N8-7N0">
-                                                        <rect key="frame" x="8" y="160" width="32" height="32"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iaR-E7-3KH">
-                                                                <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
-                                                                <state key="normal" image="like">
-                                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                                </state>
-                                                            </button>
-                                                        </subviews>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <constraints>
-                                                            <constraint firstItem="iaR-E7-3KH" firstAttribute="leading" secondItem="13S-N8-7N0" secondAttribute="leading" id="8uq-ta-lmq"/>
-                                                            <constraint firstItem="iaR-E7-3KH" firstAttribute="top" secondItem="13S-N8-7N0" secondAttribute="top" id="Nrs-Kl-ftX"/>
-                                                            <constraint firstAttribute="trailing" secondItem="iaR-E7-3KH" secondAttribute="trailing" id="QQP-3A-K4c"/>
-                                                            <constraint firstAttribute="bottom" secondItem="iaR-E7-3KH" secondAttribute="bottom" id="hsz-ex-hhy"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ecx-v3-7mC">
-                                                        <rect key="frame" x="280" y="160" width="32" height="32"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </view>
-                                                </subviews>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstItem="Ecx-v3-7mC" firstAttribute="trailing" secondItem="66Z-ov-yRF" secondAttribute="trailingMargin" id="46Z-yr-8hs"/>
-                                                    <constraint firstItem="13S-N8-7N0" firstAttribute="bottom" secondItem="66Z-ov-yRF" secondAttribute="bottomMargin" id="F1S-X2-qGf"/>
-                                                    <constraint firstAttribute="bottom" secondItem="cyy-pG-sel" secondAttribute="bottom" id="NkU-OI-UC6"/>
-                                                    <constraint firstItem="Ecx-v3-7mC" firstAttribute="top" secondItem="13S-N8-7N0" secondAttribute="top" id="YLh-rZ-i3Y"/>
-                                                    <constraint firstItem="Ecx-v3-7mC" firstAttribute="leading" secondItem="66Z-ov-yRF" secondAttribute="leading" constant="280" id="eBZ-qA-BTi"/>
-                                                    <constraint firstItem="cyy-pG-sel" firstAttribute="top" secondItem="66Z-ov-yRF" secondAttribute="top" id="g1R-3W-N59"/>
-                                                    <constraint firstItem="13S-N8-7N0" firstAttribute="leading" secondItem="66Z-ov-yRF" secondAttribute="leadingMargin" id="kmN-yO-cBv"/>
-                                                    <constraint firstItem="cyy-pG-sel" firstAttribute="leading" secondItem="66Z-ov-yRF" secondAttribute="leading" id="kxZ-7Q-oLn"/>
-                                                    <constraint firstItem="Ecx-v3-7mC" firstAttribute="bottom" secondItem="13S-N8-7N0" secondAttribute="bottom" id="p7K-kg-x7Y"/>
-                                                    <constraint firstAttribute="trailing" secondItem="cyy-pG-sel" secondAttribute="trailing" id="wKX-rf-bYq"/>
-                                                </constraints>
-                                            </view>
-                                            <prototypes>
-                                                <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="photoTableCell" id="N2w-xx-zqf" customClass="detailPhotoTableViewCell">
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="N2w-xx-zqf" id="7ST-x2-5Ww">
-                                                        <autoresizingMask key="autoresizingMask"/>
-                                                        <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7gL-h1-rVK">
-                                                                <rect key="frame" x="8" y="8" width="50" height="50"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="50" id="Xsg-N4-io7"/>
-                                                                </constraints>
-                                                            </imageView>
-                                                            <label opaque="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dgp-gY-DS3">
-                                                                <rect key="frame" x="66" y="8" width="246" height="50"/>
-                                                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="14"/>
-                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dE1-D3-MgD">
-                                                                <rect key="frame" x="270" y="75" width="42" height="21"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="42" id="OE6-uR-F8y"/>
-                                                                </constraints>
-                                                                <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="13"/>
-                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstItem="Dgp-gY-DS3" firstAttribute="bottom" secondItem="7gL-h1-rVK" secondAttribute="bottom" id="EX1-rj-nGk"/>
-                                                            <constraint firstAttribute="bottomMargin" secondItem="dE1-D3-MgD" secondAttribute="bottom" constant="13" id="HHY-K4-oXS"/>
-                                                            <constraint firstItem="Dgp-gY-DS3" firstAttribute="trailing" secondItem="dE1-D3-MgD" secondAttribute="trailing" id="NHf-XP-j3U"/>
-                                                            <constraint firstItem="Dgp-gY-DS3" firstAttribute="leading" secondItem="7gL-h1-rVK" secondAttribute="trailing" constant="8" symbolic="YES" id="Nnu-d4-b8o"/>
-                                                            <constraint firstAttribute="bottomMargin" secondItem="7gL-h1-rVK" secondAttribute="bottom" constant="51" id="OBl-Db-fXb"/>
-                                                            <constraint firstItem="dE1-D3-MgD" firstAttribute="top" secondItem="Dgp-gY-DS3" secondAttribute="bottom" constant="17" id="W3H-IH-eno"/>
-                                                            <constraint firstItem="7gL-h1-rVK" firstAttribute="leading" secondItem="7ST-x2-5Ww" secondAttribute="leadingMargin" id="hSS-t5-2BZ"/>
-                                                            <constraint firstItem="7gL-h1-rVK" firstAttribute="top" secondItem="Dgp-gY-DS3" secondAttribute="top" id="isZ-oP-hC7"/>
-                                                            <constraint firstItem="Dgp-gY-DS3" firstAttribute="trailing" secondItem="7ST-x2-5Ww" secondAttribute="trailingMargin" id="sEG-up-69V"/>
-                                                            <constraint firstItem="Dgp-gY-DS3" firstAttribute="top" secondItem="7ST-x2-5Ww" secondAttribute="topMargin" id="zT1-Vb-IMR"/>
-                                                        </constraints>
-                                                    </tableViewCellContentView>
-                                                    <connections>
-                                                        <outlet property="content" destination="Dgp-gY-DS3" id="Udk-Fs-dh3"/>
-                                                        <outlet property="publisher" destination="7gL-h1-rVK" id="kvd-E2-uqf"/>
-                                                        <outlet property="time" destination="dE1-D3-MgD" id="FFa-TT-vKL"/>
-                                                    </connections>
-                                                </tableViewCell>
-                                            </prototypes>
-                                            <connections>
-                                                <outlet property="dataSource" destination="zhr-l4-JgF" id="sV2-6b-DUf"/>
-                                                <outlet property="delegate" destination="zhr-l4-JgF" id="UGo-5U-KTG"/>
-                                            </connections>
-                                        </tableView>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                                <color key="backgroundColor" red="0.94901960780000005" green="0.92549019610000005" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
-                                <size key="customSize" width="320" height="504"/>
-                                <connections>
-                                    <outlet property="comment" destination="Ecx-v3-7mC" id="b4v-pL-mrR"/>
-                                    <outlet property="tablePhotoImage" destination="cyy-pG-sel" id="gt2-G8-CRM"/>
-                                    <outlet property="tableView" destination="TDU-Fa-9rh" id="JZf-wf-srU"/>
-                                </connections>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="Xmg-Ql-IUh" id="vMv-fA-SSE"/>
-                            <outlet property="delegate" destination="Xmg-Ql-IUh" id="NA9-VO-v6F"/>
-                        </connections>
-                    </collectionView>
-                    <navigationItem key="navigationItem" id="efI-c4-bST">
-                        <barButtonItem key="rightBarButtonItem" image="list" id="HyE-9E-BnR"/>
-                    </navigationItem>
-                    <nil key="simulatedBottomBarMetrics"/>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7z6-pw-d7d" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4665" y="-168"/>
-        </scene>
         <!--Photo-->
         <scene sceneID="WS7-Cm-WV7">
             <objects>
@@ -1244,45 +1128,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.94901960784313721" green="0.92549019607843142" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="3" minimumInteritemSpacing="3" id="UX6-me-li6">
-                            <size key="itemSize" width="100" height="100"/>
-                            <size key="headerReferenceSize" width="50" height="30"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="3" minimumInteritemSpacing="0.0" id="axt-aj-pS1">
+                            <size key="itemSize" width="75" height="75"/>
+                            <size key="headerReferenceSize" width="320" height="30"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="0.0"/>
+                            <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="5"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photoCell" id="KVd-w8-KKW" customClass="PhotoCollectionViewCell">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ivq-yZ-Jdu">
-                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
                                         </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <size key="customSize" width="100" height="100"/>
+                                <size key="customSize" width="75" height="75"/>
                                 <connections>
                                     <outlet property="cellImage" destination="ivq-yZ-Jdu" id="VwJ-3N-5HY"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
-                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="headerSecions" id="7fm-xo-cS4" customClass="HeaderCollectionReusableView">
-                            <rect key="frame" x="0.0" y="64" width="320" height="30"/>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="headerSecions" id="RcC-9P-Ws9" customClass="HeaderCollectionReusableView">
+                            <rect key="frame" x="0.0" y="64" width="320" height="50"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hkJ-dM-C7e">
-                                    <rect key="frame" x="8" y="4" width="42" height="21"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="689-cF-owW">
+                                    <rect key="frame" x="8" y="4" width="297" height="21"/>
                                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
-                                    <color key="textColor" red="0.69019607839999997" green="0.71372549019999998" blue="0.73333333329999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
                             <connections>
-                                <outlet property="header" destination="hkJ-dM-C7e" id="qGF-14-NNc"/>
+                                <outlet property="header" destination="689-cF-owW" id="16D-VR-kuh"/>
                             </connections>
                         </collectionReusableView>
                         <connections>
@@ -1317,12 +1201,181 @@
                     <connections>
                         <outlet property="photoSegmentControl" destination="BYe-jp-fiM" id="Gij-ht-nom"/>
                         <segue destination="QkE-Bh-wQx" kind="push" identifier="myPhotosSegue" id="e6H-lE-p2d"/>
-                        <segue destination="Xmg-Ql-IUh" kind="push" identifier="allPhotoDetailSegue" id="KnF-G9-1ed"/>
+                        <segue destination="TYE-gr-vbB" kind="push" identifier="allPhotoDetailSegue" id="O2o-jV-qaj"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2nZ-ii-N9C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4412" y="583"/>
+        </scene>
+        <!--Detail Photo Collection View Controller-->
+        <scene sceneID="eGr-9x-u60">
+            <objects>
+                <collectionViewController extendedLayoutIncludesOpaqueBars="YES" id="TYE-gr-vbB" customClass="detailPhotoCollectionViewController" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="zP6-eS-0ux">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <collectionViewLayout key="collectionViewLayout" id="u7n-uC-Xzu" customClass="detailPhotoUICollectionViewFlowLayout"/>
+                        <imageView key="backgroundView" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="JfR-gg-PML">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="detailPhotoCell" id="c7c-5q-1PC" customClass="detailPhotoCollectionViewCell">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="447"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PJx-Pg-oOD">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="447"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lUz-mc-nTJ">
+                                                    <rect key="frame" x="0.0" y="338" width="300" height="109"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nlK-19-e4X">
+                                                            <rect key="frame" x="8" y="44" width="32" height="32"/>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S3e-Wf-Tah">
+                                                            <rect key="frame" x="127" y="89" width="165" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOb-5O-wSa">
+                                                            <rect key="frame" x="48" y="47" width="244" height="45"/>
+                                                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="13"/>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w6Q-7J-42l">
+                                                            <rect key="frame" x="86" y="6" width="70" height="25"/>
+                                                            <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
+                                                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                            <state key="normal" title="Description">
+                                                                <color key="titleColor" red="0.83921568627450982" green="0.27058823529411763" blue="0.050980392156862744" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                        </button>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwe-hL-vjv">
+                                                            <rect key="frame" x="8" y="6" width="70" height="25"/>
+                                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
+                                                            <state key="normal" title="Comment">
+                                                                <color key="titleColor" red="0.83921568629999999" green="0.27058823529999998" blue="0.050980392159999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                        </button>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No Content Yet~" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKx-Tp-lk3">
+                                                            <rect key="frame" x="50" y="51" width="200" height="21"/>
+                                                            <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="14"/>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.96078431372549022" green="0.94117647058823528" blue="0.90980392156862744" alpha="1" colorSpace="calibratedRGB"/>
+                                                </view>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AVJ-Cm-cIj">
+                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="338"/>
+                                                </imageView>
+                                                <view alpha="0.59999999999999998" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="reF-XG-asA">
+                                                    <rect key="frame" x="0.0" y="288" width="300" height="50"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3lS-kV-sDg"/>
+                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ftn-Na-0Km">
+                                                            <rect key="frame" x="203" y="-17" width="97" height="84"/>
+                                                            <subviews>
+                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jMc-sZ-VaQ">
+                                                                    <rect key="frame" x="39" y="21" width="30" height="30"/>
+                                                                    <state key="normal" image="photoComments">
+                                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    </state>
+                                                                </button>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Comment" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qhX-gm-pvd">
+                                                                    <rect key="frame" x="20" y="46" width="57" height="21"/>
+                                                                    <fontDescription key="fontDescription" type="italicSystem" pointSize="10"/>
+                                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        </view>
+                                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0My-ew-B7s">
+                                                            <rect key="frame" x="139" y="5" width="30" height="30"/>
+                                                            <state key="normal" image="photoMap">
+                                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </state>
+                                                        </button>
+                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Skp-Jh-EDg">
+                                                            <rect key="frame" x="6" y="-12" width="82" height="82"/>
+                                                            <subviews>
+                                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uyt-p5-9nS">
+                                                                    <rect key="frame" x="23" y="16" width="30" height="30"/>
+                                                                    <state key="normal" image="photoLike">
+                                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    </state>
+                                                                </button>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Like" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uHT-1S-dga">
+                                                                    <rect key="frame" x="17" y="41" width="42" height="21"/>
+                                                                    <fontDescription key="fontDescription" type="italicSystem" pointSize="10"/>
+                                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        </view>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FMP-BZ-UJg">
+                                                            <rect key="frame" x="134" y="29" width="42" height="21"/>
+                                                            <fontDescription key="fontDescription" type="italicSystem" pointSize="10"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <size key="customSize" width="300" height="447"/>
+                                <connections>
+                                    <outlet property="cellWrap" destination="PJx-Pg-oOD" id="FZQ-fl-ni9"/>
+                                    <outlet property="commentButton" destination="jMc-sZ-VaQ" id="8fw-BF-NXM"/>
+                                    <outlet property="date" destination="S3e-Wf-Tah" id="BLU-dv-nIS"/>
+                                    <outlet property="emptyDescription" destination="bKx-Tp-lk3" id="RSx-h6-MZn"/>
+                                    <outlet property="functionArear" destination="reF-XG-asA" id="XXz-Ln-YYN"/>
+                                    <outlet property="imageDescription" destination="bOb-5O-wSa" id="YXt-2g-r2P"/>
+                                    <outlet property="innerImage" destination="AVJ-Cm-cIj" id="34S-aP-mgT"/>
+                                    <outlet property="like" destination="uyt-p5-9nS" id="5Ft-ze-B3x"/>
+                                    <outlet property="location" destination="0My-ew-B7s" id="Ttc-y9-6bM"/>
+                                    <outlet property="postUser" destination="nlK-19-e4X" id="k8n-aC-7it"/>
+                                    <outlet property="switchComment" destination="uwe-hL-vjv" id="fbQ-WR-F8r"/>
+                                    <outlet property="switchDescription" destination="w6Q-7J-42l" id="HgV-Eu-fj3"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="TYE-gr-vbB" id="h4f-83-Qpl"/>
+                            <outlet property="delegate" destination="TYE-gr-vbB" id="9Jd-gE-QMB"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="34f-6b-J0j">
+                        <nil key="title"/>
+                    </navigationItem>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="backImage" destination="JfR-gg-PML" id="iip-hZ-GNv"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nt7-uE-y36" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4705" y="-114"/>
         </scene>
         <!--My Photos View Controller-->
         <scene sceneID="qoL-Jf-sSO">
@@ -1335,6 +1388,84 @@
                     <view key="view" contentMode="scaleToFill" id="pi2-HO-Eb1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="197" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Dqj-Vk-vlQ">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                                <color key="backgroundColor" red="0.94901960780000005" green="0.92549019610000005" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.94901960780000005" green="0.92549019610000005" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="myPhotoCell" rowHeight="200" id="mBR-Zq-f6V" customClass="MyPhotoTableViewCell">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mBR-Zq-f6V" id="Gvm-jq-6jI">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OAc-4M-fHr">
+                                                    <rect key="frame" x="221" y="41" width="75" height="74"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uR8-9B-TgF">
+                                                    <rect key="frame" x="221" y="116" width="75" height="75"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H0t-Re-ALN">
+                                                    <rect key="frame" x="144" y="116" width="75" height="75"/>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cOk-HO-1Mp">
+                                                    <rect key="frame" x="250" y="12" width="46" height="30"/>
+                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
+                                                    <state key="normal" title="More">
+                                                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="timeLine" translatesAutoresizingMaskIntoConstraints="NO" id="txZ-cV-iAp">
+                                                    <rect key="frame" x="25" y="0.0" width="5" height="200"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Timeline_node" translatesAutoresizingMaskIntoConstraints="NO" id="rMQ-kR-vsJ">
+                                                    <rect key="frame" x="12" y="8" width="30" height="30"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="date" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nIU-WD-vEG">
+                                                    <rect key="frame" x="50" y="12" width="102" height="26"/>
+                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="13"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MBp-UK-83b">
+                                                    <rect key="frame" x="144" y="40" width="75" height="75"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="4 Photos" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cz0-0o-UBn">
+                                                    <rect key="frame" x="70" y="170" width="66" height="21"/>
+                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="11"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ciP-Tu-91W">
+                                                    <rect key="frame" x="50" y="67" width="86" height="95"/>
+                                                    <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="12"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.94901960780000005" green="0.92549019610000005" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.96078431369999995" green="0.94117647059999998" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <inset key="separatorInset" minX="50" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="displayMore" destination="cOk-HO-1Mp" id="oNV-Do-hpz"/>
+                                            <outlet property="imageDescrption" destination="ciP-Tu-91W" id="UTq-MO-ezG"/>
+                                            <outlet property="imageFour" destination="uR8-9B-TgF" id="uFw-4R-xOH"/>
+                                            <outlet property="imageOne" destination="MBp-UK-83b" id="xWI-pR-DuW"/>
+                                            <outlet property="imageThree" destination="H0t-Re-ALN" id="417-wS-fve"/>
+                                            <outlet property="imageTwo" destination="OAc-4M-fHr" id="rEe-3F-cs7"/>
+                                            <outlet property="numberPhotos" destination="Cz0-0o-UBn" id="159-Ie-REd"/>
+                                            <outlet property="time" destination="nIU-WD-vEG" id="aQU-7L-ELU"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="QkE-Bh-wQx" id="H7o-Nx-0fH"/>
+                                    <outlet property="delegate" destination="QkE-Bh-wQx" id="e2R-qW-aSJ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="0.94901960780000005" green="0.92549019610000005" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="lzV-cN-54W">
@@ -1355,17 +1486,22 @@
                                 <action selector="actionMyPhotoSegment:" destination="QkE-Bh-wQx" eventType="valueChanged" id="RDV-8c-MmH"/>
                             </connections>
                         </segmentedControl>
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="ayQ-jK-lAi"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="ayQ-jK-lAi">
+                            <connections>
+                                <action selector="search:" destination="QkE-Bh-wQx" id="OrD-a0-Tz4"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="myPhotoSegment" destination="e6c-JI-1u4" id="Y1r-AO-2Ml"/>
+                        <outlet property="tableView" destination="Dqj-Vk-vlQ" id="Ys1-vt-yHU"/>
                         <segue destination="vSo-wW-5A3" kind="push" identifier="SelectFamiliesAndUploadSegue" id="1u2-sa-IEi"/>
-                        <segue destination="Xmg-Ql-IUh" kind="push" identifier="myPhotoDetailSegue" id="Iff-88-cgf"/>
+                        <segue destination="TYE-gr-vbB" kind="push" identifier="myPhotoDetailSegue" id="Lav-oH-Abd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c9p-DF-SH5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4845" y="578.99999999999955"/>
+            <point key="canvasLocation" x="4876" y="578"/>
         </scene>
         <!--Send The Photos View Controller-->
         <scene sceneID="xKv-On-obq">
@@ -1381,7 +1517,8 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="6Y9-cJ-lQA">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.94901960780000005" green="0.92549019610000005" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.94901960780000005" green="0.92549019610000005" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="selectFamilyCell" textLabel="xvl-HB-f8F" style="IBUITableViewCellStyleDefault" id="mgk-69-S0o">
                                         <autoresizingMask key="autoresizingMask"/>
@@ -1606,7 +1743,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sAK-No-Mai" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2887" y="578.99999999999955"/>
+            <point key="canvasLocation" x="3188" y="597"/>
         </scene>
         <!--Perferences-->
         <scene sceneID="a6H-y6-Q1T">
@@ -1730,7 +1867,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9at-ZX-tHJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3854" y="952"/>
+            <point key="canvasLocation" x="3888" y="1232"/>
         </scene>
         <!--Personal Info Setting Modify Table View Controller-->
         <scene sceneID="LHd-Iv-13d">
@@ -2059,9 +2196,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Timeline_node" width="50" height="50"/>
+        <image name="addFamily" width="32" height="32"/>
         <image name="age" width="25" height="25"/>
         <image name="arrow" width="64" height="64"/>
-        <image name="backgound" width="320" height="480"/>
+        <image name="bagage" width="20" height="20"/>
         <image name="bubble" width="461" height="280"/>
         <image name="bubble_arrow" width="19" height="52"/>
         <image name="chats" width="32" height="32"/>
@@ -2071,16 +2210,18 @@
         <image name="family_tab" width="32" height="32"/>
         <image name="fullscreen_map" width="25" height="25"/>
         <image name="gender" width="25" height="25"/>
-        <image name="like" width="32" height="32"/>
-        <image name="list" width="25" height="25"/>
         <image name="more" width="32" height="32"/>
         <image name="name" width="25" height="25"/>
         <image name="password" width="25" height="25"/>
         <image name="phone" width="25" height="25"/>
-        <image name="photos" width="32" height="32"/>
+        <image name="photoComments" width="32" height="32"/>
+        <image name="photoLike" width="32" height="32"/>
+        <image name="photoMap" width="32" height="32"/>
+        <image name="photos" width="32" height="29"/>
         <image name="searchUser" width="32" height="32"/>
         <image name="settings" width="32" height="32"/>
         <image name="success" width="112" height="119"/>
+        <image name="timeLine" width="10" height="200"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -2088,7 +2229,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="KZX-j9-dwi"/>
-        <segue reference="Iff-88-cgf"/>
+        <segue reference="Ois-D3-gam"/>
+        <segue reference="Lav-oH-Abd"/>
     </inferredMetricsTieBreakers>
 </document>

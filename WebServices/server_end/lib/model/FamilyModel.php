@@ -94,11 +94,7 @@ class Family extends DataBaseCRUDModel{
             $getFamilyDetail=array();
         }
 
-
          return json_encode(array('type'=>"fetchAll",'success'=>'true','families'=>$getFamilyDetail));
-
-
-
 
     }
 
@@ -116,7 +112,27 @@ class Family extends DataBaseCRUDModel{
 
 
 
-    private function getFamiliesDetailsOnly($familiesIds){
+
+    public function getFamilyInformation($familyId){
+
+        $this->statement = 'SELECT family_id,family_name,family_date,family_desc,user_id FROM iafamily_group WHERE family_id=?';
+        $this->bindType = array('i');
+        $this->bindName = array($familyId);
+        $this->selectSQL();
+        $final = array_reduce($this->selectedFetchResult, function($_, $inner){
+            return $_ = array_merge((array)$_, $inner);
+        });
+        return $final;
+
+
+    }
+
+
+
+
+
+
+    private  function getFamiliesDetailsOnly($familiesIds){
         //fetch detail only
         $detailArray=array();
 
@@ -132,7 +148,6 @@ class Family extends DataBaseCRUDModel{
                 array_push($detailArray,$final);
 
         }
-
         //read through all family id and find each member users' detail
 
 
@@ -155,10 +170,6 @@ class Family extends DataBaseCRUDModel{
 
 
         return $detailArray;
-
-
-
-
     }
 
 

@@ -32,26 +32,52 @@
 
     [super viewWillAppear:animated];
 
-    //create the full screen image
+    //create the full screen video
     
-    UIImageView* fullImageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
     
-    [fullImageView  setImage:[UIImage imageNamed:@"background"]];
-    //add the blur effect on image
+    
+    UIImageView* uiimageView = [[UIImageView alloc] initWithFrame:self.view.frame];
+    [uiimageView setContentMode:UIViewContentModeScaleAspectFit];
+    [uiimageView setImage:[UIImage imageNamed:@"welcome"]];
+    
+
     UIVisualEffect *blurEffect;
-    blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+   blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
     
     UIVisualEffectView *visualEffectView;
     visualEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
     
+    //UIView* coverView = [[UIView alloc] initWithFrame:uiimageView.frame];
+    //coverView.backgroundColor = Rgb2UIColor(0, 0, 0, 0.65);
     
-    visualEffectView.frame = fullImageView.bounds;
+    visualEffectView.frame = self.view.bounds;
     
-    [fullImageView addSubview:visualEffectView];
+    [uiimageView addSubview:visualEffectView];
+    
+    [self.view addSubview:uiimageView];
+    
+    [self.view addSubview:self.controllerDisplayView];
 
-    [self.view addSubview:fullImageView];
-    [self.view sendSubviewToBack:fullImageView];
+    
+    
+    
+    
+    self.signInBt.layer.cornerRadius = self.signInBt.bounds.size.width/2.0;
+    self.signInBt.layer.borderWidth = 1.0;
+    self.signInBt.layer.borderColor = self.signInBt.titleLabel.textColor.CGColor;
+    
+    self.SignUpBt.layer.cornerRadius = self.SignUpBt.bounds.size.width/2.0;
+    self.SignUpBt.layer.borderWidth = 1.0;
+    self.SignUpBt.layer.borderColor = self.SignUpBt.titleLabel.textColor.CGColor;
+    
+    
+    
+    
 }
+
+
+
+
 
 
 - (void)viewDidLoad {
@@ -63,6 +89,16 @@
 }
 
 
+-(void) viewDidAppear:(BOOL)animated{
+
+    [super viewDidAppear:animated];
+}
+
+- (void)playerItemDidReachEnd:(NSNotification *)notification {
+    AVPlayerItem *p = [notification object];
+    [p seekToTime:kCMTimeZero];
+}
+
 
 
 
@@ -70,10 +106,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
-
-
 
 
 
@@ -140,7 +172,8 @@
 
 
 -(IBAction)login{
-
+    
+    
     if([self inputCheck]){
         
         [self authorization:self.emailTextView.text: [Security md5Hash:self.passwordTextView.text]];

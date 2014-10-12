@@ -16,7 +16,7 @@
 
 +(UIImage *)squareImageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize;
 
-+(void) tableImageAsyncDownload: (NSString*) url : (UIImageView*) uiImageView;
++(void) tableImageAsyncDownload: (NSString*) url : (UIImageView*) uiImageView : (BOOL)isComment;
 
 +(UIMotionEffectGroup*)enableParralxEffect;
 
@@ -24,7 +24,7 @@
 
 +(void) fadeOutAnimation:(UIView*)object :(float)value;
 
-+(void) collectionImageAsynDownload:(NSString*)url : (UIImageView*)uiImageView : (NSString*) placeHolderName;
++(void) collectionImageAsynDownload:(NSString*)url : (UIImageView*)uiImageView : (NSString*) placeHolderName :(BOOL) animated;
 
 + (UIImage *)fixOrientation:(UIImage *)aImage;
 

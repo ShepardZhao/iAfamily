@@ -12,12 +12,11 @@
 #import <QuartzCore/QuartzCore.h>
 #import "HMSideMenu.h"
 
-
 @interface AllPhotosCollectionViewController : UICollectionViewController<MBProgressHUDDelegate,UITextFieldDelegate>
 @property (nonatomic,strong) NSMutableArray* iamgeItemsContainer;
 @property (nonatomic,strong) NSMutableArray* passedImageItemsSets;
 
-@property (nonatomic, assign) BOOL menuIsVisible;
 @property (nonatomic, strong) HMSideMenu *sideMenu;
+@property BOOL sectionStatus;
 
 @end

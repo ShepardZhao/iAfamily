@@ -10,6 +10,8 @@
 #import "NsUserDefaultModel.h"
 #import "SSKeychain.h"
 #import "WelcomeViewController.h"
+#import <Parse/Parse.h>
+#import "ParsePushModel.h"
 @interface AppDelegate ()
 
 @end
@@ -39,8 +41,8 @@
         
     */
     
-    
-    
+    //register notification
+    [self startParsePush:application];
     
     
     // here to check the login status, if the user name and password are stored on the keychain then $this will head to main page, otherwise, then login page.
@@ -56,6 +58,7 @@
     }
 
     
+  
 
     return YES;
  
@@ -63,6 +66,51 @@
     
     
 }
+
+
+
+
+-(void)startParsePush:(UIApplication *)application{
+
+    [Parse setApplicationId:@"GltiCBxlAhcd2tgoN2WQV5iIeNboAz36b3mPeoOF"
+                  clientKey:@"9Ea0cM0qGkEIjsNLPtQqVWynyOV6NcUELZMCUNAO"];
+
+
+    
+    // Register for Push Notitications, if running iOS 8
+    if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+        UIUserNotificationType userNotificationTypes = (UIUserNotificationTypeAlert |
+                                                        UIUserNotificationTypeBadge |
+                                                        UIUserNotificationTypeSound);
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:userNotificationTypes
+                                                                                 categories:nil];
+        [application registerUserNotificationSettings:settings];
+        [application registerForRemoteNotifications];
+    } else {
+        // Register for Push Notifications before iOS 8
+        [application registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge |
+                                                         UIRemoteNotificationTypeAlert |
+                                                         UIRemoteNotificationTypeSound)];
+    }
+    
+    
+
+}
+
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    // Store the deviceToken in the current installation and save it to Parse.
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation setDeviceTokenFromData:deviceToken];
+    [currentInstallation saveInBackground];
+
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    NSLog(@"%@",userInfo);
+    [PFPush handlePush:userInfo];
+}
+
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -84,7 +132,11 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 
-    
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    if (currentInstallation.badge != 0) {
+        currentInstallation.badge = 0;
+        [currentInstallation saveEventually];
+    }
     
 }
 
@@ -96,7 +148,7 @@
 //navigation setting
 -(void) navigationSetting{
     //set nav backgound
-    [[UINavigationBar appearance] setBarTintColor:Rgb2UIColor(40, 177, 234,0.7)];
+    [[UINavigationBar appearance] setBarTintColor:Rgb2UIColor(40, 177, 234,1.0)];
     
     [[UINavigationBar appearance] setShadowImage:[UIImage new]];
     
@@ -107,7 +159,7 @@
     [[UINavigationBar appearance] setTitleTextAttributes:
      [NSDictionary dictionaryWithObjectsAndKeys:
       [UIColor whiteColor], NSForegroundColorAttributeName,
-      [UIFont fontWithName:@"Lato-Light" size:21.0], NSFontAttributeName,nil]];
+      [UIFont fontWithName:@"Lato-Regular" size:21.0], NSFontAttributeName,nil]];
     
     
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
@@ -119,9 +171,8 @@ setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor],
 forState:UIControlStateNormal];
     
     
-    
     [[UITabBar appearance] setTintColor:Rgb2UIColor(52, 152, 219,1.0)];
-    [[UITabBar appearance] setBarTintColor:Rgb2UIColor(255,255,255,0.7)];
+    [[UITabBar appearance] setBarTintColor:Rgb2UIColor(255,255,255,0.5)];
     [[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIFont fontWithName:@"Lato-Light" size:13.0f], NSFontAttributeName, nil] forState:UIControlStateNormal];
 
 

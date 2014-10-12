@@ -18,4 +18,5 @@
 +(NSString*) getContenntFromLog:(NSString*)logName;
 
 +(void) clearLogContent:(NSString*)logName;
++(NSString*)getCurrentCommentDate;
 @end

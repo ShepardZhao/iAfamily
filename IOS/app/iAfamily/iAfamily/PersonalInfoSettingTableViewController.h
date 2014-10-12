@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "QBImagePickerController.h"
 #import "SimpleCam.h"
+#import "ActionSheetUIView.h"
+
 @interface PersonalInfoSettingTableViewController : UITableViewController<QBImagePickerControllerDelegate,SimpleCamDelegate>
 @property (strong,nonatomic) NSDictionary* detailPersonalDictionary;
+@property (nonatomic,strong) ActionSheetUIView* actionSheet;
+
 @end

@@ -35,11 +35,17 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
             echo json_encode(array('requestType'=>'fetchAllMessagesDetail','success'=>'false'));
 
         }
+    }
+    else if($_POST['requestType']==='fetchDetailOfInvitaitionMessages'){
+        if(!empty($_POST['requestUserID'])){
+            $messageFetch->detailInvitationRequesting($_POST['requestUserID']);
+            echo json_encode(array('requestType'=>'fetchDetailOfInvitaitionMessages','success'=>'true','messageDetails'=>$messageFetch->getAllDetaillOfMessages()));
+        }
+        else{
+            echo json_encode(array('requestType'=>'fetchDetailOfInvitaitionMessages','success'=>'false'));
 
+        }
 
 
     }
-
-
-
 }

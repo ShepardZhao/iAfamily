@@ -10,6 +10,7 @@
 #import "ServerEnd.h"
 #import "NsUserDefaultModel.h"
 #import "PopModal.h"
+#import "ParsePushModel.h"
 #import "AnimationAndUIAndImage.h"
 @interface FamilyUserSearchViewController (){
     UIImageView *navBarHairlineImageView;
@@ -93,7 +94,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"searchCell" forIndexPath:indexPath];
     //set the deatil for the each cell - the cell has 2 lines for maxium displaying the infomation
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    [AnimationAndUIAndImage tableImageAsyncDownload:self.usersResults[indexPath.row][@"user_avatar"] :cell.imageView];
+    [AnimationAndUIAndImage tableImageAsyncDownload:self.usersResults[indexPath.row][@"user_avatar"] :cell.imageView:NO];
     cell.detailTextLabel.numberOfLines=3;
     cell.detailTextLabel.lineBreakMode = NSLineBreakByWordWrapping;
     
@@ -128,18 +129,27 @@
         HUD.delegate = self;
         //here to send the request invited user
         [ServerEnd fetchJson:[ServerEnd setBaseUrl:@"messageInvitationRestful.php"] :@{@"requestType":@"message",@"sender":self.familyID,@"senderName":self.familyTitle,@"receiver":[NSString stringWithFormat:@"%i",tagID],@"invitator":[NsUserDefaultModel getUserDictionaryFromSession][@"user_name"],@"invitatorHeadImageUrl":[NsUserDefaultModel getUserDictionaryFromSession][@"user_avatar"]} onCompletion:^(NSDictionary *dictionary) {
-            NSLog(@"%@",dictionary);
 
             if ([dictionary[@"success"] isEqualToString:@"true"]) {
                 //here's to refresh the table
                 HUD.labelText = @"Done";
-                double delayInSeconds = 2.0;
                 
-                dispatch_time_t popTimes = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
+                dispatch_time_t popTimes = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC));
                 
                 dispatch_after(popTimes, dispatch_get_main_queue(), ^(void){
                     [MBProgressHUD hideHUDForView:self.view animated:YES];
+                    //return to preivouse view
+                    [self.navigationController popToRootViewControllerAnimated:YES];
                 });
+                
+                
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    //here to send the push notification to the user who is invited
+                    [ParsePushModel sendUserInvitationPushNotification:[NSString stringWithFormat:@"%i",tagID] :[NsUserDefaultModel getUserDictionaryFromSession][@"user_name"]];
+                    
+                    
+                });
+                
                 
                 
             }
@@ -154,16 +164,10 @@
                     [PopModal showAlertMessage:@"You cannot repeatedly invite same person" :@"Warning" :@"Got it" :SIAlertViewButtonTypeCancel];
                     
                 });
-                
-                
-                
+            
             }
-            
-            
-            
+        
         }];
-        
-        
         
     }
     
@@ -204,8 +208,6 @@
 
 
 
-
-
 /**
  **request package
  **/
@@ -223,7 +225,7 @@
             //get family data
             
             self.usersResults = dictionary[@"searchResult"];
-            
+            [[self view] endEditing:YES];
             
             //here's to refresh the table
             

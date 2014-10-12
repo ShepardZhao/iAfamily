@@ -11,7 +11,7 @@ include_once $_SERVER["DOCUMENT_ROOT"].'/lib/controller/FamilyController.php';
 header("Content-Type: application/json");
 
 if($_SERVER['REQUEST_METHOD']==='POST'){
-
+   $gps = json_decode($_POST['gpsArray']);
 
 
     //get images from files
@@ -23,6 +23,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
 
             //set the default image uploaded path
         $imageUpload -> setDestination($_SERVER["DOCUMENT_ROOT"].$userImageRootPath);
+        $index=0;
         foreach($_FILES as $key=>$content){
             //set image time
             $imageUpload -> setImageID($key);
@@ -38,7 +39,6 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
             $imageUpload -> setType($content["type"]);
             //get image name
             //resize image
-            $imageUpload -> upload($content['tmp_name']); //copy full size photo to user folder
 
 
             //here to doing the database operation
@@ -46,26 +46,24 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
             //2.secondly, insert the record to iafamily_detail
 
             //prepare gps
-            $gps = $imageUpload->readGPSinfoEXIF();
+            //$gps = $imageUpload->readGPSinfoEXIF();
             //if the gps existed
-            if($gps){
-                $result = $imageUpload->insertImageBasicInformation($gps[0],$gps[1],$_POST['photoDescription']);
-            }else{
-                $result = $imageUpload->insertImageBasicInformation('null','null',$_POST['photoDescription']);
-            }
+            $result = $imageUpload->insertImageBasicInformation($gps[$index][0],$gps[$index][1],$_POST['photoDescription']);
+
 
 
             //insert the image and resize image to image_detail
 
             //resize to half size, and thumb size
             if($result){
-                $imageUpload -> resize($imageUpload->getDestination().$imageUpload->getfilename().'.jpeg',100,100,'_icon'); //for thumb
-                $imageUpload -> resize($imageUpload->getDestination().$imageUpload->getfilename().'.jpeg',320,200,'_half'); //for slide
+                $imageUpload -> resize($content['tmp_name'],300,300,'_icon'); //for thumb
+                $imageUpload -> resize($content['tmp_name'],600,676,'_half'); //for slide
+                $imageUpload -> upload($content['tmp_name']); //copy full size photo to user folder
                 $imageUpload -> insertIntoImageDetail($userImageRootPath.$imageUpload->getfilename().'.jpeg',$userImageRootPath.'_icon'.$imageUpload->getfilename().'.jpeg',$userImageRootPath.'_half'.$imageUpload->getfilename().'.jpeg');
                 array_push($storeImageIdAndPath,array('image_id'=>array($userImageRootPath.$imageUpload->getfilename().'.jpeg',$userImageRootPath.'_icon'.$imageUpload->getfilename().'.jpeg',$userImageRootPath.'_half'.$imageUpload->getfilename().'.jpeg')));
             }
 
-
+            $index++;
         }
 
 

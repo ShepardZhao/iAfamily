@@ -20,6 +20,48 @@
 
 @implementation MessageViewController
 
+
+
+
+
+
+
+- (IBAction)doMessageSwitch:(id)sender {
+    if (self.messageSegment.selectedSegmentIndex==0) {
+     //normal message
+        //if the message cache existed
+        if (![NsUserDefaultModel getCurrentData:Message_photo]) {
+            [self getMessageRequest:@"fetchDetailOfMessages"];
+            [self.tableView reloadData];
+        }
+        else{
+            self.detailMessageArray = [NsUserDefaultModel getCurrentData:Message_photo];
+            [self.tableView reloadData];
+
+        }
+        
+        NSLog(@"%@",self.detailMessageArray);
+        
+        
+    }
+    else if(self.messageSegment.selectedSegmentIndex ==1){
+    //invitation message
+        if (![NsUserDefaultModel getCurrentData:Message_invitation]) {
+            [self getMessageRequest:@"fetchDetailOfInvitaitionMessages"];
+             [self.tableView reloadData];
+        }
+        else{
+            self.detailMessageArray = [NsUserDefaultModel getCurrentData:Message_invitation];
+             [self.tableView reloadData];
+            
+        }
+
+    }
+    
+}
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -31,9 +73,10 @@
     ODRefreshControl *refreshControl = [[ODRefreshControl alloc] initInScrollView:self.tableView];
     [refreshControl addTarget:self action:@selector(dropViewDidBeginRefreshing:) forControlEvents:UIControlEventValueChanged];
     
-    
+   
     
 }
+
 
 
 
@@ -43,7 +86,15 @@
     double delayInSeconds = 3.0;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        [self getMessageRequest];
+        if (self.messageSegment.selectedSegmentIndex==0) {
+            [self getMessageRequest:@"fetchDetailOfMessages"];
+
+        }
+        else if(self.messageSegment.selectedSegmentIndex==1){
+            [self getMessageRequest:@"fetchDetailOfInvitaitionMessages"];
+
+        }
+        
         
         [refreshControl endRefreshing];
         
@@ -73,15 +124,29 @@
 
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
-    
-    //if the message cache existed
-    if (![NsUserDefaultModel getCurrentData:Message_photo]) {
-        [self getMessageRequest];
-    }
-    else{
-        self.detailMessageArray = [NsUserDefaultModel getCurrentData:Message_photo];
+    if (self.messageSegment.selectedSegmentIndex==0) {
+        //if the message cache existed
+        if (![NsUserDefaultModel getCurrentData:Message_photo]) {
+            [self getMessageRequest:@"fetchDetailOfMessages"];
+        }
+        else{
+            self.detailMessageArray = [NsUserDefaultModel getCurrentData:Message_photo];
+            
+        }
 
     }
+    else if(self.messageSegment.selectedSegmentIndex==1){
+        //if the message cache existed
+        if (![NsUserDefaultModel getCurrentData:Message_invitation]) {
+            [self getMessageRequest:@"fetchDetailOfInvitaitionMessages"];
+        }
+        else{
+            self.detailMessageArray = [NsUserDefaultModel getCurrentData:Message_invitation];
+            
+        }
+    
+    }
+   
     
     
 
@@ -93,16 +158,22 @@
  **get detail message for current user
  **/
 
--(void)getMessageRequest{
+-(void)getMessageRequest:(NSString*)messageType{
     MBProgressHUD *HUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     HUD.labelText = @"loading...";
     HUD.delegate = self;
     
-    [ServerEnd fetchJson:[ServerEnd setBaseUrl:@"messageFetchRestful.php"] :@{@"requestType":@"fetchDetailOfMessages",@"requestUserID":[NsUserDefaultModel getUserIDFromCurrentSession]} onCompletion:^(NSDictionary *dictionary){
+    [ServerEnd fetchJson:[ServerEnd setBaseUrl:@"messageFetchRestful.php"] :@{@"requestType":messageType,@"requestUserID":[NsUserDefaultModel getUserIDFromCurrentSession]} onCompletion:^(NSDictionary *dictionary){
         if ([dictionary[@"success"] isEqualToString:@"true"]) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                //set the message into the NsUserDefault
-                [NsUserDefaultModel setUserDefault:dictionary[@"messageDetails"] :Message_photo];
+                if (self.messageSegment.selectedSegmentIndex==0) {
+                    //set the message into the NsUserDefault
+                    [NsUserDefaultModel setUserDefault:dictionary[@"messageDetails"] :Message_photo];
+                }
+                else if(self.messageSegment.selectedSegmentIndex==1){
+                    [NsUserDefaultModel setUserDefault:dictionary[@"fetchDetailOfInvitaitionMessages"] :Message_invitation];
+                }
+                
                 
                 self.detailMessageArray = dictionary[@"messageDetails"];
 
@@ -125,9 +196,6 @@
         
         }
         
-        
-    
-    
     }];
 
 
@@ -181,30 +249,31 @@
 (NSIndexPath *)indexPath {
     
     MessageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"messageCell" forIndexPath:indexPath];
+    
+    if (self.messageSegment.selectedSegmentIndex==0) {
+    
     //set the deatil for the each cell - the cell has 2 lines for maxium displaying the infomation
     //if current fetch is including photo
   
         //set the header image
-    [AnimationAndUIAndImage tableImageAsyncDownload:self.detailMessageArray[indexPath.row][@"senderUrl"] : cell.headerImage];
+        [AnimationAndUIAndImage tableImageAsyncDownload:self.detailMessageArray[indexPath.row][@"senderUrl"] : cell.headerImage:NO];
     
     
     //set name -- who has latest action
-     cell.titel.text = [NSString stringWithFormat:@"%@",self.detailMessageArray[indexPath.row][@"senderName"]];
+     cell.title.text = [NSString stringWithFormat:@"%@",self.detailMessageArray[indexPath.row][@"senderName"]];
     
     
     
     //set sub title - latest time
     cell.subTitle.text = [NSString stringWithFormat:@"%@",self.detailMessageArray[indexPath.row][@"content"][0][@"create_date"]];
     
-    cell.numberOfImage.text =[NSString stringWithFormat:@"%lu",[self.detailMessageArray[indexPath.row][@"content"][0][@"message_content"] count]];
-    
+    cell.numberOfMessage.titleLabel.text =[NSString stringWithFormat:@"%lu",(unsigned long)[self.detailMessageArray[indexPath.row][@"content"][0][@"message_content"] count]];
+     
     
     
     //set the latest image 1
-    [AnimationAndUIAndImage collectionImageAsynDownload:[NSString stringWithFormat:@"%@",self.detailMessageArray[indexPath.row][@"content"][0][@"message_content"][0][@"image_id"][1]]:cell.latestImage_One:@"photoPlaceHolder_thumb"];
-    
-    
-    
+    [AnimationAndUIAndImage collectionImageAsynDownload:[NSString stringWithFormat:@"%@",self.detailMessageArray[indexPath.row][@"content"][0][@"message_content"][0][@"image_id"][1]]:cell.latestImage_One:@"photoPlaceHolder_thumb":YES];
+
     
     /*
     if ([self.detailMessageArray[indexPath.row][@"message_type"] isEqualToString:@"photo"]) {
@@ -226,7 +295,16 @@
             
     }
     */
-  
+        
+    }
+    else if(self.messageSegment.selectedSegmentIndex==1){
+        
+        [AnimationAndUIAndImage tableImageAsyncDownload:self.detailMessageArray[indexPath.row][@"message_content"][@"invitator_image_url"]:cell.headerImage:NO];
+        
+        cell.title.text = self.detailMessageArray[indexPath.row][@"message_content"][@"senderName"];
+        cell.subTitle.text = [NSString stringWithFormat:@"%@%@", self.detailMessageArray[indexPath.row][@"message_content"][@"invitator"],self.detailMessageArray[indexPath.row][@"message_content"][@"message"]];
+    }
+      
     return cell;
     
 }
@@ -240,7 +318,14 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    [self performSegueWithIdentifier:@"messagePhotoSegue" sender:self];
+    if (self.messageSegment.selectedSegmentIndex==0) {
+        [self performSegueWithIdentifier:@"messagePhotoSegue" sender:self];
+
+    }
+    else if(self.messageSegment.selectedSegmentIndex==1){
+        [self performSegueWithIdentifier:@"viewInvitationMessageSegue" sender:self];
+
+    }
 
     
 }

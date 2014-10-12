@@ -11,7 +11,6 @@
 #import "PopModal.h"
 #import "Security.h"
 #import "ServerEnd.h"
-#import "AHKActionSheet.h"
 #import "NsUserDefaultModel.h"
 #import "AnimationAndUIAndImage.h"
 @interface SignUpViewController ()
@@ -127,6 +126,20 @@
      [self.ageTextView setValue:Rgb2UIColor(255,255,255,1.0) forKeyPath:@"_placeholderLabel.textColor"];
      [self.phoneTextView setValue:Rgb2UIColor(255,255,255,1.0) forKeyPath:@"_placeholderLabel.textColor"];
      [self.genderTextView setValue:Rgb2UIColor(255,255,255,1.0) forKeyPath:@"_placeholderLabel.textColor"];
+    
+    
+    
+    
+    
+    
+    self.nextBtn.layer.cornerRadius = self.nextBtn.bounds.size.width/2.0;
+    self.nextBtn.layer.borderWidth = 1.0;
+    self.nextBtn.layer.borderColor = self.nextBtn.titleLabel.textColor.CGColor;
+    
+    
+    self.loginBtn.layer.cornerRadius = self.loginBtn.bounds.size.width/2.0;
+    self.loginBtn.layer.borderWidth = 1.0;
+    self.loginBtn.layer.borderColor = self.loginBtn.titleLabel.textColor.CGColor;
     
     
 }

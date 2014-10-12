@@ -116,6 +116,13 @@
 
 
 -(void) showLatestMemberPosition{
+    
+    
+   
+    if (self.singleMemberDetail[@"latest_latitude"] !=[NSNull null]&& self.singleMemberDetail[@"latest_longitude"]!=[NSNull null]) {
+    
+        
+    
     MKCoordinateSpan span = MKCoordinateSpanMake(0.0001f, 0.0001f);
     CLLocationCoordinate2D coordinate = {[self.singleMemberDetail[@"latest_latitude"] doubleValue],[self.singleMemberDetail[@"latest_longitude"] doubleValue]};
     MKCoordinateRegion region = {coordinate, span};
@@ -133,12 +140,13 @@
     [self.mapview setRegion:region animated:YES];
     [self.mapview setCenterCoordinate:coordinate animated:YES];
 
-
+        
+    }
 }
 -(void)initalUI{
     //user profile
     self.memberProfile = [[UIImageView alloc] initWithFrame:CGRectMake(10, 100, 64, 64)];
-    [AnimationAndUIAndImage tableImageAsyncDownload:self.singleMemberDetail[@"user_avatar"] : self.memberProfile];
+    [AnimationAndUIAndImage tableImageAsyncDownload:self.singleMemberDetail[@"user_avatar"] : self.memberProfile:NO];
     [self.tableView addSubview:self.memberProfile];
     [[UIApplication sharedApplication].keyWindow bringSubviewToFront:self.memberProfile];
 
@@ -188,6 +196,9 @@
         
         cell.textLabel.text=nil;
 
+        if (self.singleMemberDetail[@"latest_latitude"] !=[NSNull null]&& self.singleMemberDetail[@"latest_longitude"]!=[NSNull null]) {
+        
+        
         self.selectedLocation =
         [[CLLocation alloc] initWithLatitude:[self.singleMemberDetail[@"latest_latitude"] doubleValue] longitude:[self.singleMemberDetail[@"latest_longitude"] doubleValue]];
         
@@ -224,7 +235,7 @@
         }];
         
         
-    
+        }
     }
     
   
@@ -353,10 +364,6 @@
     
     
 }
-
-
-
-
 
 
 

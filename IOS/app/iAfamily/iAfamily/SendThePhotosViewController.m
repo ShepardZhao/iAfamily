@@ -71,7 +71,6 @@
 
 
 
-
 -(void)descriptionViewAnimationClose{
 
     [UIView animateWithDuration:1.0f
@@ -88,7 +87,17 @@
 
 
 
+-(void) viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    
+    
+    MyPhotosViewController *myController = (MyPhotosViewController *)[self.navigationController.viewControllers objectAtIndex:0];
+    
+   [myController getDefaultMyPhoto];
 
+    
+
+}
 
 
 -(void) viewDidAppear:(BOOL)animated{
@@ -107,7 +116,11 @@
 }
 
 - (IBAction)doUploadingAction:(id)sender {
-    [self photoUpload];
+    
+            [self photoUpload];
+
+    
+    
 }
 
 
@@ -139,7 +152,7 @@
     [vibrancyEffectView setFrame:self.view.bounds];
     
        //set the UIText
-    self.descriptContent = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, 200, 30)];
+    self.descriptContent = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, 300, 30)];
     [self.descriptContent setTextColor:[UIColor whiteColor]];
     self.descriptContent.center = self.view.center;
     [self.descriptContent setFont:[UIFont fontWithName:@"Lato-Light" size:16]];
@@ -272,10 +285,10 @@
     
     NSMutableArray* familyDicitionary = [[NSMutableArray alloc] init];
     familyDicitionary= [NsUserDefaultModel getCurrentData:FamilyGroup];
-    
+    cell.textLabel.font=[UIFont fontWithName:@"Lato-Light" size:16];
+
     //set the title for each cell
     cell.textLabel.text=familyDicitionary[indexPath.row][@"family_name"];
-    
     
     
     //prepare the detail information for each cell
@@ -339,6 +352,9 @@
  **/
 -(void) photoUpload{
 
+    //set the upload button to cancle
+    
+    [self.uploadPhotos setEnabled:NO];
     self.navigationItem.hidesBackButton = YES;
     NSString *getCompleteURL = [[NSString alloc] initWithFormat:@"%@photoUplaodingRestful.php",DefaultURL];
     
@@ -346,11 +362,17 @@
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
       
         
-        [ServerEnd getImageUploadResult:self:self.selectedImages:@{@"userId":[NsUserDefaultModel getUserIDFromCurrentSession],@"familiesIDs":self.selectFamilyGroupIds,@"photoDescription":self.descriptions}:getCompleteURL onCompletion:^(NSDictionary *dictionary) {
+        [ServerEnd getImageUploadResult:self:self.selectedImages:@{@"gpsArray":[NSJSONSerialization dataWithJSONObject:self.gpsArray options:0 error:NULL],@"userId":[NsUserDefaultModel getUserIDFromCurrentSession],@"familiesIDs":self.selectFamilyGroupIds,@"photoDescription":self.descriptions}:getCompleteURL onCompletion:^(NSDictionary *dictionary) {
             self.navigationItem.hidesBackButton = NO;
-            NSLog(@"%@",dictionary);
             if ([dictionary[@"success"] isEqualToString:@"true"]) {
+                [self.uploadPhotos setEnabled:YES];
+
+
+                
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    
+                    
+                    //dismissed the view
                     [self.navigationController popToRootViewControllerAnimated:YES];
                 });
                 
@@ -360,12 +382,7 @@
         }];
         
     });
-
-
-
 }
-
-
 
 
 /**

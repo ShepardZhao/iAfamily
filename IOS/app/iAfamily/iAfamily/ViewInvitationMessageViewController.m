@@ -10,7 +10,9 @@
 #import "ServerEnd.h"
 #import "AnimationAndUIAndImage.h"
 
-@interface ViewInvitationMessageViewController ()
+@interface ViewInvitationMessageViewController (){
+    UIImageView *navBarHairlineImageView;
+}
 @property (weak, nonatomic) IBOutlet UITextView *detail;
 @property (weak, nonatomic) IBOutlet UIImageView *inviterImage;
 
@@ -28,6 +30,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    navBarHairlineImageView = [AnimationAndUIAndImage findHairlineImageViewUnder:self.navigationController.navigationBar];
+
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,8 +50,22 @@
     NSString* str = [NSString stringWithFormat:@"%@%@%@",self.messageDicitonary[@"message_content"][@"invitator"],self.messageDicitonary[@"message_content"][@"message"],self.messageDicitonary[@"message_content"][@"senderName"]];
     self.detail.text = str;
     
-    [AnimationAndUIAndImage tableImageAsyncDownload:self.messageDicitonary[@"message_content"][@"invitator_image_url"] : self.inviterImage];
+    [AnimationAndUIAndImage tableImageAsyncDownload:self.messageDicitonary[@"message_content"][@"invitator_image_url"] : self.inviterImage:NO];
+
+    navBarHairlineImageView.hidden = YES;
+
+
 }
+
+
+
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    navBarHairlineImageView.hidden = NO;
+}
+
+
 
 
 /**

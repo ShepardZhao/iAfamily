@@ -12,9 +12,7 @@
 #import "ODRefreshControl.h"
 #import "NsUserDefaultModel.h"
 #import "detailPhotoCollectionViewController.h"
-
 #import "HeaderCollectionReusableView.h"
-
 
 @interface AllPhotosCollectionViewController (){
     UIImageView *navBarHairlineImageView;
@@ -36,6 +34,14 @@
     //set default uiviewcollection header display
     BOOL headerDisplayInitial;
     
+    
+    //click status
+    BOOL clicked;
+    
+    
+    //passed title name
+    
+    NSString* passedTitleName;
     
 }
 
@@ -63,13 +69,19 @@
                           delay:0.f
                         options:UIViewAnimationOptionCurveLinear
                      animations:^{
-                         visualEffectView.layer.opacity=.0f;
+                         visualEffectView.frame =CGRectMake(0, 0, 320, 40);
+
+                         
                      }
                      completion:^(BOOL finished){
-                         [visualEffectView removeFromSuperview];
+                         //[visualEffectView removeFromSuperview];
                          sortStatus= NO;
                          
                      }];
+    
+    
+    
+    
     
 }
 
@@ -82,19 +94,20 @@
 
     }
     else{
+        
+        if (!clicked) {
+            
         //set up the view
         UIVisualEffect *blurEffect;
-        blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+        blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
         
         visualEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
         
         visualEffectView.frame =CGRectMake(0, 64, 320, 40);
         
-        visualEffectView.layer.opacity=.0f;
         
         [self.collectionView.superview addSubview:visualEffectView];
-        
-        
+      
         //set button date
         sortDate = [[UIButton alloc] init];
         sortDate= [self generagedButtonAndAddToView:CGRectMake(5, 10, 74, 20):@"Date"];
@@ -150,19 +163,37 @@
 
        
         
-        //set up the animation
-        [UIView animateWithDuration:0.5f
-                              delay:0.f
-                            options:UIViewAnimationOptionCurveLinear
-                         animations:^{
-                             visualEffectView.layer.opacity=1.0f;
-                             
-                         }
-                         completion:^(BOOL finished){
-                             
-                             sortStatus =YES;
-                             
-                         }];
+        CATransition *animation = [CATransition animation];
+        
+        [animation setDuration:0.3]; //Animate for a duration of 0.3 seconds
+        [animation setType:kCATransitionPush]; //New image will push the old image off
+        [animation setSubtype:kCATransitionFromBottom]; //Current image will slide off to the left, new image slides in from the right
+        [animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear] ];
+        
+        [[visualEffectView layer] addAnimation:animation forKey:nil ];
+        
+        sortStatus =YES;
+
+        }else{
+        
+            [UIView animateWithDuration:0.5f
+                                  delay:0.f
+                                options:UIViewAnimationOptionCurveLinear
+                             animations:^{
+                                 visualEffectView.frame =CGRectMake(0, 64, 320, 40);
+                                 }
+                             completion:^(BOOL finished){
+                                 //[visualEffectView removeFromSuperview];
+                                 sortStatus=YES;
+                                 
+                             }];
+            
+            
+            
+        }
+        
+        
+   
         
     }
     
@@ -177,11 +208,10 @@
     [sortButton setTitle:buttonTitle forState:UIControlStateNormal];
     [sortButton setTitleColor:Rgb2UIColor(26, 188, 156,1.0) forState:UIControlStateNormal];
     [[sortButton layer] setCornerRadius:10];
-    [[sortButton layer] setBorderWidth:0.5f];
+    [[sortButton layer] setBorderWidth:1.0f];
     [[sortButton layer] setBorderColor:Rgb2UIColor(26, 188, 156,1.0).CGColor];
     return sortButton;
 }
-
 
 
 
@@ -193,11 +223,17 @@
 -(void)sortDatetapGestureFunction{
     //fill the sort date button
     if (sortDateStatus) {
+       
         
         sortDateStatus=NO;
         
         [sortDate setBackgroundColor:[UIColor clearColor]];
         [sortDate setTitleColor:Rgb2UIColor(26, 188, 156,1.0) forState:UIControlStateNormal];
+        
+        //set header to display
+        headerDisplayInitial = YES;
+        clicked=NO;
+
         
     }
     else{
@@ -224,10 +260,12 @@
         sortUploaderStatus =NO;
         sortFavoriteStatus =NO;
         
+        //set header to display
+        headerDisplayInitial = NO;
         
+        clicked=YES;
         //do date sort function
-        
-        [sortDate addTarget:self action:@selector(sortdateFunction) forControlEvents:(UIControlEvents)UIControlEventTouchUpInside];
+        [self sortdateFunction];
         
     }
     
@@ -237,8 +275,7 @@
 -(void)sortdateFunction{
     
     
-
-
+    [self allPhotoFetch:@"photoSortFetchRestful.php" : @"sortByDate"];
 
 }
 
@@ -258,7 +295,7 @@
         [sortFamilies setBackgroundColor:[UIColor clearColor]];
         [sortFamilies setTitleColor:Rgb2UIColor(26, 188, 156,1.0) forState:UIControlStateNormal];
         
-        
+        clicked=NO;
     }
     else{
         [sortFamilies setBackgroundColor:Rgb2UIColor(26, 188, 156,1.0)];
@@ -286,9 +323,28 @@
         sortUploaderStatus =NO;
         sortFavoriteStatus =NO;
         
+        clicked=YES;
+
+        
+        //do date sort function
+        [self sortFamilyFunction];
+        
     }
 
 }
+
+
+
+-(void)sortFamilyFunction{
+    
+    
+    [self allPhotoFetch:@"photoSortFetchRestful.php" : @"sortByFamilies"];
+
+    
+}
+
+
+
 
 //sort uploader
 
@@ -300,16 +356,13 @@
         
         [sortUploader setBackgroundColor:[UIColor clearColor]];
         [sortUploader setTitleColor:Rgb2UIColor(26, 188, 156,1.0) forState:UIControlStateNormal];
-        
+        clicked=NO;
     }
     else{
         [sortUploader setBackgroundColor:Rgb2UIColor(26, 188, 156,1.0)];
         [sortUploader setTitleColor:Rgb2UIColor(255, 255, 255,1.0) forState:UIControlStateNormal];
         
-        
-        
-        
-        
+    
         //set other button
         
         
@@ -332,10 +385,25 @@
         sortDateStatus =NO;
         sortFavoriteStatus =NO;
         
+        
+        clicked=YES;
+        
+        //do date sort function
+        [self sortUploaderFunction];
+        
+        
     }
     
 }
 
+
+
+-(void)sortUploaderFunction{
+    
+    [self allPhotoFetch:@"photoSortFetchRestful.php" : @"sortByUploader"];
+
+    
+}
 
 
 //sort buttonFavorite
@@ -350,7 +418,7 @@
         
         [sortFavorite setBackgroundColor:[UIColor clearColor]];
         [sortFavorite setTitleColor:Rgb2UIColor(26, 188, 156,1.0) forState:UIControlStateNormal];
-        
+        clicked=NO;
         
     }
     else{
@@ -382,11 +450,24 @@
         sortFamilyStatus=NO;
         sortDateStatus =NO;
         
+        clicked=YES;
+        
+        //do date sort function
+        
+        
+        [self sortFavoriteFunction];
         
     }
     
     
 
+}
+
+
+-(void)sortFavoriteFunction{
+    
+    [self allPhotoFetch:@"photoSortFetchRestful.php" : @"SortByFavorite"];
+    
 }
 
 
@@ -424,41 +505,41 @@
 
 -(void) searchSlide{
     
-    UIView *twitterItem = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
-    [twitterItem setMenuActionWithBlock:^{
+    UIView *familyItem = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
+    [familyItem setMenuActionWithBlock:^{
         NSLog(@"tapped twitter item");
     }];
-    UIImageView *searchFamilyIcon = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
-    [searchFamilyIcon setImage:[UIImage imageNamed:@"searchFamily"]];
-    [twitterItem addSubview:searchFamilyIcon];
+    UIImageView *familyIcon = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+    [familyIcon setImage:[UIImage imageNamed:@"searchFamily"]];
+    [familyItem addSubview:familyIcon];
     
-    UIView *emailItem = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
-    [emailItem setMenuActionWithBlock:^{
+    UIView *timeItem = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
+    [timeItem setMenuActionWithBlock:^{
         NSLog(@"tapped email item");
     }];
-    UIImageView *emailIcon = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30 , 30)];
-    [emailIcon setImage:[UIImage imageNamed:@"searchTime"]];
-    [emailItem addSubview:emailIcon];
+    UIImageView *timeIcon = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30 , 30)];
+    [timeIcon setImage:[UIImage imageNamed:@"searchTime"]];
+    [timeItem addSubview:timeIcon];
     
-    UIView *facebookItem = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
-    [facebookItem setMenuActionWithBlock:^{
+    UIView *locationItem = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
+    [locationItem setMenuActionWithBlock:^{
         
     }];
-    UIImageView *facebookIcon = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
-    [facebookIcon setImage:[UIImage imageNamed:@"searchLocation"]];
-    [facebookItem addSubview:facebookIcon];
+    UIImageView *locationIcon = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+    [locationIcon setImage:[UIImage imageNamed:@"searchLocation"]];
+    [locationItem addSubview:locationIcon];
     
-    UIView *browserItem = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
-    [browserItem setMenuActionWithBlock:^{
+    UIView *uploaderItem = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
+    [uploaderItem setMenuActionWithBlock:^{
     
         
     
     }];
-    UIImageView *browserIcon = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
-    [browserIcon setImage:[UIImage imageNamed:@"searchUploader"]];
-    [browserItem addSubview:browserIcon];
+    UIImageView *uploaderIcon = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+    [uploaderIcon setImage:[UIImage imageNamed:@"searchUploader"]];
+    [uploaderItem addSubview:uploaderIcon];
     
-    self.sideMenu = [[HMSideMenu alloc] initWithItems:@[twitterItem, emailItem, facebookItem, browserItem]];
+    self.sideMenu = [[HMSideMenu alloc] initWithItems:@[familyItem, timeItem, locationItem, uploaderItem]];
     [self.sideMenu setItemSpacing:5.0f];
     [self.view addSubview:self.sideMenu];
     
@@ -561,14 +642,20 @@
 
 
 
+
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+
     navBarHairlineImageView = [AnimationAndUIAndImage findHairlineImageViewUnder:self.navigationController.navigationBar];
 
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
     
-    [self allPhotoFetch];
+    
+    [self allPhotoFetch:@"photoFetchRestful.php":@"fetchAllImages"];
     //do refresh when pull the screen
     ODRefreshControl *refreshControl = [[ODRefreshControl alloc] initInScrollView:self.collectionView];
     [refreshControl addTarget:self action:@selector(dropViewDidBeginRefreshing:) forControlEvents:UIControlEventValueChanged];
@@ -585,9 +672,9 @@
     
     
     //ready the NsUserDefault records
-    if ([NsUserDefaultModel getCurrentData:Photo]) {
-        self.iamgeItemsContainer =[NsUserDefaultModel getCurrentData:Photo];
-    }
+    //if ([NsUserDefaultModel getCurrentData:AllPhoto]) {
+      //  self.iamgeItemsContainer =[NsUserDefaultModel getCurrentData:AllPhoto];
+    //}
     
     
     //long swipe to left
@@ -595,10 +682,14 @@
     swipeleft.direction=UISwipeGestureRecognizerDirectionLeft;
     [self.view addGestureRecognizer:swipeleft];
     
-    
     //hidden UICollectionView header when begin
-    headerDisplayInitial = YES;
-    
+    if (self.sectionStatus==YES) {
+        headerDisplayInitial = NO;
+        
+    }else{
+        headerDisplayInitial = YES;
+        
+    }
 
     
 }
@@ -623,7 +714,29 @@
     
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        [self allPhotoFetch];
+
+       
+        
+        if (sortDateStatus) {
+            [self allPhotoFetch:@"photoSortFetchRestful.php" : @"sortByDate"];
+
+        }
+        else if(sortFamilyStatus){
+            [self allPhotoFetch:@"photoSortFetchRestful.php" : @"sortByFamilies"];
+        }
+        else if(sortUploaderStatus){
+            [self allPhotoFetch:@"photoSortFetchRestful.php" : @"sortByUploader"];
+        }
+        else if(sortFavoriteStatus){
+            [self allPhotoFetch:@"photoSortFetchRestful.php" : @"SortByFavorite"];
+
+        }
+        else{
+            [self allPhotoFetch:@"photoFetchRestful.php":@"fetchAllImages"];
+            
+        }
+        
+    
         [refreshControl endRefreshing];
         
         
@@ -643,7 +756,8 @@
         detailPhotoCollectionViewController* deCol = (detailPhotoCollectionViewController*) segue.destinationViewController;
         
         deCol.detailPhotosArray = self.passedImageItemsSets;
-    
+        deCol.titleName= passedTitleName;
+        deCol.groupStatus = self.sectionStatus;
     }
 
 }
@@ -653,20 +767,49 @@
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 1;
+    if (headerDisplayInitial) {
+        return 1;
+    }
+    else{
+        return [self.iamgeItemsContainer count];
+    }
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [self.iamgeItemsContainer count];
+    
+    if (headerDisplayInitial) {
+        return [self.iamgeItemsContainer count];
+    }else{
+        return [self.iamgeItemsContainer[section][@"globalContent"] count];
+    }
+    
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    //UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
     PhotoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"photoCell" forIndexPath:indexPath];
+    if (headerDisplayInitial) {//if current value is fetch the data info
+        [AnimationAndUIAndImage collectionImageAsynDownload:self.iamgeItemsContainer[indexPath.row][@"imagePath"][@"image_thumb_size"]:cell.cellImage:@"photoPlaceHolder_thumb":NO] ;
+    }
+    else{
     
-    [AnimationAndUIAndImage collectionImageAsynDownload:self.iamgeItemsContainer[indexPath.row][@"imagePath"][@"image_thumb_size"]:cell.cellImage:@"photoPlaceHolder_thumb"];
+      [AnimationAndUIAndImage collectionImageAsynDownload:self.iamgeItemsContainer[indexPath.section][@"globalContent"][indexPath.row][@"imagePath"][@"image_thumb_size"]:cell.cellImage:@"photoPlaceHolder_thumb":NO] ;
+    
+    }
+    
+    CGRect finalCellFrame = cell.frame;
+    //check the scrolling direction to verify from which side of the screen the cell should come.
+    CGPoint translation = [collectionView.panGestureRecognizer translationInView:collectionView.superview];
+    if (translation.x > 0) {
+        cell.frame = CGRectMake(finalCellFrame.origin.x - 1000, - 500.0f, 0, 0);
+    } else {
+        cell.frame = CGRectMake(finalCellFrame.origin.x + 1000, - 500.0f, 0, 0);
+    }
+    
+    [UIView animateWithDuration:0.5f animations:^(void){
+        cell.frame = finalCellFrame;
+    }];
     
     
     return cell;
@@ -680,14 +823,34 @@
     
     
     self.passedImageItemsSets = [[NSMutableArray alloc] init];
-
-    [self.passedImageItemsSets addObject:self.iamgeItemsContainer[indexPath.row]];
-    
-    for (int i=0; i<[self.iamgeItemsContainer count]; i++) {
-        if (indexPath.row!=i) {
-            [self.passedImageItemsSets addObject:self.iamgeItemsContainer[i]];
+    if (headerDisplayInitial) {
+        [self.passedImageItemsSets addObject:self.iamgeItemsContainer[indexPath.row]];
+        
+        for (int i=0; i<[self.iamgeItemsContainer count]; i++) {
+            if (indexPath.row!=i) {
+                [self.passedImageItemsSets addObject:self.iamgeItemsContainer[i]];
+            }
         }
+        
+        passedTitleName = [NSString stringWithFormat:@"%@",@"Photos"];
+        
     }
+    else{
+
+        [self.passedImageItemsSets addObject:self.iamgeItemsContainer[indexPath.section][@"globalContent"][indexPath.row]];
+        
+        for (int i=0; i<[self.iamgeItemsContainer[indexPath.section][@"globalContent"] count]; i++) {
+            if (indexPath.row!=i) {
+                [self.passedImageItemsSets addObject:self.iamgeItemsContainer[indexPath.section][@"globalContent"][i]];
+            }
+        }
+     
+        
+        passedTitleName = [NSString stringWithFormat:@"%@",self.iamgeItemsContainer[indexPath.section][@"date"]];
+        self.sectionStatus=YES;
+        
+    }
+    
     
     [self performSegueWithIdentifier:@"allPhotoDetailSegue" sender:self];
 
@@ -724,15 +887,50 @@
 
 
 
--(void)allPhotoFetch{
-    [ServerEnd fetchJson:[ServerEnd setBaseUrl:@"photoFetchRestful.php"] :@{@"requestType":@"fetchAllImages",@"requestUserID":[NsUserDefaultModel getUserIDFromCurrentSession]} onCompletion:^(NSDictionary *dictionary){
+-(void)allPhotoFetch:(NSString*)baseUrl : (NSString*)requestType{
+    MBProgressHUD *HUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    HUD.labelText = @"waiting...";
+    HUD.delegate = self;
+    
+    [ServerEnd fetchJson:[ServerEnd setBaseUrl:baseUrl] :@{@"requestType":requestType,@"requestUserID":[NsUserDefaultModel getUserIDFromCurrentSession]} onCompletion:^(NSDictionary *dictionary){
+        
+        NSLog(@"%@",dictionary[@"imageSets"]);
         if ([dictionary[@"success"] isEqualToString:@"true"]) {
-            
             ////set photo list to NsUserDefault
-            [NsUserDefaultModel setUserDefault:dictionary[@"imageSets"] :Photo];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
+            });
+            
+            if (sortDateStatus) {
+                //if the sort is setting up as date
+                [NsUserDefaultModel setUserDefault:dictionary[@"imageSets"] :Date_Photo];
+
+            }
+            else if(sortFamilyStatus){
+                //if the sort is setting up as family group
+                [NsUserDefaultModel setUserDefault:dictionary[@"imageSets"] :Family_Photo];
+
+            }
+            else if(sortUploaderStatus){
+                //if the sort is setting up as uploader
+                [NsUserDefaultModel setUserDefault:dictionary[@"imageSets"] :Uploaders_Photo];
+
+            }
+            else if(sortFavoriteStatus){
+                //if the sort is setting up as favoriteStatus
+                [NsUserDefaultModel setUserDefault:dictionary[@"imageSets"] :Favorite_Photo];
+
+            }
+            else{
+                //if there is no filter
+                [NsUserDefaultModel setUserDefault:dictionary[@"imageSets"] :AllPhoto];
+
+            }
+            
+            
             
             self.iamgeItemsContainer =dictionary[@"imageSets"];
-            NSLog(@"%@",self.iamgeItemsContainer);
             [self.collectionView reloadData];
         }
 
@@ -746,14 +944,35 @@
 
 
 -(UICollectionReusableView*) collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{
-    
+   
+
     
     HeaderCollectionReusableView* header=[collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"headerSecions" forIndexPath:indexPath];
     
-    header.header.text =@"Time";
     
+        if (sortDateStatus) {
+            //if the sort is setting up as date
+            header.header.text =self.iamgeItemsContainer[indexPath.section][@"date"];
+            
+        }
+        if(sortFamilyStatus){
+            //if the sort is setting up as family group
+            header.header.text =self.iamgeItemsContainer[indexPath.section][@"family"];
+            
+        }
+        if(sortUploaderStatus){
+            //if the sort is setting up as uploader
+            header.header.text =self.iamgeItemsContainer[indexPath.section][@"uploader"];
+            
+        }
+        if(sortFavoriteStatus){
+            //if the sort is setting up as favoriteStatus
+            header.header.text =self.iamgeItemsContainer[indexPath.section][@"favorite"];
+            
+        }
     
-    
+      
+
     return header;
     
 }
@@ -768,6 +987,13 @@
         return CGSizeMake(CGRectGetWidth(collectionView.bounds), 30);
     }
 }
+
+
+
+
+
+
+
 
 
 /**
@@ -790,6 +1016,10 @@
 /**
  **end
  **/
+
+
+
+
 
 
 

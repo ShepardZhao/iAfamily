@@ -42,8 +42,49 @@ class MessageFetchModel extends DataBaseCRUDModel {
      */
 
 
+    /**
+     * get invitation of message
+     */
+    public function detailInvitationRequesting($userID){
+        $this->statement ="SELECT message_id,message_content,sender_id,receiver_id,create_date FROM iafamily_message WHERE receiver_id=? AND message_type='invitation' AND message_status=1 ORDER BY create_date DESC";
+        $this->bindType = array('i');
+        $this->bindName = array($userID);
+        $this->selectSQL();
+        //unserialize
+        $this->unserializeContent();
+    }
+
+    /**
+     *
+     */
 
 
+    /**
+     * sub function to unserialize
+     */
+
+    private function unserializeContent(){
+
+        //unserialize
+        foreach ($this->selectedFetchResult as $index=>$array){
+            foreach ($array as $key=>$value){
+                if($key==='message_content'){
+                    $this->selectedFetchResult[$index][$key]= unserialize($value);
+                }
+
+            }
+        }
+
+
+
+
+    }
+
+
+
+    /**
+     * end
+     */
 
     /**
      * get all detail of messages
@@ -76,14 +117,7 @@ class MessageFetchModel extends DataBaseCRUDModel {
         $uniquedSenderIds = array_unique($temp);
 
         //unserialize
-        foreach ($this->selectedFetchResult as $index=>$array){
-            foreach ($array as $key=>$value){
-                    if($key==='message_content'){
-                        $this->selectedFetchResult[$index][$key]= unserialize($value);
-                    }
-
-                }
-        }
+        $this->unserializeContent();
 
         $returnArray=array();
 
@@ -112,10 +146,6 @@ class MessageFetchModel extends DataBaseCRUDModel {
 
 
         $this->selectedFetchResult =$returnArray;
-
-
-
-
 
     }
 

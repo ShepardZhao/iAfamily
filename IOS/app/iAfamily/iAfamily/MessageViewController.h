@@ -16,4 +16,8 @@
 
 @interface MessageViewController : UIViewController<MBProgressHUDDelegate>
 @property (strong,nonatomic) NSMutableArray* detailMessageArray;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *messageSegment;
+
+
+
 @end

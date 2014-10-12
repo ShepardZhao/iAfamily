@@ -10,10 +10,11 @@
 
 @interface MessageTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *headerImage;
-@property (weak, nonatomic) IBOutlet UILabel *titel;
+@property (weak, nonatomic) IBOutlet UILabel *title;
 @property (weak, nonatomic) IBOutlet UILabel *subTitle;
 @property (weak, nonatomic) IBOutlet UIImageView *latestImage_One;
-@property (weak, nonatomic) IBOutlet UILabel *numberOfImage;
+@property (weak, nonatomic) IBOutlet UIButton *numberOfMessage;
+
 
 
 @end

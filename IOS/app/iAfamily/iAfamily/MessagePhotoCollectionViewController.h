@@ -12,5 +12,4 @@
 @property(strong,nonatomic) NSDictionary* singleUserDetailArray;
 @property(strong,nonatomic) NSString* header;
 
-
 @end

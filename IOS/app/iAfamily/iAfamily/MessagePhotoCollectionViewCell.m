@@ -13,6 +13,11 @@
 
 
 #pragma mark <UICollectionViewDataSource>
+-(void)awakeFromNib{
+    
+    [self.innerUICollectionView.collectionViewLayout invalidateLayout];
+
+}
 
 
 
@@ -31,7 +36,7 @@
     // Configure the cell
     
     //set the latest image 1
-    [AnimationAndUIAndImage collectionImageAsynDownload:[NSString stringWithFormat:@"%@",self.imageArrays[indexPath.row][@"image_id"][1]]:cell.innerCellImage:@"photoPlaceHolder_thumb"];
+    [AnimationAndUIAndImage collectionImageAsynDownload:[NSString stringWithFormat:@"%@",self.imageArrays[indexPath.row][@"image_id"][1]]:cell.innerCellImage:@"photoPlaceHolder_thumb":NO];
     
     
     return cell;

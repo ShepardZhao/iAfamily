@@ -9,11 +9,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-AHKActionSheet.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-Canvas.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -44,11 +39,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-SlackTextViewController.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -57,52 +47,42 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>11356635FECE6304AB4EE63C</key>
+		<key>359C9F9FF406F2EDD28781D1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>163FB7538B55EA01F13FFF5A</key>
+		<key>62438FE7E7FCB49FEE0A189E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3C89587F00FE54C0A90DBD75</key>
+		<key>773D954510ED4559EC61AB20</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>57BF230A0E1E091A85EBEA11</key>
+		<key>A5364D7988FDDC7C2CF40B3B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9DA235EB6E11ACF639019154</key>
+		<key>CEC7743BBE678ABED3F9D191</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BBAA0AAAD8A4659705DD48BE</key>
+		<key>DF8A8A35F52BCFFCED44C15D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D77B1304706305BC174336D7</key>
+		<key>E1A6B03AF001E86C65B2C908</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DF445E849339EEB0DEF7E10C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E6980627783B22F6711777F1</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EFB139A6573A2BDDFB0EB842</key>
+		<key>E50CD71D2353BAB50B4AEC47</key>
 		<dict>
 			<key>primary</key>
 			<true/>
