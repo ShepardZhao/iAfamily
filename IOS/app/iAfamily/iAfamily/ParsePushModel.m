@@ -26,17 +26,14 @@
 //get user id to channel
 
 +(void)setChannelName{
-    
+
+
     if (![self isUserIDExistOnChannel]) {
         PFInstallation *currentInstallation = [PFInstallation currentInstallation];
         
         [currentInstallation addUniqueObject:[self getCurrentUserAsUniqueChannelName] forKey:@"channels"];
-        
-        [[PFInstallation currentInstallation] setObject:[self getCurrentUserAsUniqueChannelName]  forKey:[self getCurrentUserAsUniqueChannelName] ];
-
-        
         [currentInstallation saveInBackground];
-                
+        
     }
 
 }
@@ -63,42 +60,82 @@
 }
 
 
-
-
+//return message content format
++(NSMutableDictionary*)returnMessageContent:(NSString*)messageContent : (NSString*)badge : (NSString*) sound{
+    NSMutableDictionary* data= [[NSMutableDictionary alloc]init];
+    [data setValue:messageContent forKey:@"alert"];
+    [data setValue:badge forKey:@"badge"];
+    [data setValue:sound forKey:@"sound"];
+    return data;
+}
 
 
 
 //push notification to the user who is invited
-+(void)sendUserInvitationPushNotification:(NSString*)invitedUserID :(NSString*)invitorName {
++(void)sendUserInvitationPushNotification:(NSString*)invitedUserID :(NSString*)invitorName : (NSString*) message{
     
     
     
-    NSMutableDictionary* data= [[NSMutableDictionary alloc]init];
-    NSString* setMessage =[NSString stringWithFormat:@"%@ invoted you to join new Family",invitorName];
-
+    NSLog(@"%@",invitedUserID);
     
-    [data setValue:setMessage forKey:@"alert"];
-    [data setValue:@"Increment" forKey:@"badge"];
-    [data setValue:@"cheering.caf" forKey:@"sound"];
-    
-    
-    NSString* getinvitedUserID = [NSString stringWithFormat:@"user_%@",invitedUserID];
-
     PFQuery *pushQuery = [PFInstallation query];
-    [pushQuery whereKey:@"channels" equalTo:getinvitedUserID]; // Set channel
-    
-    
-
+    [pushQuery whereKey:@"channels" equalTo:[NSString stringWithFormat:@"user_%@",invitedUserID]];
+ 
     PFPush *push = [[PFPush alloc] init];
     [push setQuery:pushQuery]; // Set our Installation query
+    [push setData:[ParsePushModel returnMessageContent:[NSString stringWithFormat:@"%@ %@",invitorName,message] :@"Increment" :@"cheering.caf"]];
+    [push sendPushInBackground];
 
-    [push setData:data];
+}
+
+
+//push notfication to uses when the relvant user upload new photos
++(void)sendUserPhotoNotifcations:(NSArray*)relatedUserIDs : (int)photoNumbers : (NSString*)contentForUploader{
+    
+    NSLog(@"%@",relatedUserIDs);
+    
+    PFQuery *pushQuery = [PFInstallation query];
+    [pushQuery whereKey:@"channels" containedIn:relatedUserIDs];
+   
+    PFPush *push = [[PFPush alloc] init];
+    
+    [push setQuery:pushQuery]; // Set our Installation query
+    
+    [push setData:[ParsePushModel returnMessageContent:[NSString stringWithFormat:@"%@ just upload %d photo(s) (Descptions: %@)",[NsUserDefaultModel getUserDictionaryFromSession][@"user_name"],photoNumbers,contentForUploader] :@"Increment" :@"cheering.caf"]];
     [push sendPushInBackground];
     
 
 }
 
 
+//push notification when user do the comments
++(void)sendUserCommentNotifcation:(NSArray*)relatedUserID : (NSData*)commentMessage{
+    
+    PFQuery *pushQuery = [PFInstallation query];
+    [pushQuery whereKey:@"channels" containedIn:relatedUserID];
+    
+    PFPush *push = [[PFPush alloc] init];
+    
+    [push setQuery:pushQuery]; // Set our Installation query
+    
+    [push setData:[ParsePushModel returnMessageContent:[NSString stringWithFormat:@"%@(Comment): %@",[NsUserDefaultModel getUserDictionaryFromSession][@"user_name"],commentMessage] :@"Increment" :@"cheering.caf"]];
+    
+    [push sendPushInBackground];
+}
+
+
+
+
+//remove the current user from the parse
++(void)removeCurrentUserFromPush{
+
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    
+    [currentInstallation removeObject:[ParsePushModel getCurrentUserAsUniqueChannelName] forKey:@"channels"];
+    [currentInstallation saveInBackground];
+
+
+}
 
 
 

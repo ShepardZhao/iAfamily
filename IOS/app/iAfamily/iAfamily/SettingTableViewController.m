@@ -12,6 +12,7 @@
 #import "ServerEnd.h"
 #import "NsUserDefaultModel.h"
 #import "AnimationAndUIAndImage.h"
+#import "ParsePushModel.h"
 #import "PersonalInfoSettingTableViewController.h"
 @interface SettingTableViewController (){
     UIImageView *navBarHairlineImageView;
@@ -118,26 +119,42 @@
 **/
 -(void) signOut{
     
-    [PopModal showAlertMessageAndDoSegue:@"you have successfully logged out" :@"Success Info" :@"Jump to Portal" :SIAlertViewButtonTypeDefault:self:@"reSignIn"];
+    
     //delete all session
+    //remove push info
+    [ParsePushModel removeCurrentUserFromPush];
+    
+    
     dispatch_async(dispatch_get_main_queue(), ^{
         NSUserDefaults *getSession = [NSUserDefaults standardUserDefaults];
         NSDictionary * dict = [getSession dictionaryRepresentation];
+        if ([dict count]>0) {
             for (id key in dict) {
                 [getSession removeObjectForKey:key];
             }
             [getSession synchronize];
+        }
+       
         
         
         //delete all keychain
         NSArray *accounts = [SSKeychain accountsForService:@"iafamily"];
-        for (NSDictionary *dictionary in accounts) {
-            NSString *account = [dictionary objectForKey:@"acct"];
-            [SSKeychain deletePasswordForService:@"iafamily" account:account];
+        if ([accounts count]>0) {
+            for (NSDictionary *dictionary in accounts) {
+                NSString *account = [dictionary objectForKey:@"acct"];
+                [SSKeychain deletePasswordForService:@"iafamily" account:account];
+            }
         }
+      
+        
         
     });
-   
+    
+
+    
+    
+    
+    [PopModal showAlertMessageAndDoSegue:@"you have successfully logged out" :@"Success Info" :@"Jump to Portal" :SIAlertViewButtonTypeDefault:self:@"reSignIn"];
     
 
 }

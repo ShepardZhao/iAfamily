@@ -94,7 +94,7 @@ class Family extends DataBaseCRUDModel{
             $getFamilyDetail=array();
         }
 
-         return json_encode(array('type'=>"fetchAll",'success'=>'true','families'=>$getFamilyDetail));
+        return $getFamilyDetail;
 
     }
 
@@ -126,6 +126,45 @@ class Family extends DataBaseCRUDModel{
 
 
     }
+
+
+   /*
+
+    public function getFamilyMembers($userID){
+
+       $tempArray=array();
+
+      $tempFamiliesIDsOnly =  $this->getFamiliesIdsOnly($userID);
+      foreach($tempFamiliesIDsOnly as $subKey=>$subArray){
+          foreach($subArray as $key=>$value){
+              if($key==='family_id'){
+
+                  $final = array_reduce($this->getEachMemberId($value), function($_, $inner){
+                      return $_ = array_merge((array)$_, $inner);
+                  });
+
+                  foreach ($final as $finalValue){
+                      array_push($tempArray,$finalValue);
+
+
+                  }
+
+
+              }
+
+          }
+      }
+
+
+
+        return $tempArray;
+
+    }
+
+
+
+*/
+
 
 
 
@@ -182,6 +221,30 @@ class Family extends DataBaseCRUDModel{
         return $this->selectedFetchResult;
 
     }
+
+
+    public function getPushNotificationMemberIds($familyID,$filterUserID){
+
+        $tempArray= array();
+        foreach($this->getEachMemberId($familyID) as $key=>$value){
+            foreach($value as $subKey=>$finalValue){
+
+                if($subKey==='member_user_id'){
+                    if($filterUserID!=$finalValue){
+                        array_push($tempArray,'user_'.$finalValue);
+                    }
+                }
+            }
+
+        }
+
+
+
+        return $tempArray;
+
+    }
+
+
 
 
     private function getCreatorName($familyId){

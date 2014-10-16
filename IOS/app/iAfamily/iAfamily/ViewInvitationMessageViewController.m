@@ -9,31 +9,43 @@
 #import "ViewInvitationMessageViewController.h"
 #import "ServerEnd.h"
 #import "AnimationAndUIAndImage.h"
+#import "NsUserDefaultModel.h"
+#import "ViewInvitationTableViewCell.h"
+#import "MessageModel.h"
+#import "ParsePushModel.h"
 
-@interface ViewInvitationMessageViewController (){
+@interface ViewInvitationMessageTableViewController (){
     UIImageView *navBarHairlineImageView;
 }
-@property (weak, nonatomic) IBOutlet UITextView *detail;
-@property (weak, nonatomic) IBOutlet UIImageView *inviterImage;
+
+@property (weak, nonatomic) IBOutlet UISegmentedControl *switchSegmented;
 
 @end
 
-@implementation ViewInvitationMessageViewController
-- (IBAction)acceptAction:(id)sender {
-    [self acceptOrDeclineRequest:@{@"requestType":@"accept",@"user_id":self.messageDicitonary[@"receiver_id"],@"family_id":self.messageDicitonary[@"sender_id"],@"message_id":self.messageDicitonary[@"message_id"]}];
+@implementation ViewInvitationMessageTableViewController
+
+
+- (IBAction)switchSegmented:(id)sender {
+    
+    if (self.switchSegmented.selectedSegmentIndex==0) {
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }
+    
 }
-- (IBAction)declineAction:(id)sender {
-   //user wants to decline the invitation
-    [self acceptOrDeclineRequest:@{@"requestType":@"decline",@"message_id":self.messageDicitonary[@"message_id"]}];
-}
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     navBarHairlineImageView = [AnimationAndUIAndImage findHairlineImageViewUnder:self.navigationController.navigationBar];
 
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    //do refresh when pull the screen
+    ODRefreshControl *refreshControl = [[ODRefreshControl alloc] initInScrollView:self.tableView];
+    [refreshControl addTarget:self action:@selector(dropViewDidBeginRefreshing:) forControlEvents:UIControlEventValueChanged];
     
-    
+    [self fetchInvitationList];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,25 +57,157 @@
 -(void)viewWillAppear:(BOOL)animated{
 
     [super viewWillAppear:YES];
-    self.title = @"Invitation";
-    
-    NSString* str = [NSString stringWithFormat:@"%@%@%@",self.messageDicitonary[@"message_content"][@"invitator"],self.messageDicitonary[@"message_content"][@"message"],self.messageDicitonary[@"message_content"][@"senderName"]];
-    self.detail.text = str;
-    
-    [AnimationAndUIAndImage tableImageAsyncDownload:self.messageDicitonary[@"message_content"][@"invitator_image_url"] : self.inviterImage:NO];
 
     navBarHairlineImageView.hidden = YES;
-
+    
 
 }
 
 
-
+- (void)dropViewDidBeginRefreshing:(ODRefreshControl *)refreshControl
+{
+    double delayInSeconds = 3.0;
+    dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
+    dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
+        [self fetchInvitationList];
+        
+        [refreshControl endRefreshing];
+        
+        
+    });
+}
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     navBarHairlineImageView.hidden = NO;
 }
+
+
+
+/**
+ **fetch the invitation record
+ **/
+
+
+-(void) fetchInvitationList{
+    MBProgressHUD *HUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    HUD.labelText = @"waiting...";
+    HUD.delegate = self;
+    
+    [ServerEnd fetchJson:[ServerEnd setBaseUrl:@"messageFetchRestful.php"] :@{@"requestType":@"fetchDetailOfInvitaitionMessages",@"requestUserID":[NsUserDefaultModel getUserIDFromCurrentSession]} onCompletion:^(NSDictionary *dictionary) {
+        if ([dictionary[@"success"] isEqualToString:@"true"]) {
+            
+            
+            self.getInvitationList = dictionary[@"messageDetails"];
+            NSLog(@"%@",self.getInvitationList);
+            
+            [self.tableView reloadData];
+            
+            //here to join the cache
+            
+            //GCD hiden
+            dispatch_async(dispatch_get_main_queue(),^{
+                
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
+                
+            });
+        }
+        
+    }];
+    
+}
+
+
+
+
+
+/**
+ **end
+ **/
+
+
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    // Return the number of sections.
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    // Return the number of rows in the section;
+    return [self.getInvitationList count];
+    
+}
+
+
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Return NO if you do not want the specified item to be editable.
+    return YES;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:
+(NSIndexPath *)indexPath {
+    
+    ViewInvitationTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"invitationCell" forIndexPath:indexPath];
+    //set the deatil for the each cell - the cell has 2 lines for maxium displaying the infomation
+    
+    
+    cell.timeLabel.text =self.getInvitationList[indexPath.row][@"create_date"];
+
+    
+    cell.inviterName.text = self.getInvitationList[indexPath.row][@"message_content"][@"senderName"];
+    //set the header image
+   
+    
+    [AnimationAndUIAndImage tableImageAsyncDownload:self.getInvitationList[indexPath.row][@"message_content"][@"invitator_image_url"] :cell.headProfile :NO];
+    
+    cell.message.text =[NSString stringWithFormat:@"%@%@ '%@'", self.getInvitationList[indexPath.row][@"message_content"][@"invitator"],self.getInvitationList[indexPath.row][@"message_content"][@"message"],self.getInvitationList[indexPath.row][@"message_content"][@"senderName"]];
+    
+    cell.acceptButton.tag= indexPath.row;
+    
+    
+    
+    [cell.acceptButton addTarget:self action:@selector(acceptAction:) forControlEvents:(UIControlEvents)UIControlEventTouchUpInside];
+    
+    cell.declineButton.tag= indexPath.row;
+    
+    [cell.declineButton addTarget:self action:@selector(declineAction:) forControlEvents:(UIControlEvents)UIControlEventTouchUpInside];
+    
+   
+    return cell;
+    
+}
+
+
+-(void)acceptAction:(id)sender{
+    UIButton* tempButton = (UIButton*)sender;
+    
+    long index = tempButton.tag;
+    
+    NSLog(@"%@",self.getInvitationList);
+    
+    
+    [self acceptOrDeclineRequest:@{@"requestType":@"accept",@"user_id":self.getInvitationList[index][@"receiver_id"],@"family_id":self.getInvitationList[index][@"sender_id"],@"message_id":self.getInvitationList[index][@"message_id"],@"senderID":self.getInvitationList[index][@"sender_id"],@"invitatorID":self.getInvitationList[index][@"message_content"][@"invitatorID"]}];
+
+}
+
+
+
+-(void)declineAction:(id)sender{
+
+    UIButton* tempButton = (UIButton*)sender;
+    
+    long index = tempButton.tag;
+
+    
+    //user wants to decline the invitation
+    [self acceptOrDeclineRequest:@{@"requestType":@"decline",@"message_id":self.getInvitationList[index][@"message_id"],@"senderID":self.getInvitationList[index][@"sender_id"],@"invitatorID":self.getInvitationList[index][@"message_content"][@"invitatorID"]}];
+
+
+}
+
+
+
 
 
 
@@ -74,42 +218,47 @@
 
 
 -(void) acceptOrDeclineRequest:(NSDictionary*) paramters{
-    MBProgressHUD *HUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    HUD.labelText = @"Sending request...";
-    HUD.delegate = self;
+   
+  
     
     [ServerEnd fetchJson:[ServerEnd setBaseUrl:@"userAcceptOrDeclineFamilyInvitationRestful.php"] :paramters onCompletion:^(NSDictionary *dictionary) {
         if ([dictionary[@"success"] isEqualToString:@"true"]) {
-          
             
-            //GCD hiden
-            dispatch_async(dispatch_get_main_queue(),^{
+            if ([dictionary[@"status"] isEqualToString:@"accept"]) {
                 
-                [MBProgressHUD hideHUDForView:self.view animated:YES];
+                [ParsePushModel sendUserInvitationPushNotification:paramters[@"invitatorID"] :[NsUserDefaultModel getUserDictionaryFromSession][@"user_name"] :@"has accepted your invitation :)"];
+                
+                
+            }
+            else if([dictionary[@"status"] isEqualToString:@"decline"]){
+                [ParsePushModel sendUserInvitationPushNotification:paramters[@"invitatorID"]:[NsUserDefaultModel getUserDictionaryFromSession][@"user_name"] :@"has declined your invitation :("];
+            }
+            
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self fetchInvitationList];
                 
             });
+
             
             
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                [self.navigationController popToRootViewControllerAnimated:YES];
-            });
+           
+            
+            [MessageModel refreshNumberOfMessage:self.tabBarController];
+            
             
         }
         
     }];
-
     
-
-
+    
+    
+    
 }
 
 /**
  **end
  **/
-
-
-
-
 
 /*
 #pragma mark - Navigation

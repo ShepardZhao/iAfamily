@@ -43,7 +43,7 @@ class PhotoFetchModel extends  DataBaseCRUDModel{
 
             //get images
             foreach($oneDimensionFamilyIDs as $singleFamilyId){
-                $this->statement='SELECT iafamily_image.image_id, iafamily_image.image_name,iafamily_image.image_date, iafamily_image.image_latitude,iafamily_image.image_longitude,iafamily_image.image_desc,iafamily_image.image_like, iafamily_image_group.family_id FROM iafamily_image INNER JOIN iafamily_image_group ON iafamily_image.image_id = iafamily_image_group.image_id WHERE iafamily_image_group.family_id=?';
+                $this->statement='SELECT iafamily_image.image_id, iafamily_image.image_name,iafamily_image.image_date, iafamily_image.image_latitude,iafamily_image.image_longitude,iafamily_image.image_desc,iafamily_image.image_like, iafamily_image_group.family_id FROM iafamily_image INNER JOIN iafamily_image_group ON iafamily_image.image_id = iafamily_image_group.image_id WHERE iafamily_image_group.family_id=? ORDER BY iafamily_image.image_date DESC';
                 $this->bindType=array('i');
                 $this->bindName=array($singleFamilyId);
                 $this->selectSQL();
@@ -196,7 +196,7 @@ class PhotoFetchModel extends  DataBaseCRUDModel{
 
         }
 
-        return array_reverse($returnArray);
+        return $returnArray;
 
     }
 

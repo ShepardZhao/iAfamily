@@ -24,7 +24,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
         $status=$acceptOrDeclineFamily -> updateStatus();
 
         if($status){
-            echo json_encode(array('requestType'=>'userAcceptFamilyInvitation','success'=>'true'));
+            echo json_encode(array('requestType'=>'userAcceptFamilyInvitation','status'=>'accept','success'=>'true'));
         }
         else{
             echo json_encode(array('requestType'=>'userAcceptFamilyInvitation','success'=>'false'));
@@ -38,7 +38,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
             //will request message id only
         $status=$acceptOrDeclineFamily -> cancelMessage($_POST['message_id']);
         if($status){
-            echo json_encode(array('requestType'=>'userDeclineFamilyInvitation','success'=>'true'));
+            echo json_encode(array('requestType'=>'userDeclineFamilyInvitation','status'=>'decline','success'=>'true'));
         }
         else{
             echo json_encode(array('requestType'=>'userDeclineFamilyInvitation','success'=>'false'));

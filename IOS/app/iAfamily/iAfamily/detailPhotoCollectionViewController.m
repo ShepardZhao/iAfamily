@@ -17,6 +17,7 @@
     UIImageView *navBarHairlineImageView;
     UIView* commentBackGrView;
     UILabel* progressLabel;
+    int currentIndex;
 }
 
 @end
@@ -192,13 +193,14 @@
 
 -(void)commentButton:(id)sender{
     
-    UIButton *buttonTag = (UIButton *)sender;
-
+    NSLog(@"%@",self.detailPhotosArray);
     
+    
+    UIButton *buttonTag = (UIButton *)sender;
     CommentController *commCropVC = [[CommentController alloc] init];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:commCropVC];
     commCropVC.setid =[NSString stringWithFormat:@"%ld",(long)[buttonTag tag]];
-    
+    commCropVC.setFamilyId =[NSString stringWithFormat:@"%@",self.detailPhotosArray[currentIndex][@"family_id"]];
     
     [self presentViewController:navigationController animated:YES completion:nil];
 

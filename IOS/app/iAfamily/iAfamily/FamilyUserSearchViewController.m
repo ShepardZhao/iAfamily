@@ -128,7 +128,7 @@
         HUD.labelText = @"sending request...";
         HUD.delegate = self;
         //here to send the request invited user
-        [ServerEnd fetchJson:[ServerEnd setBaseUrl:@"messageInvitationRestful.php"] :@{@"requestType":@"message",@"sender":self.familyID,@"senderName":self.familyTitle,@"receiver":[NSString stringWithFormat:@"%i",tagID],@"invitator":[NsUserDefaultModel getUserDictionaryFromSession][@"user_name"],@"invitatorHeadImageUrl":[NsUserDefaultModel getUserDictionaryFromSession][@"user_avatar"]} onCompletion:^(NSDictionary *dictionary) {
+        [ServerEnd fetchJson:[ServerEnd setBaseUrl:@"messageInvitationRestful.php"] :@{@"requestType":@"message",@"sender":self.familyID,@"senderName":self.familyTitle,@"receiver":[NSString stringWithFormat:@"%i",tagID],@"invitator":[NsUserDefaultModel getUserDictionaryFromSession][@"user_name"],@"invitatorID":[NsUserDefaultModel getUserIDFromCurrentSession],@"invitatorHeadImageUrl":[NsUserDefaultModel getUserDictionaryFromSession][@"user_avatar"]} onCompletion:^(NSDictionary *dictionary) {
 
             if ([dictionary[@"success"] isEqualToString:@"true"]) {
                 //here's to refresh the table
@@ -145,7 +145,7 @@
                 
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     //here to send the push notification to the user who is invited
-                    [ParsePushModel sendUserInvitationPushNotification:[NSString stringWithFormat:@"%i",tagID] :[NsUserDefaultModel getUserDictionaryFromSession][@"user_name"]];
+                    [ParsePushModel sendUserInvitationPushNotification:[NSString stringWithFormat:@"%i",tagID] :[NsUserDefaultModel getUserDictionaryFromSession][@"user_name"]:@"invoted you to join the new Family"];
                     
                     
                 });
@@ -161,7 +161,7 @@
                 });
                 
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    [PopModal showAlertMessage:@"You cannot repeatedly invite same person" :@"Warning" :@"Got it" :SIAlertViewButtonTypeCancel];
+                    [PopModal showAlertMessage:@"You cannot repeatedly invite same person or that person already in your family group" :@"Warning" :@"Got it" :SIAlertViewButtonTypeCancel];
                     
                 });
             

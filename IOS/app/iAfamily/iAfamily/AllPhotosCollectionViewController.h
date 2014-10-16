@@ -18,5 +18,6 @@
 
 @property (nonatomic, strong) HMSideMenu *sideMenu;
 @property BOOL sectionStatus;
+@property BOOL reloadView;
 
 @end

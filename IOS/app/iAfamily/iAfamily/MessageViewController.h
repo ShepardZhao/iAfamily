@@ -14,10 +14,10 @@
 #import "AnimationAndUIAndImage.h"
 #import "SystemNSObject.h"
 
-@interface MessageViewController : UIViewController<MBProgressHUDDelegate>
+@interface MessageViewController : UIViewController<MBProgressHUDDelegate,UITableViewDataSource,UITableViewDelegate>
 @property (strong,nonatomic) NSMutableArray* detailMessageArray;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *messageSegment;
 
-
+-(void)getMessageRequest:(NSString*)messageType;
 
 @end

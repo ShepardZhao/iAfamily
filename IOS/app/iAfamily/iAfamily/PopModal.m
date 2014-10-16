@@ -28,6 +28,7 @@
     SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:messageTitle andMessage:getErrorMessage];
     [alertView addButtonWithTitle:buttonTitle type:setButtonType
                           handler:^(SIAlertView *alert) {
+                              
                               [getThis performSegueWithIdentifier:segueIdentify sender:nil];
                           }];
     alertView.transitionStyle = SIAlertViewTransitionStyleBounce;

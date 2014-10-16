@@ -13,6 +13,7 @@
 #import "NsUserDefaultModel.h"
 #import "ServerEnd.h"
 #import "SystemNSObject.h"
+#import "ParsePushModel.h"
 
 static NSString *CommentCellIdentifier = @"CommentCell";
 
@@ -328,6 +329,7 @@ static NSString *CommentCellIdentifier = @"CommentCell";
     
     return cell;
 }
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([tableView isEqual:self.tableView]) {
@@ -381,15 +383,14 @@ static NSString *CommentCellIdentifier = @"CommentCell";
     NSLog(@"%@",@"1");
 }
 
-
-
-
 #pragma private function
 
 -(void)submitComment:(NSData*)messageContent : (UITableView*) tableView {
 
     //submit the comment
-    [ServerEnd fetchJson:[ServerEnd setBaseUrl:@"submitCommentRestful.php"] :@{@"requestType":@"submitComment",@"userId":[NsUserDefaultModel getUserIDFromCurrentSession],@"imageID":self.setid,@"commentContent":messageContent,@"commentType":commentType,@"commentID":[SystemNSObject getCurrentTimeStamp]} onCompletion:^(NSDictionary *dictionary) {
+    [ServerEnd fetchJson:[ServerEnd setBaseUrl:@"submitCommentRestful.php"] :@{@"requestType":@"submitComment",@"userId":[NsUserDefaultModel getUserIDFromCurrentSession],@"imageID":self.setid,@"commentContent":messageContent,@"commentType":commentType,@"commentID":[SystemNSObject getCurrentTimeStamp],@"familyID":self.setFamilyId} onCompletion:^(NSDictionary *dictionary) {
+        
+        //NSLog(@"%@",dictionary);
         
         if ([dictionary[@"success"] isEqualToString:@"true"]) {
             
@@ -413,9 +414,18 @@ static NSString *CommentCellIdentifier = @"CommentCell";
             [self.tableView endUpdates];
             
             [self.tableView slk_scrollToTopAnimated:YES];
+            
+            NSLog(@"%@",dictionary[@"pushNotificationMembersIDs"]);
+            [ParsePushModel sendUserCommentNotifcation:dictionary[@"pushNotificationMembersIDs"] :messageContent];
+          
+            
+            
+            
+            
+            
+            
         }
     }];
-    
     
     
 }

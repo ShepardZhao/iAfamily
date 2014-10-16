@@ -17,5 +17,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *time;
 @property (weak, nonatomic) IBOutlet UILabel *numberPhotos;
 @property (weak, nonatomic) IBOutlet UILabel *imageDescrption;
+@property (weak, nonatomic) IBOutlet UIImageView *timeImage;
 
 @end

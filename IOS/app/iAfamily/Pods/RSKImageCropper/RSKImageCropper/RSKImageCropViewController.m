@@ -261,6 +261,8 @@ static const CGFloat kLandscapeCancelAndChooseButtonsVerticalMargin = 12.0f;
         _moveAndScaleLabel = [[UILabel alloc] init];
         _moveAndScaleLabel.translatesAutoresizingMaskIntoConstraints = NO;
         _moveAndScaleLabel.backgroundColor = [UIColor clearColor];
+        [_moveAndScaleLabel setFont:[UIFont fontWithName:@"Lato-Regular" size:16]];
+
         _moveAndScaleLabel.text = @"Move and Scale";
         _moveAndScaleLabel.textColor = [UIColor whiteColor];
         _moveAndScaleLabel.opaque = NO;
@@ -274,6 +276,13 @@ static const CGFloat kLandscapeCancelAndChooseButtonsVerticalMargin = 12.0f;
         _cancelButton = [[UIButton alloc] init];
         _cancelButton.translatesAutoresizingMaskIntoConstraints = NO;
         [_cancelButton setTitle:@"Cancel" forState:UIControlStateNormal];
+        [_cancelButton.titleLabel setFont:[UIFont fontWithName:@"Lato-Regular" size:13]];
+        //_cancelButton.titleEdgeInsets = UIEdgeInsetsMake(2, 2, 2, 2);
+
+        _cancelButton.layer.cornerRadius = 3.0f;
+        _cancelButton.layer.borderWidth =1.0f;
+        _cancelButton.layer.borderColor = [UIColor whiteColor].CGColor;
+        
         [_cancelButton addTarget:self action:@selector(onCancelButtonTouch:) forControlEvents:UIControlEventTouchUpInside];
         _cancelButton.opaque = NO;
     }
@@ -285,6 +294,13 @@ static const CGFloat kLandscapeCancelAndChooseButtonsVerticalMargin = 12.0f;
     if (!_chooseButton) {
         _chooseButton = [[UIButton alloc] init];
         _chooseButton.translatesAutoresizingMaskIntoConstraints = NO;
+        [_chooseButton.titleLabel setFont:[UIFont fontWithName:@"Lato-Regular" size:13]];
+        _chooseButton.layer.cornerRadius = 3.0f;
+        _chooseButton.layer.borderWidth =1.0f;
+        _chooseButton.layer.borderColor = [UIColor whiteColor].CGColor;
+       // _chooseButton.titleEdgeInsets = UIEdgeInsetsMake(2, 2, 2, 2);
+
+        
         [_chooseButton setTitle:@"Choose" forState:UIControlStateNormal];
         [_chooseButton addTarget:self action:@selector(onChooseButtonTouch:) forControlEvents:UIControlEventTouchUpInside];
         _chooseButton.opaque = NO;

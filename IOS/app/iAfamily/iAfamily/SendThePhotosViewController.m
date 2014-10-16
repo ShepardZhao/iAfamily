@@ -9,8 +9,11 @@
 #import "SendThePhotosViewController.h"
 #import "AnimationAndUIAndImage.h"
 #import "PopModal.h"
+#import "ParsePushModel.h"
+#import "AllPhotosCollectionViewController.h"
 @interface SendThePhotosViewController (){
     UIImageView *navBarHairlineImageView;
+    
 }
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property NSMutableArray* selectFamilyGroupIds;
@@ -22,9 +25,6 @@
 @end
 
 @implementation SendThePhotosViewController
-
-
-
 
 
 -(void) descriptionCheck{
@@ -87,17 +87,6 @@
 
 
 
--(void) viewDidDisappear:(BOOL)animated{
-    [super viewDidDisappear:animated];
-    
-    
-    MyPhotosViewController *myController = (MyPhotosViewController *)[self.navigationController.viewControllers objectAtIndex:0];
-    
-   [myController getDefaultMyPhoto];
-
-    
-
-}
 
 
 -(void) viewDidAppear:(BOOL)animated{
@@ -119,14 +108,20 @@
     
             [self photoUpload];
 
-    
-    
 }
 
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     navBarHairlineImageView.hidden = NO;
+}
+
+
+-(void) viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    AllPhotosCollectionViewController* allContr= [[AllPhotosCollectionViewController alloc] init];
+    allContr.reloadView =YES;
+
 }
 
 
@@ -364,13 +359,20 @@
         
         [ServerEnd getImageUploadResult:self:self.selectedImages:@{@"gpsArray":[NSJSONSerialization dataWithJSONObject:self.gpsArray options:0 error:NULL],@"userId":[NsUserDefaultModel getUserIDFromCurrentSession],@"familiesIDs":self.selectFamilyGroupIds,@"photoDescription":self.descriptions}:getCompleteURL onCompletion:^(NSDictionary *dictionary) {
             self.navigationItem.hidesBackButton = NO;
+            
+            
             if ([dictionary[@"success"] isEqualToString:@"true"]) {
                 [self.uploadPhotos setEnabled:YES];
 
-
+                
+                
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    //here to send the photo notifications to those relvant users.
+                    [ParsePushModel sendUserPhotoNotifcations:dictionary[@"pushMembersIDs"] :(int)[self.selectedImages count] : self.descriptions];
+                    
+                });
                 
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                    
                     
                     //dismissed the view
                     [self.navigationController popToRootViewControllerAnimated:YES];

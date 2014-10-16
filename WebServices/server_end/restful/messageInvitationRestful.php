@@ -12,8 +12,8 @@ include_once $_SERVER["DOCUMENT_ROOT"].'/lib/controller/messageInvitationControl
 header('Content-Type: application/json');
 if($_SERVER['REQUEST_METHOD']==='POST'){
     if(!empty($_POST['requestType'])){
-        if(!empty($_POST['sender']) &&!empty($_POST['receiver']) && !empty($_POST['invitator']) && !empty($_POST['senderName'])){
-            $message ->setSenderAndReceiverAndMessageType($_POST['sender'],$_POST['receiver'], $_POST['invitator'] ,$_POST['senderName'],$_POST['invitatorHeadImageUrl']);
+        if(!empty($_POST['sender']) &&!empty($_POST['receiver']) && !empty($_POST['invitator']) && !empty($_POST['invitatorID']) && !empty($_POST['senderName'])){
+            $message ->setSenderAndReceiverAndMessageType($_POST['sender'],$_POST['receiver'], $_POST['invitator'] ,$_POST['senderName'],$_POST['invitatorHeadImageUrl'],$_POST['invitatorID']);
 
             if($message->senderMessage()){
 

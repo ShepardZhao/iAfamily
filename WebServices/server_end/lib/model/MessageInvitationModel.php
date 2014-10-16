@@ -18,19 +18,20 @@ class MessageInvitationModel extends DataBaseCRUDModel {
     private $messageStatus;
     private $messageType;
     private $create_date;
-
+    private $invitatorID;
     public function __construct(){
         parent::__construct();
     }
 
 
-    public function setSenderAndReceiverAndMessageType($sender,$receiver,$invitator,$senderName,$invitatorHeaderImageUrl){
+    public function setSenderAndReceiverAndMessageType($sender,$receiver,$invitator,$senderName,$invitatorHeaderImageUrl,$invitatorID){
             $this->message_id = time();
             $this->sender = $sender;
             $this->receiver = $receiver;
             $this->invitator = $invitator;
+            $this->invitatorID = $invitatorID;
             $this->senderName = $senderName;
-            $this->content = serialize(array('invitator'=>$this->invitator,'invitator_image_url'=>$invitatorHeaderImageUrl, 'senderName'=>$this->senderName, 'message'=> ' invites you to join the group '));
+            $this->content = serialize(array('invitatorID'=>$this->invitatorID,'invitator'=>$this->invitator,'invitator_image_url'=>$invitatorHeaderImageUrl, 'senderName'=>$this->senderName, 'message'=> ' invites you to join the group '));
             $this->messageStatus =1;
             $this->messageType ='invitation';
             $this->create_date = date('Y-m-d H:i:s');
@@ -42,7 +43,7 @@ class MessageInvitationModel extends DataBaseCRUDModel {
     public function senderMessage(){
 
         $result = false;
-        if($this->repeatCheck()){
+        if($this->repeatCheck() && $this->checkUserisAlreadyExist()){
             $this->statement ='INSERT INTO iafamily_message (message_id, message_content, message_type, message_status,sender_id, receiver_id,create_date) VALUES (?,?,?,?,?,?,?)';
             $this->bindType= array('i','s','s','i','i','i','s');
             $this->bindName = array($this->message_id, $this->content,$this->messageType , $this->messageStatus,$this->sender,$this->receiver,$this->create_date);
@@ -59,6 +60,30 @@ class MessageInvitationModel extends DataBaseCRUDModel {
         return $result;
 
     }
+
+
+
+    /**
+     *check user already in the group
+     */
+
+    private function checkUserisAlreadyExist(){
+        $this->statement ='SELECT * FROM iafamily_member WHERE family_id=? AND member_user_id=?';
+        $this->bindType= array('i','i');
+        $this->bindName = array($this->sender, $this->receiver);
+        $this->selectSQL();
+        if(count($this->selectedFetchResult)===0){
+            return true;
+
+        }
+        else{
+            return false;
+        }
+    }
+
+    /**
+     * end
+     */
 
 
 

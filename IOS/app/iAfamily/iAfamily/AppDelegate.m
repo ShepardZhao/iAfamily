@@ -12,6 +12,7 @@
 #import "WelcomeViewController.h"
 #import <Parse/Parse.h>
 #import "ParsePushModel.h"
+#import "PopModal.h"
 @interface AppDelegate ()
 
 @end
@@ -44,7 +45,6 @@
     //register notification
     [self startParsePush:application];
     
-    
     // here to check the login status, if the user name and password are stored on the keychain then $this will head to main page, otherwise, then login page.
     UITabBarController *controller_family = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"mainTabBar"];
      WelcomeViewController *controller_welcome = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"WelcomeViewController"];
@@ -59,12 +59,11 @@
 
     
   
-
+    
+    
+    
     return YES;
  
-    
-    
-    
 }
 
 
@@ -107,8 +106,14 @@
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
-    NSLog(@"%@",userInfo);
-    [PFPush handlePush:userInfo];
+
+    UIApplicationState state = [application applicationState];
+    if (state == UIApplicationStateActive) {
+        
+        [PopModal showAlertMessage:userInfo[@"aps"][@"alert"] :@"Notification" :@"Okay" :SIAlertViewButtonTypeDefault];
+
+    }
+    
 }
 
 

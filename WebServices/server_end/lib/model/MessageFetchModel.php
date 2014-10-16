@@ -96,7 +96,7 @@ class MessageFetchModel extends DataBaseCRUDModel {
 
         $finalValue =array();
 
-        $this->statement ="SELECT message_id,message_content,sender_id,receiver_id,create_date FROM iafamily_message WHERE receiver_id=? AND message_type='photo' AND message_status=1 ORDER BY create_date DESC";
+        $this->statement ="SELECT message_id,message_content,sender_id,receiver_id,create_date, message_status FROM iafamily_message WHERE receiver_id=? AND message_type='photo' ORDER BY create_date DESC";
         $this->bindType = array('i');
         $this->bindName = array($userID);
         $this->selectSQL();

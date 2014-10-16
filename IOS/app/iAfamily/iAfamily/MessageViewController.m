@@ -10,9 +10,10 @@
 #import "MessageModel.h"
 #import "ODRefreshControl.h"
 #import "MessageTableViewCell.h"
-#import "MessagePhotoCollectionViewController.h"
+#import "MessagePhotoTableViewController.h"
 @interface MessageViewController (){
     UIImageView *navBarHairlineImageView;
+    long setIndexPath;
 }
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (assign, nonatomic) CATransform3D initialTransformation;
@@ -20,19 +21,12 @@
 
 @implementation MessageViewController
 
-
-
-
-
-
-
 - (IBAction)doMessageSwitch:(id)sender {
     if (self.messageSegment.selectedSegmentIndex==0) {
      //normal message
         //if the message cache existed
         if (![NsUserDefaultModel getCurrentData:Message_photo]) {
             [self getMessageRequest:@"fetchDetailOfMessages"];
-            [self.tableView reloadData];
         }
         else{
             self.detailMessageArray = [NsUserDefaultModel getCurrentData:Message_photo];
@@ -40,21 +34,12 @@
 
         }
         
-        NSLog(@"%@",self.detailMessageArray);
-        
-        
     }
     else if(self.messageSegment.selectedSegmentIndex ==1){
-    //invitation message
-        if (![NsUserDefaultModel getCurrentData:Message_invitation]) {
-            [self getMessageRequest:@"fetchDetailOfInvitaitionMessages"];
-             [self.tableView reloadData];
-        }
-        else{
-            self.detailMessageArray = [NsUserDefaultModel getCurrentData:Message_invitation];
-             [self.tableView reloadData];
-            
-        }
+        
+        [self performSegueWithIdentifier:@"viewInvitationMessageSegue" sender:self];
+        
+        [self.messageSegment setSelectedSegmentIndex:0];
 
     }
     
@@ -72,9 +57,7 @@
     //do refresh when pull the screen
     ODRefreshControl *refreshControl = [[ODRefreshControl alloc] initInScrollView:self.tableView];
     [refreshControl addTarget:self action:@selector(dropViewDidBeginRefreshing:) forControlEvents:UIControlEventValueChanged];
-    
-   
-    
+
 }
 
 
@@ -146,9 +129,6 @@
         }
     
     }
-   
-    
-    
 
 }
 
@@ -164,24 +144,26 @@
     HUD.delegate = self;
     
     [ServerEnd fetchJson:[ServerEnd setBaseUrl:@"messageFetchRestful.php"] :@{@"requestType":messageType,@"requestUserID":[NsUserDefaultModel getUserIDFromCurrentSession]} onCompletion:^(NSDictionary *dictionary){
+        
+        
         if ([dictionary[@"success"] isEqualToString:@"true"]) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                if (self.messageSegment.selectedSegmentIndex==0) {
                     //set the message into the NsUserDefault
                     [NsUserDefaultModel setUserDefault:dictionary[@"messageDetails"] :Message_photo];
-                }
-                else if(self.messageSegment.selectedSegmentIndex==1){
-                    [NsUserDefaultModel setUserDefault:dictionary[@"fetchDetailOfInvitaitionMessages"] :Message_invitation];
-                }
-                
-                
+            
+            
                 self.detailMessageArray = dictionary[@"messageDetails"];
+
+        
+            
+            HUD.labelText = @"Done";
+            
+            
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [MBProgressHUD hideHUDForView:self.view animated:YES];
 
             });
             
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [MBProgressHUD hideHUDForView:self.view animated:YES];
-            });
+           
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.tableView reloadData];
@@ -250,7 +232,6 @@
     
     MessageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"messageCell" forIndexPath:indexPath];
     
-    if (self.messageSegment.selectedSegmentIndex==0) {
     
     //set the deatil for the each cell - the cell has 2 lines for maxium displaying the infomation
     //if current fetch is including photo
@@ -267,6 +248,14 @@
     //set sub title - latest time
     cell.subTitle.text = [NSString stringWithFormat:@"%@",self.detailMessageArray[indexPath.row][@"content"][0][@"create_date"]];
     
+    
+    [self checkLatestUpdate:indexPath.row];
+    
+ 
+if ([self checkLatestUpdate:indexPath.row]>0) {
+  
+    
+    
     cell.numberOfMessage.titleLabel.text =[NSString stringWithFormat:@"%lu",(unsigned long)[self.detailMessageArray[indexPath.row][@"content"][0][@"message_content"] count]];
      
     
@@ -274,50 +263,43 @@
     //set the latest image 1
     [AnimationAndUIAndImage collectionImageAsynDownload:[NSString stringWithFormat:@"%@",self.detailMessageArray[indexPath.row][@"content"][0][@"message_content"][0][@"image_id"][1]]:cell.latestImage_One:@"photoPlaceHolder_thumb":YES];
 
+   }
+  
+else{
     
-    /*
-    if ([self.detailMessageArray[indexPath.row][@"message_type"] isEqualToString:@"photo"]) {
-        
-        cell.textLabel.text = [NSString stringWithFormat:@"%@ uploaded %lu photos",self.detailMessageArray[indexPath.row][@"senderName"],(unsigned long)[self.detailMessageArray[indexPath.row][@"message_content"] count]];
-        cell.detailTextLabel.text =[NSString stringWithFormat:@"%@",self.detailMessageArray[indexPath.row][@"create_date"]];
-        
-        [AnimationAndUIAndImage tableImageAsyncDownload:self.detailMessageArray[indexPath.row][@"senderUrl"] : cell.imageView];
-        
-        
-        
-    }
+    cell.numberOfMessage.hidden =YES;
+    cell.latestImage_One.hidden=YES;
     
-    if ([self.detailMessageArray[indexPath.row][@"message_type"] isEqualToString:@"invitation"]) {
-           
-               [AnimationAndUIAndImage tableImageAsyncDownload:self.detailMessageArray[indexPath.row][@"message_content"][@"invitator_image_url"] : cell.imageView];
-            cell.textLabel.text=@"Invitation";
-            cell.detailTextLabel.text = [NSString stringWithFormat:@"Date:%@",self.detailMessageArray[indexPath.row][@"create_date"]];
-            
     }
-    */
-        
-    }
-    else if(self.messageSegment.selectedSegmentIndex==1){
-        
-        [AnimationAndUIAndImage tableImageAsyncDownload:self.detailMessageArray[indexPath.row][@"message_content"][@"invitator_image_url"]:cell.headerImage:NO];
-        
-        cell.title.text = self.detailMessageArray[indexPath.row][@"message_content"][@"senderName"];
-        cell.subTitle.text = [NSString stringWithFormat:@"%@%@", self.detailMessageArray[indexPath.row][@"message_content"][@"invitator"],self.detailMessageArray[indexPath.row][@"message_content"][@"message"]];
-    }
-      
+     
+  
     return cell;
     
 }
 
 
-
-
+//check the number of message that has not been read yet
+-(long)checkLatestUpdate:(long) index{
+    long number=0;
+    
+    for (int i=0; i<[self.detailMessageArray[index][@"content"] count]; i++) {
+       
+        int value =[self.detailMessageArray[index][@"content"][i][@"message_status"] intValue];
+        if (value==1) {
+            number++;
+        }
+        
+        
+    }
+    return number;
+}
 
 
 
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    setIndexPath = indexPath.row;
+
     if (self.messageSegment.selectedSegmentIndex==0) {
         [self performSegueWithIdentifier:@"messagePhotoSegue" sender:self];
 
@@ -340,28 +322,22 @@
 
 
 
-
-
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     
     
-      NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
-    
-    
+
     if ([segue.identifier isEqualToString:@"viewInvitationMessageSegue"]) {
-        ViewInvitationMessageViewController *viewInControl = (ViewInvitationMessageViewController*) segue.destinationViewController;
-        viewInControl.messageDicitonary = self.detailMessageArray[indexPath.row];
+       // ViewInvitationMessageViewController *viewInControl = (ViewInvitationMessageViewController*) segue.destinationViewController;
+       // viewInControl.messageDicitonary = self.detailMessageArray[indexPath.row];
     }
     
     if ([segue.identifier isEqualToString:@"messagePhotoSegue"]) {
-        
-        MessagePhotoCollectionViewController *messagePhotoCon = (MessagePhotoCollectionViewController*) segue.destinationViewController;
-        messagePhotoCon.singleUserDetailArray = self.detailMessageArray[indexPath.row];
-        
-        messagePhotoCon.header = self.detailMessageArray[indexPath.row][@"senderUrl"];
+        MessagePhotoTableViewController *messagePhotoCon = (MessagePhotoTableViewController*) segue.destinationViewController;
+        messagePhotoCon.singleUserDetailArray = self.detailMessageArray[setIndexPath];
+
+        messagePhotoCon.userProfile = self.detailMessageArray[setIndexPath][@"senderUrl"];
 
         
     }

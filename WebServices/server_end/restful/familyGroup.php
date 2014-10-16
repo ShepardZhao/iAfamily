@@ -34,7 +34,8 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
        if($requestType==='fetchAll'){
 
            if(!empty($_POST['userId'])){
-                echo $family->getFamiliesByUserId($_POST['userId']);
+
+               echo json_encode(array('type'=>"fetchAll",'success'=>'true','families'=>$family->getFamiliesByUserId($_POST['userId'])));
 
            }
            else{

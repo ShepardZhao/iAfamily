@@ -15,5 +15,16 @@
 +(NSArray*)getParseChannels;
 
 //set the user invited push notification
-+(void)sendUserInvitationPushNotification:(NSString*)invitedUserID :(NSString*)invitorName;
++(void)sendUserInvitationPushNotification:(NSString*)invitedUserID :(NSString*)invitorName : (NSString*) message;
+
+//remove the current user Id from parse channel
++(void)removeCurrentUserFromPush;
+
+//photo push notification
+
++(void)sendUserPhotoNotifcations:(NSArray*)relatedUserIDs : (int)photoNumbers : (NSString*)contentForUploader;
+
+//comment push nnotification
++(void)sendUserCommentNotifcation:(NSArray*)relatedUserID : (NSData*)commentMessage;
+
 @end

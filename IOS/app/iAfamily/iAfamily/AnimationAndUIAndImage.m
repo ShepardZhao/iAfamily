@@ -429,7 +429,6 @@ dispatch_async(dispatch_get_main_queue(),^{
  **/
 +(void) showTabBar:(UITabBarController *) tabbarcontroller{
 
-
     CATransition *animation = [CATransition animation];
     
     [animation setDuration:0.3]; //Animate for a duration of 0.3 seconds

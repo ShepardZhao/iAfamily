@@ -28,5 +28,5 @@
 @property (nonatomic, strong) HMSideMenu *sideMenu;
 @property (nonatomic, assign) BOOL menuIsVisible;
 @property (nonatomic,strong) ActionSheetUIView* actionSheet;
--(void)getDefaultMyPhoto;
+
 @end

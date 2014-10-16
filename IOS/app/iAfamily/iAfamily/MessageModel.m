@@ -16,6 +16,50 @@
 @implementation MessageModel
 
 /**
+ **if the user ready seen the message then mark message already read
+ **/
++(void)removeNumberOfMessage:(UITabBarController*)setController : (NSMutableArray*) messageIds{
+    
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [ServerEnd fetchJson:[ServerEnd setBaseUrl:@"messageModifiyRestful.php"] :@{@"requestType":@"readMessage",@"messageIDArrays":messageIds} onCompletion:^(NSDictionary *Messagedictionary) {
+          
+            NSLog(@"%@",Messagedictionary);
+            if ([Messagedictionary[@"success"] isEqualToString:@"true"]) {
+                
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    
+                    [self refreshNumberOfMessage:setController];
+                    
+                });
+                
+                
+                
+                
+            }
+            
+        }];
+        
+    });
+    
+
+    
+
+
+}
+
+
+
+
+ /**
+ **end
+ **/
+
+
+
+
+
+/**
  ** refresh the number of messages
  **/
 +(void) refreshNumberOfMessage:(UITabBarController*)setController {

@@ -286,20 +286,20 @@
     self.title = @"Loading...";
 
     [ServerEnd fetchJson:[ServerEnd setBaseUrl:@"familyGroup.php"] :@{@"requestType":@"fetchAll",@"userId":[NsUserDefaultModel getUserIDFromCurrentSession]} onCompletion:^(NSDictionary *dictionary) {
-
+        
         if ([dictionary[@"success"] isEqualToString:@"true"]) {
             //get family data
             
             //set the fetched family group to NsUserDefault
             [NsUserDefaultModel setUserDefault:dictionary[@"families"] : FamilyGroup];
 
+            
+            
             self.familyDicitonary = dictionary[@"families"];
             
             self.title = @"Done";
 
-            
-            
-            
+    
             //here's to refresh the table
      
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -354,6 +354,7 @@
         //prepare the detail information for each cell
         
         NSString* detailInfo = [[NSString alloc] initWithFormat:@"Created by:%@",self.familyDicitonary[indexPath.row][@"creator"]];
+    
         cell.detailTextLabel.text=detailInfo;
         
         int numberOfMember = [self.familyDicitonary[indexPath.row][@"number_members"] intValue];
@@ -381,6 +382,7 @@
         
         
         UILabel* memberLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 30, 20)];
+    memberLabel.tag = indexPath.row;
         memberLabel.text =NumberOfMembers;
         memberLabel.textAlignment =  NSTextAlignmentCenter;
         memberLabel.textColor = Rgb2UIColor(255, 255,255,1.0);

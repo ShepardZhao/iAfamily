@@ -7,13 +7,15 @@
 //
 
 #import "MyPhotosViewController.h"
-
+#import "MorePhotosCollectionViewController.h"
 @interface MyPhotosViewController (){
     BOOL currentSwtich;
     UIImageView *navBarHairlineImageView;
     long passIndex;
-
+    UILabel* viticalLine;
+    
 }
+
 @property (weak, nonatomic) IBOutlet UISegmentedControl *myPhotoSegment;
 @property (strong,nonatomic) NSMutableArray* gpsArray;
 @end
@@ -82,14 +84,30 @@
     UISwipeGestureRecognizer * swiperight=[[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swiperight:)];
     swiperight.direction=UISwipeGestureRecognizerDirectionRight;
     [self.view addGestureRecognizer:swiperight];
+    //create the vitical line
+    viticalLine = [[UILabel alloc] initWithFrame:CGRectMake(25, 0, 5, self.view.bounds.size.height)];
     
+    viticalLine.backgroundColor = Rgb2UIColor(255,140,116, 1.0);
+    
+    [viticalLine setHidden:YES];
+    
+    [self.view addSubview:viticalLine];
     
     
     if ([NsUserDefaultModel getCurrentData:MyPhoto]) {
         self.myFetchedPhotos =[NsUserDefaultModel getCurrentData:MyPhoto];
+    
+        if ([self.myFetchedPhotos count]>0) {
+            [viticalLine setHidden:NO];
+
+        }
+        
     }
     else{
-        [self getDefaultMyPhoto];
+        [self getDefaultMyPhotos];
+        
+        
+        
     }
     
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
@@ -112,8 +130,7 @@
     [self searchSlide];
     
     
-    
-    
+        
 }
 
 - (void)dropViewDidBeginRefreshing:(ODRefreshControl *)refreshControl
@@ -121,7 +138,8 @@
     double delayInSeconds = 3.0;
     dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, delayInSeconds * NSEC_PER_SEC);
     dispatch_after(popTime, dispatch_get_main_queue(), ^(void){
-        [self getDefaultMyPhoto];
+        [self getDefaultMyPhotos];
+        
         [refreshControl endRefreshing];
         
         
@@ -356,7 +374,13 @@
         detailContr.titleName = self.myFetchedPhotos[passIndex][@"date"];
     }
 
+    if([segue.identifier isEqualToString:@"personalMorePhotoSegue"]){
     
+        MorePhotosCollectionViewController* moreCon = (MorePhotosCollectionViewController*)segue.destinationViewController;
+        moreCon.morePhotosUrls = self.myFetchedPhotos[passIndex][@"globalContent"];
+        
+        
+    }
 }
 
 
@@ -372,9 +396,7 @@
 /**
  **The default photo is getting as date DASC
  **/
--(void)getDefaultMyPhoto{
-    
-    NSLog(@"%@",@"1");
+-(void)getDefaultMyPhotos{
     
     MBProgressHUD *HUD = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     HUD.labelText = @"Loading...";
@@ -382,11 +404,21 @@
 
     [ServerEnd fetchJson:[ServerEnd setBaseUrl:@"photoFetchRestful.php"] :@{@"requestType":@"myAllImages",@"requestUserID":[NsUserDefaultModel getUserIDFromCurrentSession]} onCompletion:^(NSDictionary *dictionary){
         if ([dictionary[@"success"] isEqualToString:@"true"]) {
-            NSLog(@"%@",dictionary[@"imageSets"]);
             ////set photo list to NsUserDefault
             [NsUserDefaultModel setUserDefault:dictionary[@"imageSets"] :MyPhoto];
             
             self.myFetchedPhotos =dictionary[@"imageSets"];
+            if ([self.myFetchedPhotos count]==0) {
+                [viticalLine setHidden:YES];
+            }
+            else{
+                [viticalLine setHidden:YES];
+
+            }
+            [viticalLine setHidden:NO];
+
+            
+            
             [self.tableView reloadData];
             
             
@@ -451,6 +483,7 @@
     MyPhotoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"myPhotoCell" forIndexPath:indexPath];
     //set the deatil for the each cell - the cell has 2 lines for maxium displaying the infomation
     
+      
     //set time
     cell.time.text = self.myFetchedPhotos[indexPath.row][@"date"];
     
@@ -459,6 +492,12 @@
     
     if (numberOfPhotos<4) {
         cell.displayMore.hidden = YES;
+    }
+    else{
+        
+        cell.displayMore.tag = indexPath.row;
+        
+        [cell.displayMore addTarget:self action:@selector(toDisplayMore:) forControlEvents:(UIControlEvents)UIControlEventTouchUpInside];
     }
     
     //set the number of photos
@@ -469,6 +508,7 @@
     cell.imageDescrption.text =self.myFetchedPhotos[indexPath.row][@"globalContent"][0][@"image_desc"];
     
     
+  
     
     //only display first 4 photos
     if (numberOfPhotos==1) {
@@ -495,6 +535,16 @@
     return cell;
     
 }
+
+
+
+
+-(void)toDisplayMore:(id)sender{
+    UIButton* tempButton = (UIButton*)sender;
+    passIndex = tempButton.tag;
+    [self performSegueWithIdentifier:@"personalMorePhotoSegue" sender:self];
+}
+
 
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

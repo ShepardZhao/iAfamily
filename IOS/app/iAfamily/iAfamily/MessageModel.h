@@ -10,6 +10,8 @@
 
 @interface MessageModel : UIViewController<UITabBarControllerDelegate>
 
-+(void)refreshNumberOfMessage:(UIViewController*)setController;
++(void)refreshNumberOfMessage:(UITabBarController*)setController;
+
++(void)removeNumberOfMessage:(UITabBarController*)setController : (NSMutableArray*) messageIds;
 
 @end

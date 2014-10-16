@@ -654,7 +654,6 @@
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
     
-    
     [self allPhotoFetch:@"photoFetchRestful.php":@"fetchAllImages"];
     //do refresh when pull the screen
     ODRefreshControl *refreshControl = [[ODRefreshControl alloc] initInScrollView:self.collectionView];
@@ -670,11 +669,15 @@
     [super viewWillAppear:animated];
     navBarHairlineImageView.hidden = YES;
     
-    
     //ready the NsUserDefault records
     //if ([NsUserDefaultModel getCurrentData:AllPhoto]) {
       //  self.iamgeItemsContainer =[NsUserDefaultModel getCurrentData:AllPhoto];
     //}
+    NSLog(@"%d",self.reloadView);
+    if (self.reloadView) {
+        [self allPhotoFetch:@"photoFetchRestful.php":@"fetchAllImages"];
+    }
+    
     
     
     //long swipe to left
@@ -798,18 +801,10 @@
     
     }
     
-    CGRect finalCellFrame = cell.frame;
-    //check the scrolling direction to verify from which side of the screen the cell should come.
-    CGPoint translation = [collectionView.panGestureRecognizer translationInView:collectionView.superview];
-    if (translation.x > 0) {
-        cell.frame = CGRectMake(finalCellFrame.origin.x - 1000, - 500.0f, 0, 0);
-    } else {
-        cell.frame = CGRectMake(finalCellFrame.origin.x + 1000, - 500.0f, 0, 0);
-    }
     
-    [UIView animateWithDuration:0.5f animations:^(void){
-        cell.frame = finalCellFrame;
-    }];
+    
+    
+    
     
     
     return cell;
@@ -817,6 +812,9 @@
 
 
 #pragma mark <UICollectionViewDelegate>
+
+
+
 
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -894,7 +892,6 @@
     
     [ServerEnd fetchJson:[ServerEnd setBaseUrl:baseUrl] :@{@"requestType":requestType,@"requestUserID":[NsUserDefaultModel getUserIDFromCurrentSession]} onCompletion:^(NSDictionary *dictionary){
         
-        NSLog(@"%@",dictionary[@"imageSets"]);
         if ([dictionary[@"success"] isEqualToString:@"true"]) {
             ////set photo list to NsUserDefault
             

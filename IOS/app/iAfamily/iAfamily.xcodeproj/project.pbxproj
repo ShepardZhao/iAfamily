@@ -29,10 +29,6 @@
 		87335D3619D2B11F00FA4E12 /* detailPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 87335D3519D2B11F00FA4E12 /* detailPhotoCollectionViewCell.m */; };
 		87335D3919D2B13000FA4E12 /* detailPhotoCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87335D3819D2B13000FA4E12 /* detailPhotoCollectionViewController.m */; };
 		873C7A3A19DE71CC00F90F94 /* MessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 873C7A3919DE71CC00F90F94 /* MessageTableViewCell.m */; };
-		873C7A3E19DEAB4500F90F94 /* MessagePhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 873C7A3D19DEAB4500F90F94 /* MessagePhotoCollectionViewCell.m */; };
-		873C7A4119DEB40200F90F94 /* InnerMessagePhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 873C7A4019DEB40200F90F94 /* InnerMessagePhotoCollectionViewCell.m */; };
-		873C7A4A19DEBB8B00F90F94 /* MessagePhotoCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 873C7A4919DEBB8B00F90F94 /* MessagePhotoCollectionViewController.m */; };
-		873C7A4D19DEC31400F90F94 /* MessagePhotoHeaderCollectionReusableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 873C7A4C19DEC31400F90F94 /* MessagePhotoHeaderCollectionReusableView.m */; };
 		8742E18619A8CAE500C9330D /* FamilyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8742E18519A8CAE500C9330D /* FamilyViewController.m */; };
 		8757C80219CFF77F00F1076C /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8757C80119CFF77F00F1076C /* Lato-Light.ttf */; };
 		875EB4CF19E90216008195BF /* MXPullDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 875EB4CE19E90216008195BF /* MXPullDownMenu.m */; };
@@ -101,6 +97,12 @@
 		87BC166019935CCB009DCEDB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87BC165E19935CCB009DCEDB /* Main.storyboard */; };
 		87BC166219935CCB009DCEDB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87BC166119935CCB009DCEDB /* Images.xcassets */; };
 		87BC166E19935CCB009DCEDB /* iAfamilyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 87BC166D19935CCB009DCEDB /* iAfamilyTests.m */; };
+		87C8CFDA19EB82D400739AF5 /* MessagePhotoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87C8CFD919EB82D400739AF5 /* MessagePhotoTableViewController.m */; };
+		87C8CFDD19EB82E600739AF5 /* MessagePhotoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 87C8CFDC19EB82E600739AF5 /* MessagePhotoTableViewCell.m */; };
+		87C8CFE119EB90CD00739AF5 /* FXLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 87C8CFE019EB90CD00739AF5 /* FXLabel.m */; };
+		87C8CFE519EBB4F600739AF5 /* MorePhotosCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87C8CFE419EBB4F600739AF5 /* MorePhotosCollectionViewController.m */; };
+		87C8CFE819EBB54600739AF5 /* MorePhotosCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 87C8CFE719EBB54600739AF5 /* MorePhotosCollectionViewCell.m */; };
+		87C8CFEF19EC183600739AF5 /* ViewInvitationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 87C8CFEE19EC183600739AF5 /* ViewInvitationTableViewCell.m */; };
 		87C938C619CFF7CE00E26837 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 87C938C419CFF7CE00E26837 /* Lato-Regular.ttf */; };
 		87C938C719CFF7CE00E26837 /* Lato-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 87C938C519CFF7CE00E26837 /* Lato-Thin.ttf */; };
 		87C938C919D0027F00E26837 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 87C938C819D0027F00E26837 /* Lato-Bold.ttf */; };
@@ -165,14 +167,6 @@
 		87335D3819D2B13000FA4E12 /* detailPhotoCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = detailPhotoCollectionViewController.m; sourceTree = "<group>"; };
 		873C7A3819DE71CC00F90F94 /* MessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageTableViewCell.h; sourceTree = "<group>"; };
 		873C7A3919DE71CC00F90F94 /* MessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageTableViewCell.m; sourceTree = "<group>"; };
-		873C7A3C19DEAB4500F90F94 /* MessagePhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagePhotoCollectionViewCell.h; sourceTree = "<group>"; };
-		873C7A3D19DEAB4500F90F94 /* MessagePhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagePhotoCollectionViewCell.m; sourceTree = "<group>"; };
-		873C7A3F19DEB40200F90F94 /* InnerMessagePhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InnerMessagePhotoCollectionViewCell.h; sourceTree = "<group>"; };
-		873C7A4019DEB40200F90F94 /* InnerMessagePhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InnerMessagePhotoCollectionViewCell.m; sourceTree = "<group>"; };
-		873C7A4819DEBB8B00F90F94 /* MessagePhotoCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagePhotoCollectionViewController.h; sourceTree = "<group>"; };
-		873C7A4919DEBB8B00F90F94 /* MessagePhotoCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagePhotoCollectionViewController.m; sourceTree = "<group>"; };
-		873C7A4B19DEC31400F90F94 /* MessagePhotoHeaderCollectionReusableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagePhotoHeaderCollectionReusableView.h; sourceTree = "<group>"; };
-		873C7A4C19DEC31400F90F94 /* MessagePhotoHeaderCollectionReusableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagePhotoHeaderCollectionReusableView.m; sourceTree = "<group>"; };
 		8742E18419A8CAE500C9330D /* FamilyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FamilyViewController.h; sourceTree = "<group>"; };
 		8742E18519A8CAE500C9330D /* FamilyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FamilyViewController.m; sourceTree = "<group>"; };
 		8757C80119CFF77F00F1076C /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
@@ -298,6 +292,18 @@
 		87BC166719935CCB009DCEDB /* iAfamilyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iAfamilyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		87BC166C19935CCB009DCEDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		87BC166D19935CCB009DCEDB /* iAfamilyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iAfamilyTests.m; sourceTree = "<group>"; };
+		87C8CFD819EB82D400739AF5 /* MessagePhotoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagePhotoTableViewController.h; sourceTree = "<group>"; };
+		87C8CFD919EB82D400739AF5 /* MessagePhotoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagePhotoTableViewController.m; sourceTree = "<group>"; };
+		87C8CFDB19EB82E600739AF5 /* MessagePhotoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagePhotoTableViewCell.h; sourceTree = "<group>"; };
+		87C8CFDC19EB82E600739AF5 /* MessagePhotoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagePhotoTableViewCell.m; sourceTree = "<group>"; };
+		87C8CFDF19EB90CD00739AF5 /* FXLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXLabel.h; sourceTree = "<group>"; };
+		87C8CFE019EB90CD00739AF5 /* FXLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXLabel.m; sourceTree = "<group>"; };
+		87C8CFE319EBB4F600739AF5 /* MorePhotosCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MorePhotosCollectionViewController.h; sourceTree = "<group>"; };
+		87C8CFE419EBB4F600739AF5 /* MorePhotosCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MorePhotosCollectionViewController.m; sourceTree = "<group>"; };
+		87C8CFE619EBB54600739AF5 /* MorePhotosCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MorePhotosCollectionViewCell.h; sourceTree = "<group>"; };
+		87C8CFE719EBB54600739AF5 /* MorePhotosCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MorePhotosCollectionViewCell.m; sourceTree = "<group>"; };
+		87C8CFED19EC183600739AF5 /* ViewInvitationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewInvitationTableViewCell.h; sourceTree = "<group>"; };
+		87C8CFEE19EC183600739AF5 /* ViewInvitationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewInvitationTableViewCell.m; sourceTree = "<group>"; };
 		87C938C419CFF7CE00E26837 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		87C938C519CFF7CE00E26837 /* Lato-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Thin.ttf"; sourceTree = "<group>"; };
 		87C938C819D0027F00E26837 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
@@ -433,12 +439,11 @@
 		8710279219B9C91300A42028 /* Photos */ = {
 			isa = PBXGroup;
 			children = (
+				87C8CFE219EBB4D800739AF5 /* MorePhotos */,
 				87FA0D0A19E4D9DD00CC58AF /* MyPhoto */,
 				87FA0D0919E4D9C600CC58AF /* AllPhoto */,
 				87A1E7EE19E01F2C0033B301 /* Comment */,
 				872B410019D29EF900E99193 /* DetailPhotos */,
-				871027A919BABE6C00A42028 /* SendThePhotosViewController.h */,
-				871027AA19BABE6C00A42028 /* SendThePhotosViewController.m */,
 			);
 			name = Photos;
 			sourceTree = "<group>";
@@ -517,14 +522,10 @@
 		873C7A3B19DEAB2300F90F94 /* Message_photo */ = {
 			isa = PBXGroup;
 			children = (
-				873C7A3C19DEAB4500F90F94 /* MessagePhotoCollectionViewCell.h */,
-				873C7A3D19DEAB4500F90F94 /* MessagePhotoCollectionViewCell.m */,
-				873C7A3F19DEB40200F90F94 /* InnerMessagePhotoCollectionViewCell.h */,
-				873C7A4019DEB40200F90F94 /* InnerMessagePhotoCollectionViewCell.m */,
-				873C7A4819DEBB8B00F90F94 /* MessagePhotoCollectionViewController.h */,
-				873C7A4919DEBB8B00F90F94 /* MessagePhotoCollectionViewController.m */,
-				873C7A4B19DEC31400F90F94 /* MessagePhotoHeaderCollectionReusableView.h */,
-				873C7A4C19DEC31400F90F94 /* MessagePhotoHeaderCollectionReusableView.m */,
+				87C8CFD819EB82D400739AF5 /* MessagePhotoTableViewController.h */,
+				87C8CFD919EB82D400739AF5 /* MessagePhotoTableViewController.m */,
+				87C8CFDB19EB82E600739AF5 /* MessagePhotoTableViewCell.h */,
+				87C8CFDC19EB82E600739AF5 /* MessagePhotoTableViewCell.m */,
 			);
 			name = Message_photo;
 			sourceTree = "<group>";
@@ -736,9 +737,8 @@
 		87A85A4819ADAEA1004F0D73 /* Message */ = {
 			isa = PBXGroup;
 			children = (
+				87C8CFE919EBD8AA00739AF5 /* Invitiation_Message */,
 				873C7A3B19DEAB2300F90F94 /* Message_photo */,
-				8713EFFF19B4B9C9002B0FBA /* ViewInvitationMessageViewController.h */,
-				8713F00019B4B9C9002B0FBA /* ViewInvitationMessageViewController.m */,
 				87B5663C19B7038600CCA358 /* MessageViewController.h */,
 				87B5663D19B7038600CCA358 /* MessageViewController.m */,
 				873C7A3819DE71CC00F90F94 /* MessageTableViewCell.h */,
@@ -863,6 +863,7 @@
 		87B59E991999DCBE0027F4BD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				87C8CFDE19EB90B200739AF5 /* FXLabel */,
 				875EB4CC19E90203008195BF /* MXPullDownMenu */,
 				8760C2A519E04EFB00D6D87C /* SlackTextViewController */,
 				878161C219DBBF0000663DE6 /* Camera */,
@@ -1001,6 +1002,37 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		87C8CFDE19EB90B200739AF5 /* FXLabel */ = {
+			isa = PBXGroup;
+			children = (
+				87C8CFDF19EB90CD00739AF5 /* FXLabel.h */,
+				87C8CFE019EB90CD00739AF5 /* FXLabel.m */,
+			);
+			name = FXLabel;
+			sourceTree = "<group>";
+		};
+		87C8CFE219EBB4D800739AF5 /* MorePhotos */ = {
+			isa = PBXGroup;
+			children = (
+				87C8CFE319EBB4F600739AF5 /* MorePhotosCollectionViewController.h */,
+				87C8CFE419EBB4F600739AF5 /* MorePhotosCollectionViewController.m */,
+				87C8CFE619EBB54600739AF5 /* MorePhotosCollectionViewCell.h */,
+				87C8CFE719EBB54600739AF5 /* MorePhotosCollectionViewCell.m */,
+			);
+			name = MorePhotos;
+			sourceTree = "<group>";
+		};
+		87C8CFE919EBD8AA00739AF5 /* Invitiation_Message */ = {
+			isa = PBXGroup;
+			children = (
+				8713EFFF19B4B9C9002B0FBA /* ViewInvitationMessageViewController.h */,
+				8713F00019B4B9C9002B0FBA /* ViewInvitationMessageViewController.m */,
+				87C8CFED19EC183600739AF5 /* ViewInvitationTableViewCell.h */,
+				87C8CFEE19EC183600739AF5 /* ViewInvitationTableViewCell.m */,
+			);
+			name = Invitiation_Message;
+			sourceTree = "<group>";
+		};
 		87E461C219C30C04001D1BAF /* FaceppSDK_ARC */ = {
 			isa = PBXGroup;
 			children = (
@@ -1082,6 +1114,8 @@
 		87FA0D0A19E4D9DD00CC58AF /* MyPhoto */ = {
 			isa = PBXGroup;
 			children = (
+				871027A919BABE6C00A42028 /* SendThePhotosViewController.h */,
+				871027AA19BABE6C00A42028 /* SendThePhotosViewController.m */,
 				8710279619B9CFF400A42028 /* MyPhotosViewController.h */,
 				8710279719B9CFF400A42028 /* MyPhotosViewController.m */,
 				87FA0D0B19E4DA0300CC58AF /* MyPhotoTableViewCell.h */,
@@ -1234,6 +1268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87C8CFE819EBB54600739AF5 /* MorePhotosCollectionViewCell.m in Sources */,
 				87D3EED719975687000AC2D9 /* WelcomeViewController.m in Sources */,
 				87A85A4419ACC3AB004F0D73 /* FamilyUserSearchViewController.m in Sources */,
 				87E72D5A19BCB90300ED754F /* ClearQuotaTableViewController.m in Sources */,
@@ -1244,16 +1279,17 @@
 				8785777D19DA670100CD3DBB /* CExpandHeader.m in Sources */,
 				8791644119BD8CE7001C7217 /* NotificationAndLocationTableViewController.m in Sources */,
 				8713F00119B4B9C9002B0FBA /* ViewInvitationMessageViewController.m in Sources */,
+				87C8CFE119EB90CD00739AF5 /* FXLabel.m in Sources */,
 				878ED11219C2D6CF00BCB932 /* FaceDectectionAndAnimationViewController.m in Sources */,
 				8760C2BA19E04F0900D6D87C /* UITextView+SLKAdditions.m in Sources */,
 				87B2C0BD19C05745009A419D /* IntroductionViewController.m in Sources */,
 				877A4B2219B7278400C33AF4 /* AnimationAndUIAndImage.m in Sources */,
 				87138B9419C01CA50075DC25 /* ODRefreshControl.m in Sources */,
+				87C8CFE519EBB4F600739AF5 /* MorePhotosCollectionViewController.m in Sources */,
 				87E461E119C30C04001D1BAF /* FaceppGroup.m in Sources */,
 				8768F6C219A793FB00F51DF6 /* NsUserDefaultModel.m in Sources */,
 				8760C2BE19E04F0900D6D87C /* SLKTextViewController.m in Sources */,
 				87E461E219C30C04001D1BAF /* FaceppGrouping.m in Sources */,
-				873C7A4A19DEBB8B00F90F94 /* MessagePhotoCollectionViewController.m in Sources */,
 				87B2C0B619C05165009A419D /* HelpTableViewController.m in Sources */,
 				8768F6BE19A764D500F51DF6 /* ResultCropedImageViewController.m in Sources */,
 				8760C2B919E04F0900D6D87C /* UIScrollView+SLKAdditions.m in Sources */,
@@ -1282,6 +1318,7 @@
 				87BC165419935CCB009DCEDB /* main.m in Sources */,
 				87A85A4119ACC0CA004F0D73 /* FamilyViewDetailTableViewController.m in Sources */,
 				87B5663E19B7038600CCA358 /* MessageViewController.m in Sources */,
+				87C8CFDA19EB82D400739AF5 /* MessagePhotoTableViewController.m in Sources */,
 				877A4B3219B96BEB00C33AF4 /* PersonalInfoSettingModifyTableViewController.m in Sources */,
 				87E461E319C30C04001D1BAF /* FaceppInfo.m in Sources */,
 				87335D3919D2B13000FA4E12 /* detailPhotoCollectionViewController.m in Sources */,
@@ -1290,11 +1327,11 @@
 				875EB4CF19E90216008195BF /* MXPullDownMenu.m in Sources */,
 				87B59EBD1999EA2F0027F4BD /* ServerEnd.m in Sources */,
 				87ADC2B519C3FDD90051539B /* ActionSheetUIView.m in Sources */,
+				87C8CFDD19EB82E600739AF5 /* MessagePhotoTableViewCell.m in Sources */,
 				8760C2BD19E04F0900D6D87C /* SLKTextView.m in Sources */,
 				87FF707C19DBEF060058FAA2 /* HeaderCollectionReusableView.m in Sources */,
 				877A4B2919B731A800C33AF4 /* MessageModel.m in Sources */,
 				87E461E719C30C04001D1BAF /* FaceppError.m in Sources */,
-				873C7A4119DEB40200F90F94 /* InnerMessagePhotoCollectionViewCell.m in Sources */,
 				87E461E019C30C04001D1BAF /* FaceppFaceset.m in Sources */,
 				8791643A19BD7BCE001C7217 /* GPSDelegate.m in Sources */,
 				875EB4E719EA1608008195BF /* ParsePushModel.m in Sources */,
@@ -1303,14 +1340,13 @@
 				8710279819B9CFF400A42028 /* MyPhotosViewController.m in Sources */,
 				87E461DF19C30C04001D1BAF /* FaceppDetection.m in Sources */,
 				87E461E619C30C04001D1BAF /* FaceppTrainer.m in Sources */,
-				873C7A4D19DEC31400F90F94 /* MessagePhotoHeaderCollectionReusableView.m in Sources */,
 				87E461E419C30C04001D1BAF /* FaceppPerson.m in Sources */,
+				87C8CFEF19EC183600739AF5 /* ViewInvitationTableViewCell.m in Sources */,
 				87A85A4719AD8DF2004F0D73 /* SingleMemberDetailViewController.m in Sources */,
 				87B59E371997C2870027F4BD /* BlurryModalSegue.m in Sources */,
 				873019C119A2422600FABC18 /* UIWindow+SIUtils.m in Sources */,
 				87B59E741998A84D0027F4BD /* InternetCheck.m in Sources */,
 				87335D3619D2B11F00FA4E12 /* detailPhotoCollectionViewCell.m in Sources */,
-				873C7A3E19DEAB4500F90F94 /* MessagePhotoCollectionViewCell.m in Sources */,
 				870E195819DA94ED009956BC /* HMSideMenu.m in Sources */,
 				87B59E3D1997C6FE0027F4BD /* MZAppearance.m in Sources */,
 				87B2C0B919C0537C009A419D /* LogsViewController.m in Sources */,
@@ -1433,8 +1469,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: shepard zhao (PD4L2QV5S8)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: shepard zhao (PD4L2QV5S8)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/Shepard/Downloads/parse-library-1.4.1",
@@ -1454,8 +1490,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: shepard zhao (PD4L2QV5S8)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: shepard zhao (PD4L2QV5S8)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/Shepard/Downloads/parse-library-1.4.1",

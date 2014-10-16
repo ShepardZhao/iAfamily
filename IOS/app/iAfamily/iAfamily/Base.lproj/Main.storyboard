@@ -42,12 +42,17 @@
             <string>Lato-Light</string>
             <string>Lato-Light</string>
             <string>Lato-Light</string>
-            <string>Lato-Light</string>
-            <string>Lato-Light</string>
-            <string>Lato-Light</string>
-            <string>Lato-Light</string>
         </mutableArray>
         <mutableArray key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
             <string>Lato-Regular</string>
             <string>Lato-Regular</string>
             <string>Lato-Regular</string>
@@ -200,18 +205,19 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Congras!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f9l-QW-K0G">
                                         <rect key="frame" x="148" y="45" width="105" height="41"/>
                                         <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="25"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="You have successfully registered" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="169" translatesAutoresizingMaskIntoConstraints="NO" id="pgh-Z7-fZR">
                                         <rect key="frame" x="148" y="94" width="169" height="46"/>
                                         <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="14"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Do you like to upload user profile photo right now?" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="169" translatesAutoresizingMaskIntoConstraints="NO" id="CF5-JN-teE">
                                         <rect key="frame" x="40" y="168" width="213" height="46"/>
                                         <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="14"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YRU-7e-lDT">
@@ -254,10 +260,10 @@
                                         <rect key="frame" x="40" y="40" width="100" height="100"/>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.94901960780000005" green="0.92549019610000005" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.22352941179999999" green="0.52941176469999995" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.94901960780000005" green="0.92549019610000005" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.22352941179999999" green="0.52941176469999995" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="type" value="fadeInRight"/>
                             <userDefinedRuntimeAttribute type="number" keyPath="delay">
@@ -573,31 +579,31 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mB8-mp-fIv">
-                                                    <rect key="frame" x="8" y="7" width="50" height="50"/>
+                                                    <rect key="frame" x="8" y="12" width="40" height="40"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ujr-ox-8Kz">
-                                                    <rect key="frame" x="64" y="9" width="183" height="21"/>
-                                                    <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="17"/>
-                                                    <color key="textColor" red="0.15686274510000001" green="0.2156862745" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d34-mV-lzj">
-                                                    <rect key="frame" x="255" y="16" width="32" height="32"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8UO-ha-uca">
-                                                    <rect key="frame" x="64" y="32" width="183" height="21"/>
-                                                    <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="11"/>
+                                                    <rect key="frame" x="56" y="8" width="183" height="21"/>
+                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d34-mV-lzj">
+                                                    <rect key="frame" x="263" y="20" width="24" height="24"/>
+                                                </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="STp-i7-vum">
-                                                    <rect key="frame" x="246" y="7" width="17" height="17"/>
+                                                    <rect key="frame" x="254" y="10" width="17" height="17"/>
                                                     <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="12"/>
                                                     <state key="normal" title="1" backgroundImage="bagage">
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8UO-ha-uca">
+                                                    <rect key="frame" x="56" y="31" width="183" height="21"/>
+                                                    <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="11"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
@@ -634,180 +640,245 @@
                     <connections>
                         <outlet property="messageSegment" destination="E6e-gO-MKL" id="voP-b2-4Pi"/>
                         <outlet property="tableView" destination="DN5-0m-QtF" id="iog-Jg-JeQ"/>
-                        <segue destination="suJ-64-bYF" kind="push" identifier="viewInvitationMessageSegue" id="1SI-C3-y2S"/>
-                        <segue destination="FzR-zC-dhT" kind="push" identifier="messagePhotoSegue" id="fgs-Gr-eXA"/>
+                        <segue destination="W6N-ni-D4j" kind="push" identifier="messagePhotoSegue" id="UlA-7B-4lc"/>
+                        <segue destination="Twn-di-bd8" kind="push" identifier="viewInvitationMessageSegue" id="mLO-UB-ln7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="za9-Ui-QGN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2683" y="-114"/>
         </scene>
-        <!--Message Photo Collection View Controller-->
-        <scene sceneID="kYe-g7-yc6">
+        <!--Message Photo Table View Controller-->
+        <scene sceneID="LcP-Dz-hdc">
             <objects>
-                <collectionViewController id="FzR-zC-dhT" customClass="MessagePhotoCollectionViewController" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="m4p-NQ-MA1">
+                <tableViewController id="W6N-ni-D4j" customClass="MessagePhotoTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="263" sectionHeaderHeight="22" sectionFooterHeight="22" id="Y7M-ZK-TVb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.94901960780000005" green="0.92549019610000005" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nxx-j3-QAm">
-                            <size key="itemSize" width="309" height="80"/>
-                            <size key="headerReferenceSize" width="50" height="30"/>
+                        <color key="backgroundColor" red="0.96078431369999995" green="0.94117647059999998" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="photoMessageCell" rowHeight="263" id="tIG-8o-GxC" customClass="MessagePhotoTableViewCell">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tIG-8o-GxC" id="gEj-Am-6iV">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l1O-Rq-WyG">
+                                            <rect key="frame" x="8" y="42" width="30" height="30"/>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pSG-J2-tT4">
+                                            <rect key="frame" x="46" y="78" width="75" height="75"/>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iKF-rq-Jif">
+                                            <rect key="frame" x="46" y="155" width="75" height="75"/>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gu1-vu-jOT">
+                                            <rect key="frame" x="123" y="155" width="75" height="75"/>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dGY-7K-iCu">
+                                            <rect key="frame" x="123" y="78" width="75" height="75"/>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="STw-JB-IZR">
+                                            <rect key="frame" x="200" y="78" width="75" height="75"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iuh-cp-2qg">
+                                            <rect key="frame" x="8" y="8" width="304" height="21"/>
+                                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="13"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dvj-13-dYE">
+                                            <rect key="frame" x="281" y="37" width="40" height="40"/>
+                                            <state key="normal" title="Button" image="messageComment">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="commentButton:" destination="tIG-8o-GxC" eventType="touchUpInside" id="Bhc-te-Msg"/>
+                                            </connections>
+                                        </button>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="90d-Q0-ncu">
+                                            <rect key="frame" x="200" y="155" width="75" height="75"/>
+                                        </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MiL-0J-k3j">
+                                            <rect key="frame" x="266" y="235" width="46" height="27"/>
+                                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
+                                            <state key="normal" title="More">
+                                                <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                            </state>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUb-w7-cHa" customClass="FXLabel">
+                                            <rect key="frame" x="46" y="42" width="229" height="30"/>
+                                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="13"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.96078431369999995" green="0.94117647059999998" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <connections>
+                                    <outlet property="commentButton" destination="dvj-13-dYE" id="JVV-cc-osb"/>
+                                    <outlet property="imageDescription" destination="iUb-w7-cHa" id="sCL-I1-Hgu"/>
+                                    <outlet property="imageFive" destination="gu1-vu-jOT" id="cDe-il-ObV"/>
+                                    <outlet property="imageFour" destination="iKF-rq-Jif" id="Tbh-5N-pTz"/>
+                                    <outlet property="imageOne" destination="pSG-J2-tT4" id="a4c-aO-lCB"/>
+                                    <outlet property="imageSix" destination="90d-Q0-ncu" id="6vD-eh-Eu1"/>
+                                    <outlet property="imageThree" destination="STw-JB-IZR" id="aOj-dW-OKm"/>
+                                    <outlet property="imageTwo" destination="dGY-7K-iCu" id="yme-24-URF"/>
+                                    <outlet property="moreButton" destination="MiL-0J-k3j" id="uEF-Y6-dfB"/>
+                                    <outlet property="timeLabel" destination="iuh-cp-2qg" id="fRC-BR-BSI"/>
+                                    <outlet property="userProfile" destination="l1O-Rq-WyG" id="7U4-o9-fMX"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="W6N-ni-D4j" id="WmU-OE-Ci5"/>
+                            <outlet property="delegate" destination="W6N-ni-D4j" id="tf7-3s-ABd"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="B71-ri-5hb"/>
+                    <connections>
+                        <segue destination="xBA-Ox-wM4" kind="push" identifier="messageMorePhotosSegue" id="8gW-sy-K7L"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZYH-Cf-95Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3113" y="-114"/>
+        </scene>
+        <!--More Photos Collection View Controller-->
+        <scene sceneID="AbL-dV-o4H">
+            <objects>
+                <collectionViewController id="xBA-Ox-wM4" customClass="MorePhotosCollectionViewController" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="5u6-ZY-aSF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.96078431369999995" green="0.94117647059999998" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="3" minimumInteritemSpacing="0.0" id="L2s-rn-P8M">
+                            <size key="itemSize" width="75" height="75"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="5"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="messagePhotoWrap" id="HdJ-KQ-gH3" customClass="MessagePhotoCollectionViewCell">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="morePhotoCell" id="QpV-Pd-TAd" customClass="MorePhotosCollectionViewCell">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="310" height="82"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NLU-bS-91q">
-                                            <rect key="frame" x="0.0" y="0.0" width="309" height="300"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="MpQ-wl-53O">
-                                                <size key="itemSize" width="70" height="70"/>
-                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="5"/>
-                                            </collectionViewFlowLayout>
-                                            <cells>
-                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="innerPhotoCell" id="QDg-zZ-het" customClass="InnerMessagePhotoCollectionViewCell">
-                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                        <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
-                                                        <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z83-s7-Prq">
-                                                                <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
-                                                            </imageView>
-                                                        </subviews>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    </view>
-                                                    <connections>
-                                                        <outlet property="innerCellImage" destination="Z83-s7-Prq" id="AAH-Fh-JTL"/>
-                                                    </connections>
-                                                </collectionViewCell>
-                                            </cells>
-                                            <connections>
-                                                <outlet property="dataSource" destination="HdJ-KQ-gH3" id="INS-BR-2OS"/>
-                                                <outlet property="delegate" destination="HdJ-KQ-gH3" id="jVc-q9-bJc"/>
-                                            </connections>
-                                        </collectionView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tOm-b5-o1W">
+                                            <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
+                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <size key="customSize" width="310" height="82"/>
                                 <connections>
-                                    <outlet property="innerUICollectionView" destination="NLU-bS-91q" id="TBZ-3Z-IVY"/>
+                                    <outlet property="moreImage" destination="tOm-b5-o1W" id="udM-Jy-uO7"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
-                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="messagePhotoHeader" id="4Qc-OD-lx9" customClass="MessagePhotoHeaderCollectionReusableView">
-                            <rect key="frame" x="0.0" y="64" width="320" height="30"/>
-                            <autoresizingMask key="autoresizingMask"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKv-Hn-ipp">
-                                    <rect key="frame" x="37" y="4" width="247" height="21"/>
-                                    <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="12"/>
-                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                            <connections>
-                                <outlet property="time" destination="fKv-Hn-ipp" id="19z-3K-JNa"/>
-                            </connections>
-                        </collectionReusableView>
                         <connections>
-                            <outlet property="dataSource" destination="FzR-zC-dhT" id="0KJ-Gb-K3D"/>
-                            <outlet property="delegate" destination="FzR-zC-dhT" id="62T-aS-Bor"/>
+                            <outlet property="dataSource" destination="xBA-Ox-wM4" id="EZ2-Fy-y6C"/>
+                            <outlet property="delegate" destination="xBA-Ox-wM4" id="ApG-EW-fhD"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="9r2-6X-t6V"/>
+                    <navigationItem key="navigationItem" id="Bpg-IJ-j8t"/>
                 </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Uui-bO-uKT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7IP-jc-uiU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3111" y="-114"/>
+            <point key="canvasLocation" x="3698" y="-203"/>
         </scene>
-        <!--View Invitation Message View Controller-->
-        <scene sceneID="a8z-xV-EDF">
+        <!--View Invitation Message Table View Controller-->
+        <scene sceneID="AA6-bZ-kYg">
             <objects>
-                <viewController id="suJ-64-bYF" customClass="ViewInvitationMessageViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="lg8-fB-0tU"/>
-                        <viewControllerLayoutGuide type="bottom" id="v57-N3-7dM"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="LGt-LD-KxW">
+                <tableViewController id="Twn-di-bd8" customClass="ViewInvitationMessageTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="114" sectionHeaderHeight="22" sectionFooterHeight="22" id="ewk-Az-m4U">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rGS-C9-LUH">
-                                <rect key="frame" x="-20" y="-20" width="360" height="608"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i4v-D0-ALy">
-                                        <rect key="frame" x="276" y="288" width="50" height="50"/>
-                                        <color key="backgroundColor" red="0.87450980389999999" green="0.35294117650000001" blue="0.30196078430000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="14"/>
-                                        <state key="normal" title="Decline">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="declineAction:" destination="suJ-64-bYF" eventType="touchUpInside" id="di1-dm-DRz"/>
-                                        </connections>
-                                    </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bubble_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="k37-9R-qOv">
-                                        <rect key="frame" x="97" y="181" width="15" height="17"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O2c-3a-ocq">
-                                        <rect key="frame" x="34" y="134" width="64" height="64"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bubble" translatesAutoresizingMaskIntoConstraints="NO" id="0U5-Eu-rop">
-                                        <rect key="frame" x="111" y="134" width="215" height="113"/>
-                                    </imageView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqW-8f-qgo">
-                                        <rect key="frame" x="116" y="141" width="205" height="84"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D23-aN-gQM">
-                                        <rect key="frame" x="41" y="288" width="50" height="50"/>
-                                        <color key="backgroundColor" red="0.12941176469999999" green="0.72941176470000002" blue="0.58431372550000005" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="14"/>
-                                        <state key="normal" title="Accept">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="acceptAction:" destination="suJ-64-bYF" eventType="touchUpInside" id="G3M-Az-fVu"/>
-                                        </connections>
-                                    </button>
-                                    <tableViewCell contentMode="scaleToFill" fixedFrame="YES" selectionStyle="default" indentationWidth="10" rowHeight="240" translatesAutoresizingMaskIntoConstraints="NO" id="cUj-tO-uDL">
-                                        <rect key="frame" x="20" y="121" width="320" height="240"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cUj-tO-uDL" id="5Ea-Lk-TIY">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </tableViewCell>
-                                </subviews>
-                                <color key="backgroundColor" red="0.94901960780000005" green="0.92549019610000005" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
-                        </subviews>
-                    </view>
-                    <navigationItem key="navigationItem" id="J0f-0Y-rDZ"/>
+                        <color key="backgroundColor" red="0.96078431369999995" green="0.94117647059999998" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="invitationCell" rowHeight="114" id="GeU-IJ-IwT" customClass="ViewInvitationTableViewCell">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GeU-IJ-IwT" id="bro-Ld-KgV">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yYS-mY-imm">
+                                            <rect key="frame" x="8" y="26" width="40" height="40"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="inviter" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vuV-5O-fgf">
+                                            <rect key="frame" x="56" y="22" width="135" height="21"/>
+                                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Woo-ab-Evd" customClass="FXLabel">
+                                            <rect key="frame" x="56" y="51" width="167" height="54"/>
+                                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D1f-xf-YH5">
+                                            <rect key="frame" x="242" y="26" width="70" height="30"/>
+                                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
+                                            <state key="normal" title="Accept">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTP-Dw-LIH">
+                                            <rect key="frame" x="242" y="64" width="70" height="30"/>
+                                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="12"/>
+                                            <state key="normal" title="Decline">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YWM-hh-tHK">
+                                            <rect key="frame" x="0.0" y="2" width="320" height="21"/>
+                                            <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="13"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="acceptButton" destination="D1f-xf-YH5" id="9w3-sI-mQh"/>
+                                    <outlet property="declineButton" destination="PTP-Dw-LIH" id="07r-BL-PCb"/>
+                                    <outlet property="headProfile" destination="yYS-mY-imm" id="9Qs-Qt-VwZ"/>
+                                    <outlet property="inviterName" destination="vuV-5O-fgf" id="SQX-0H-rsT"/>
+                                    <outlet property="message" destination="Woo-ab-Evd" id="hzn-OF-MEn"/>
+                                    <outlet property="timeLabel" destination="YWM-hh-tHK" id="7nu-tb-qFM"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Twn-di-bd8" id="fOv-fv-QBz"/>
+                            <outlet property="delegate" destination="Twn-di-bd8" id="uOl-6v-2aO"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="8rv-Jl-Pwg">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="1" id="Zfn-67-bf6">
+                            <rect key="frame" x="80" y="7" width="160" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Message"/>
+                                <segment title="Invitation"/>
+                            </segments>
+                            <connections>
+                                <action selector="switchSegmented:" destination="Twn-di-bd8" eventType="valueChanged" id="Rp1-Hm-ba5"/>
+                            </connections>
+                        </segmentedControl>
+                    </navigationItem>
                     <connections>
-                        <outlet property="detail" destination="eqW-8f-qgo" id="tM9-sn-YMA"/>
-                        <outlet property="inviterImage" destination="O2c-3a-ocq" id="xzC-qE-3Q1"/>
+                        <outlet property="switchSegmented" destination="Zfn-67-bf6" id="TzQ-hy-DKF"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fvg-lV-XOO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tJ8-GY-JZ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3111" y="-736"/>
+            <point key="canvasLocation" x="2997" y="-791"/>
         </scene>
         <!--Family-->
         <scene sceneID="P78-OY-962">
@@ -1080,7 +1151,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="33M-0j-6IK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2580" y="-722"/>
+            <point key="canvasLocation" x="2379" y="-823"/>
         </scene>
         <!--Message-->
         <scene sceneID="oHS-5o-VkX">
@@ -1155,7 +1226,7 @@
                             </collectionViewCell>
                         </cells>
                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="headerSecions" id="RcC-9P-Ws9" customClass="HeaderCollectionReusableView">
-                            <rect key="frame" x="0.0" y="64" width="320" height="50"/>
+                            <rect key="frame" x="0.0" y="64" width="320" height="30"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="689-cF-owW">
@@ -1416,14 +1487,11 @@
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="timeLine" translatesAutoresizingMaskIntoConstraints="NO" id="txZ-cV-iAp">
-                                                    <rect key="frame" x="25" y="0.0" width="5" height="200"/>
-                                                </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Timeline_node" translatesAutoresizingMaskIntoConstraints="NO" id="rMQ-kR-vsJ">
-                                                    <rect key="frame" x="12" y="8" width="30" height="30"/>
+                                                    <rect key="frame" x="33" y="15" width="20" height="20"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="date" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nIU-WD-vEG">
-                                                    <rect key="frame" x="50" y="12" width="102" height="26"/>
+                                                    <rect key="frame" x="56" y="12" width="80" height="26"/>
                                                     <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="13"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -1431,22 +1499,22 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MBp-UK-83b">
                                                     <rect key="frame" x="144" y="40" width="75" height="75"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="4 Photos" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cz0-0o-UBn">
-                                                    <rect key="frame" x="70" y="170" width="66" height="21"/>
-                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="11"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ciP-Tu-91W">
-                                                    <rect key="frame" x="50" y="67" width="86" height="95"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ciP-Tu-91W" customClass="FXLabel">
+                                                    <rect key="frame" x="50" y="62" width="86" height="129"/>
                                                     <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="12"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="4 Photos" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cz0-0o-UBn">
+                                                    <rect key="frame" x="70" y="37" width="66" height="21"/>
+                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="11"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" red="0.94901960780000005" green="0.92549019610000005" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.96078431369999995" green="0.94117647059999998" blue="0.90980392160000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <inset key="separatorInset" minX="50" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
                                             <outlet property="displayMore" destination="cOk-HO-1Mp" id="oNV-Do-hpz"/>
@@ -1457,6 +1525,7 @@
                                             <outlet property="imageTwo" destination="OAc-4M-fHr" id="rEe-3F-cs7"/>
                                             <outlet property="numberPhotos" destination="Cz0-0o-UBn" id="159-Ie-REd"/>
                                             <outlet property="time" destination="nIU-WD-vEG" id="aQU-7L-ELU"/>
+                                            <outlet property="timeImage" destination="rMQ-kR-vsJ" id="kaz-IM-VWJ"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1497,11 +1566,12 @@
                         <outlet property="tableView" destination="Dqj-Vk-vlQ" id="Ys1-vt-yHU"/>
                         <segue destination="vSo-wW-5A3" kind="push" identifier="SelectFamiliesAndUploadSegue" id="1u2-sa-IEi"/>
                         <segue destination="TYE-gr-vbB" kind="push" identifier="myPhotoDetailSegue" id="Lav-oH-Abd"/>
+                        <segue destination="xBA-Ox-wM4" kind="push" identifier="personalMorePhotoSegue" id="cHp-yv-LtH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c9p-DF-SH5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4876" y="578"/>
+            <point key="canvasLocation" x="4876" y="606"/>
         </scene>
         <!--Send The Photos View Controller-->
         <scene sceneID="xKv-On-obq">
@@ -2201,8 +2271,6 @@
         <image name="age" width="25" height="25"/>
         <image name="arrow" width="64" height="64"/>
         <image name="bagage" width="20" height="20"/>
-        <image name="bubble" width="461" height="280"/>
-        <image name="bubble_arrow" width="19" height="52"/>
         <image name="chats" width="32" height="32"/>
         <image name="close_white" width="32" height="32"/>
         <image name="displaySort" width="32" height="32"/>
@@ -2210,6 +2278,7 @@
         <image name="family_tab" width="32" height="32"/>
         <image name="fullscreen_map" width="25" height="25"/>
         <image name="gender" width="25" height="25"/>
+        <image name="messageComment" width="256" height="256"/>
         <image name="more" width="32" height="32"/>
         <image name="name" width="25" height="25"/>
         <image name="password" width="25" height="25"/>
@@ -2221,7 +2290,6 @@
         <image name="searchUser" width="32" height="32"/>
         <image name="settings" width="32" height="32"/>
         <image name="success" width="112" height="119"/>
-        <image name="timeLine" width="10" height="200"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -2229,7 +2297,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Ois-D3-gam"/>
+        <segue reference="KZX-j9-dwi"/>
+        <segue reference="8gW-sy-K7L"/>
         <segue reference="Lav-oH-Abd"/>
     </inferredMetricsTieBreakers>
 </document>

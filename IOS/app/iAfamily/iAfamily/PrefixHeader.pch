@@ -17,12 +17,7 @@
 #define ImageSize_w 50//image in table view size -- width
 #define ImageSize_h 50 //image in table view size -- height
 #define ImageLoadForTableViewCellAnimationDuration 0.5 //the fadeIn animation duration of the image is for tableViewCell
-#define TimeForUpdateGPSLocation 120.0 //time period for GPS location updateed
-
-#define WelcomeAnimationTime 10.0f //time period for welcome login page
-
-
-
+#define TimeForUpdateGPSLocation 1800.0 //time period for GPS location updateed
 
 #define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
 #define SYSTEM_VERSION_GREATER_THAN(v)              ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)
@@ -34,8 +29,6 @@
 #define GPSLog @"gpsLog.txt" //GpsLog will record current user's location within 5 minues
 #define QuotaLog @"QuotaLog.txt" //QuotaLog will record current data transcation between internet and local
 #define MessageLog @"MessageLog.txt" //MessageLog will tracker the message, where it comes from
-
-
 
 //current user NsUserDefault
 

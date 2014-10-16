@@ -11,5 +11,6 @@
 
 
 @interface CommentController : SLKTextViewController
-@property (strong,nonatomic) NSString* setid;
+@property (nonatomic) NSString* setid;
+@property (nonatomic) NSString* setFamilyId;
 @end

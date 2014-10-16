@@ -13,6 +13,8 @@ header("Content-Type: application/json");
 if($_SERVER['REQUEST_METHOD']==='POST'){
    $gps = json_decode($_POST['gpsArray']);
 
+    //return members id
+    $returnMembersIDs=array();
 
     //get images from files
     if(isset($_FILES) && isset($_POST['familiesIDs']) && isset($_POST['userId'])){
@@ -60,7 +62,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
                 $imageUpload -> resize($content['tmp_name'],600,676,'_half'); //for slide
                 $imageUpload -> upload($content['tmp_name']); //copy full size photo to user folder
                 $imageUpload -> insertIntoImageDetail($userImageRootPath.$imageUpload->getfilename().'.jpeg',$userImageRootPath.'_icon'.$imageUpload->getfilename().'.jpeg',$userImageRootPath.'_half'.$imageUpload->getfilename().'.jpeg');
-                array_push($storeImageIdAndPath,array('image_id'=>array($userImageRootPath.$imageUpload->getfilename().'.jpeg',$userImageRootPath.'_icon'.$imageUpload->getfilename().'.jpeg',$userImageRootPath.'_half'.$imageUpload->getfilename().'.jpeg')));
+                array_push($storeImageIdAndPath,array('Description'=>$_POST['photoDescription'],'image_id'=>array($userImageRootPath.$imageUpload->getfilename().'.jpeg',$userImageRootPath.'_icon'.$imageUpload->getfilename().'.jpeg',$userImageRootPath.'_half'.$imageUpload->getfilename().'.jpeg')));
             }
 
             $index++;
@@ -71,6 +73,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
         //insert the data into image and group
         //loop family if there are multi-families ID
         foreach($_POST['familiesIDs'] as $familyId){
+
            array_push($storeAllMemberID, $family->getEachMemberId($familyId));
 
             foreach($storeImageId as $imageID){
@@ -97,6 +100,7 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
 
         foreach($tmpMemberID as $singleValue){
             if($singleValue!=$_POST['userId']){
+                array_push($returnMembersIDs,'user_'.$singleValue);
                 $imageUpload->photoMessageInsert(serialize($storeImageIdAndPath),$_POST['userId'],$singleValue);
 
             }
@@ -104,8 +108,8 @@ if($_SERVER['REQUEST_METHOD']==='POST'){
         }
 
 
-        //3. return json and say true
-        echo json_encode(array('success'=>'true'));
+        //3. return json and final members Ids and say true
+        echo json_encode(array('success'=>'true','pushMembersIDs'=>$returnMembersIDs));
 
 
 

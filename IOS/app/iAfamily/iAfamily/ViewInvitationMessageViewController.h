@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "MBProgressHUD.h"
+#import "ODRefreshControl.h"
+@interface ViewInvitationMessageTableViewController : UITableViewController<MBProgressHUDDelegate>
+@property(strong,nonatomic) NSMutableArray* getInvitationList;
 
-@interface ViewInvitationMessageViewController : UIViewController<MBProgressHUDDelegate>
-@property (strong,nonatomic) NSDictionary* messageDicitonary;
 @end
