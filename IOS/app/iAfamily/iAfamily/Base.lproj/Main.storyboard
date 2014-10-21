@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6249" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="H1g-i8-xZi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="H1g-i8-xZi">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6243"/>
+        <deployment defaultVersion="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Lato-Bold.ttf">
@@ -195,7 +195,7 @@
                         <viewControllerLayoutGuide type="top" id="zsc-Lt-paW"/>
                         <viewControllerLayoutGuide type="bottom" id="OeA-IP-SqG"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="yku-6n-no1" customClass="CSAnimationView">
+                    <view key="view" contentMode="scaleToFill" id="yku-6n-no1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -264,15 +264,6 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.22352941179999999" green="0.52941176469999995" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="string" keyPath="type" value="fadeInRight"/>
-                            <userDefinedRuntimeAttribute type="number" keyPath="delay">
-                                <integer key="value" value="0"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="number" keyPath="duration">
-                                <real key="value" value="0.5"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" id="I8B-qK-gxV"/>
                     <connections>

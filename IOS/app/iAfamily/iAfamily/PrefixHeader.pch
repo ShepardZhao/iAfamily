@@ -61,18 +61,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 //message NsUserDefailt
 #define Message_photo @"message_photos"
 #define Message_invitation @"message_invitation"

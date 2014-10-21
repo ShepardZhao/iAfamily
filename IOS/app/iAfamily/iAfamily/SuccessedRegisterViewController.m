@@ -7,8 +7,6 @@
 //
 
 #import "SuccessedRegisterViewController.h"
-#import "CSAnimationView.h"
-#import "Canvas.h"
 #import "PopModal.h"
 #import "ResultCropedImageViewController.h"
 

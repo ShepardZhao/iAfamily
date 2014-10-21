@@ -6,7 +6,6 @@
  * Time: 2:10 PM
  */
 //include database singleton
-include_once $_SERVER["DOCUMENT_ROOT"].'/lib/conf.php';
 include_once $_SERVER["DOCUMENT_ROOT"].'/lib/model/DatabaseSingletonModel.php';
 class DataBaseCRUDModel {
 
@@ -26,7 +25,7 @@ class DataBaseCRUDModel {
      */
 
     protected function __construct(){
-        $this->singletonDbConnection = new DatabaseSingletonModel(HostName,UserName,Password,Database);
+        $this->singletonDbConnection = DatabaseSingletonModel::getInstance()->getConnection();
     }
 
     //insert and update and delete

@@ -20,7 +20,6 @@ PODS:
   - AFNetworking/UIKit (2.4.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - Canvas (0.1.2)
   - MBProgressHUD (0.9)
   - QBImagePickerController (2.2)
   - RSKImageCropper (0.3.0)
@@ -31,7 +30,6 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking
-  - Canvas
   - MBProgressHUD
   - QBImagePickerController
   - RSKImageCropper
@@ -40,7 +38,6 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: 0aabc6fae66d6e5d039eeb21c315843c7aae51ab
-  Canvas: ae2faca05a15c4d6659fb3ae5e2a14817df4449a
   MBProgressHUD: 2038dbcf3dce73215abed6001657043d53aa79a8
   QBImagePickerController: 8325d5ac8ba69e65af78ba43aa5e0190bdd016eb
   RSKImageCropper: 38002f13db12cd5d13925872d932c7aee328149b
