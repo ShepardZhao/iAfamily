@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DB63D1CA67906EF11298E3C5"
+               BlueprintIdentifier = "9325BF8D5EED6BC04A1539D6"
                BuildableName = "libPods-RSKImageCropper.a"
                BlueprintName = "Pods-RSKImageCropper"
                ReferencedContainer = "container:Pods.xcodeproj">

@@ -13,7 +13,7 @@
 #define Indent() [[UIView alloc] initWithFrame:CGRectMake(0, 0, 40, 40)];
 
 #define Domain @"http://hypetecho.cloudapp.net"  //default domain
-#define DefaultURL @"http://hypetecho.cloudapp.net/restful/" //default restful url
+#define DefaultURL Domain@"/restful/" //default restful url
 #define ImageSize_w 50//image in table view size -- width
 #define ImageSize_h 50 //image in table view size -- height
 #define ImageLoadForTableViewCellAnimationDuration 0.5 //the fadeIn animation duration of the image is for tableViewCell

@@ -16,7 +16,7 @@
     self.minimumInteritemSpacing = 5.0;
     self.minimumLineSpacing = 5.0;
     self.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-    self.sectionInset = UIEdgeInsetsMake(20.0, 5.0, 5.0, 5.0);
+    self.sectionInset = UIEdgeInsetsMake(20.0, 10.0, 10.0, 10.0);
 }
 
 - (CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset withScrollingVelocity:(CGPoint)velocity

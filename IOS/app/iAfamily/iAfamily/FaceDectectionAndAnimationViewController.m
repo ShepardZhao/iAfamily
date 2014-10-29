@@ -84,10 +84,7 @@
                 CGContextStrokeRect(context, rect);
             }
             
-            
-            
-    
-            
+
             UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
             UIGraphicsEndImageContext();
             float scale = 1.0f;

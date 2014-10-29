@@ -24,7 +24,7 @@
     // Override point for customization after application launch.
     [self navigationSetting];
     
- 
+ /*
         NSUserDefaults *getSession = [NSUserDefaults standardUserDefaults];
         NSDictionary * dict = [getSession dictionaryRepresentation];
         for (id key in dict) {
@@ -41,7 +41,7 @@
         }
         
     
-    
+    */
     //register notification
     [self startParsePush:application];
     

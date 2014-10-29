@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="H1g-i8-xZi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A388a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="H1g-i8-xZi">
     <dependencies>
-        <deployment defaultVersion="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="Lato-Bold.ttf">
             <string>Lato-Bold</string>
         </mutableArray>
         <mutableArray key="Lato-Light.ttf">
-            <string>Lato-Light</string>
             <string>Lato-Light</string>
             <string>Lato-Light</string>
             <string>Lato-Light</string>
@@ -1695,7 +1694,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MMx-Fc-9Pe" id="8BS-L2-XVn">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Perferences" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="p3h-hU-oVN">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Preferences" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="p3h-hU-oVN">
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="16"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1764,7 +1763,7 @@
             </objects>
             <point key="canvasLocation" x="2777" y="666"/>
         </scene>
-        <!--Portfolio-->
+        <!--My Profile-->
         <scene sceneID="bwE-L7-b6J">
             <objects>
                 <tableViewController id="SNx-Rz-IFO" customClass="PersonalInfoSettingTableViewController" sceneMemberID="viewController">
@@ -1797,7 +1796,7 @@
                             <outlet property="delegate" destination="SNx-Rz-IFO" id="CfM-dg-M8x"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Portfolio" id="OaY-EC-9lf"/>
+                    <navigationItem key="navigationItem" title="My Profile" id="OaY-EC-9lf"/>
                     <connections>
                         <segue destination="e3N-4g-R2a" kind="push" identifier="faceDectectAndAnimateSegue" id="qlT-Oa-6Ig"/>
                     </connections>
@@ -1806,7 +1805,7 @@
             </objects>
             <point key="canvasLocation" x="3188" y="597"/>
         </scene>
-        <!--Perferences-->
+        <!--Preferences-->
         <scene sceneID="a6H-y6-Q1T">
             <objects>
                 <tableViewController id="3oc-ls-G1I" customClass="NotificationAndLocationTableViewController" sceneMemberID="viewController">
@@ -1862,29 +1861,7 @@
                                 </cells>
                             </tableViewSection>
                             <tableViewSection id="5fV-g6-OTg">
-                                <string key="footerTitle">Switch off if you don't like to be always asked for doing photo type editing. The all photos you seleted will send out as 'default' type.</string>
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="5Fk-Kl-IUN">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Fk-Kl-IUN" id="TKb-Nm-5Lm">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Photo Edit" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="syZ-PH-4ZL">
-                                                    <rect key="frame" x="8" y="11" width="81" height="21"/>
-                                                    <fontDescription key="fontDescription" name="Lato-Light" family="Lato" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jzG-v8-Ue3">
-                                                    <rect key="frame" x="263" y="6" width="51" height="31"/>
-                                                    <connections>
-                                                        <action selector="locationSwitch:" destination="3oc-ls-G1I" eventType="valueChanged" id="Vi5-eK-nxI"/>
-                                                    </connections>
-                                                </switch>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
+                                <cells/>
                             </tableViewSection>
                         </sections>
                         <connections>
@@ -1892,7 +1869,7 @@
                             <outlet property="delegate" destination="3oc-ls-G1I" id="m93-1T-O1j"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Perferences" id="RtB-0D-Po3"/>
+                    <navigationItem key="navigationItem" title="Preferences" id="RtB-0D-Po3"/>
                     <connections>
                         <outlet property="locationSwitch" destination="jw0-tu-N55" id="FlK-h7-1Fa"/>
                         <outlet property="notificationSwitch" destination="D7W-Hb-jJg" id="8dz-Pd-OBa"/>
@@ -2258,7 +2235,7 @@
     </scenes>
     <resources>
         <image name="Timeline_node" width="50" height="50"/>
-        <image name="addFamily" width="32" height="32"/>
+        <image name="addFamily" width="24" height="24"/>
         <image name="age" width="25" height="25"/>
         <image name="arrow" width="64" height="64"/>
         <image name="bagage" width="20" height="20"/>
@@ -2288,7 +2265,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="KZX-j9-dwi"/>
+        <segue reference="Ois-D3-gam"/>
         <segue reference="8gW-sy-K7L"/>
         <segue reference="Lav-oH-Abd"/>
     </inferredMetricsTieBreakers>

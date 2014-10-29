@@ -1681,11 +1681,13 @@ fi
 			<array>
 				<string>8768F6C019A793FB00F51DF6</string>
 				<string>8768F6C119A793FB00F51DF6</string>
+				<string>87B3C72019FFC5D5002D60E5</string>
+				<string>87B3C72119FFC5D5002D60E5</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
 			<key>name</key>
-			<string>SessionModel</string>
+			<string>LocalStorageModel</string>
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
@@ -2700,6 +2702,39 @@ fi
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
+		<key>87B3C72019FFC5D5002D60E5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>DataBase.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>87B3C72119FFC5D5002D60E5</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>DataBase.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>87B3C72219FFC5D5002D60E5</key>
+		<dict>
+			<key>fileRef</key>
+			<string>87B3C72119FFC5D5002D60E5</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
 		<key>87B5663C19B7038600CCA358</key>
 		<dict>
 			<key>fileEncoding</key>
@@ -3485,6 +3520,7 @@ fi
 				<string>87E461E819C30C04001D1BAF</string>
 				<string>8710279819B9CFF400A42028</string>
 				<string>87E461DF19C30C04001D1BAF</string>
+				<string>87B3C72219FFC5D5002D60E5</string>
 				<string>87E461E619C30C04001D1BAF</string>
 				<string>87E461E419C30C04001D1BAF</string>
 				<string>87C8CFEF19EC183600739AF5</string>

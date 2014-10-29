@@ -801,12 +801,6 @@
     
     }
     
-    
-    
-    
-    
-    
-    
     return cell;
 }
 
@@ -891,7 +885,7 @@
     HUD.delegate = self;
     
     [ServerEnd fetchJson:[ServerEnd setBaseUrl:baseUrl] :@{@"requestType":requestType,@"requestUserID":[NsUserDefaultModel getUserIDFromCurrentSession]} onCompletion:^(NSDictionary *dictionary){
-        
+        NSLog(@"%@",dictionary);
         if ([dictionary[@"success"] isEqualToString:@"true"]) {
             ////set photo list to NsUserDefault
             

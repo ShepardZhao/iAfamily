@@ -15,11 +15,20 @@
 @interface MessagePhotoTableViewController (){
     long index;
     NSMutableArray* messageIDArrays;
+    UIImageView *navBarHairlineImageView;
+
 }
 
 @end
 
 @implementation MessagePhotoTableViewController
+
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    navBarHairlineImageView.hidden = YES;
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -33,7 +42,8 @@
     self.title = self.singleUserDetailArray[@"senderName"];
      self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
-    
+    navBarHairlineImageView = [AnimationAndUIAndImage findHairlineImageViewUnder:self.navigationController.navigationBar];
+
     //to mark the new message has been read already
     [self setMessageIDArrays];
 }
@@ -48,11 +58,16 @@
     
     [messControl getMessageRequest:@"fetchDetailOfMessages"];
  
-    
-    
-    
 
 }
+
+
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    navBarHairlineImageView.hidden = NO;
+}
+
 
 
 //analysis array and take the message id from old multableArray to new multableArray
